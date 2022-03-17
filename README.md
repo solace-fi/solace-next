@@ -16,6 +16,7 @@ yarn
 ```sh
 # run development server
 yarn dev
+
 # build & deploy
 yarn build
 yarn start
