@@ -1,0 +1,9 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.formatOnSave": true,
+
+  "prettier.singleQuote": true,
+  "explorer.confirmDelete": false,
+  "eslint.codeAction.showDocumentation": { "enable": true },
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true }
+}
