@@ -8,22 +8,26 @@ const BKPT_6 = 1370;
 const BKPT_7 = 1640;
 
 module.exports = {
-  darkMode: 'class', // or 'media' or 'class'
+  // content: [],
+  // mode: "jit",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
+
   ],
   theme: {
-    extend: {
+    theme: {
       screens: {
-        xs: BKPT_1,
-        sm: BKPT_2,
-        md: BKPT_3,
-        lg: BKPT_4,
-        xl: BKPT_5,
-        '2xl': BKPT_6,
-        '3xl': BKPT_7
-      },
-    }
+        xs: BKPT_1 + "px",
+        sm: BKPT_2 + "px",
+        md: BKPT_3 + "px",
+        lg: BKPT_4 + "px",
+        xl: BKPT_5 + "px",
+        '2xl': BKPT_6 + "px",
+        '3xl': BKPT_7 + "px",
+      }
+    },
+    extend: {},
   },
-};
+  plugins: [],
+}
