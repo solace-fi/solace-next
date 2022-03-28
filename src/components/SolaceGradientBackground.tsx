@@ -25,9 +25,9 @@
 
 export default function SolaceGradientBackground({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-color">
+    <div className="solace-gradient">
       <style jsx>{`
-        .bg-color {
+        .solace-gradient {
           background: radial-gradient(
               ellipse 120% 150% at 60% 0,
               rgba(212, 120, 216, 1) 10%,
@@ -48,11 +48,16 @@ export default function SolaceGradientBackground({ children }: { children: React
             background-position: 0% 50%;
           }
         }
-        .bg-color {
+        .solace-gradient {
           background-attachment: fixed;
           background-size: cover;
           animation: movingGradient 30s ease infinite;
         }
+        /* .solace-gradient::before {
+          clear: both;
+          content: '';
+          display: table;
+        } */
       `}</style>
       {children}
     </div>

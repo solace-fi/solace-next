@@ -19,7 +19,11 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-  return <Component {...pageProps} />
+  return (
+    <div className="text-light selection:bg-select">
+      <Component {...pageProps} />
+    </div>
+  )
 }
 
 export default MyApp

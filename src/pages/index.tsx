@@ -1,10 +1,15 @@
+import Sidebar from '@/components/Sidebar'
 import SolaceGradientBackground from '@/components/SolaceGradientBackground'
 
 export default function Home() {
   return (
     <SolaceGradientBackground>
-      <div className="selection:bg-[#333] min-h-screen flex items-center justify-center text-8xl font-bold font-serif">
-        <div className="text-center">sabrina</div>
+      {/* Sidebar */}
+      <Sidebar />
+      <div className="flex">
+        <div className="min-h-screen flex bg-dark w-full ml-[200px]">
+          a in commerce, b in studies
+        </div>
       </div>
     </SolaceGradientBackground>
   )

@@ -1,33 +1,58 @@
-const BKPT_1 = 380;
-const BKPT_NAVBAR = 600;
-const BKPT_2 = 770;
-const BKPT_3 = 900;
-const BKPT_4 = 1060;
-const BKPT_5 = 1232;
-const BKPT_6 = 1370;
-const BKPT_7 = 1640;
+const BKPT_1 = 380
+const BKPT_NAVBAR = 600
+const BKPT_2 = 770
+const BKPT_3 = 900
+const BKPT_4 = 1060
+const BKPT_5 = 1232
+const BKPT_6 = 1370
+const BKPT_7 = 1640
 
 module.exports = {
   // content: [],
   // mode: "jit",
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-
-  ],
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     theme: {
+      // screen sizes
       screens: {
-        xs: BKPT_1 + "px",
-        sm: BKPT_2 + "px",
-        md: BKPT_3 + "px",
-        lg: BKPT_4 + "px",
-        xl: BKPT_5 + "px",
-        '2xl': BKPT_6 + "px",
-        '3xl': BKPT_7 + "px",
-      }
+        xs: BKPT_1 + 'px',
+        sm: BKPT_2 + 'px',
+        md: BKPT_3 + 'px',
+        lg: BKPT_4 + 'px',
+        xl: BKPT_5 + 'px',
+        '2xl': BKPT_6 + 'px',
+        '3xl': BKPT_7 + 'px',
+      },
     },
-    extend: {},
+    // colors
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      light: '#fafafa',
+      dark: '#5E5E5E',
+      select: '#DA3325',
+      warmGradientA: 'rgba(243, 211, 126, 1)',
+      warmGradientB: 'rgba(240, 77, 66, 1)',
+      techyGradientA: 'rgb(212, 120, 216)',
+      techyGradientB: 'rgb(95, 93, 249)',
+    },
+    // font families
+    fontFamily: {
+      // body: open sans, title: montserrat
+      body: ['Open Sans', 'sans-serif'],
+      title: ['Montserrat', 'sans-serif'],
+    },
+    extend: {
+      // spacing
+      spacing: {
+        // standard margin / padding between foreign elements: 30px
+        7.5: '30px',
+        // big solace logo ball on desktop: 78px
+        logoBallDesktop: '78px',
+        // big solace logo ball on mobile: 35.69px
+        logoBallMobile: '35.69px',
+      },
+    },
   },
   plugins: [],
 }
