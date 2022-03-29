@@ -1,28 +1,33 @@
 import React, { RefObject, useEffect, useMemo } from 'react'
-import { Flex, Grid } from '../../../../components/atoms/Layout'
-import { SectionTitle } from '../../../../components/atoms/Typography'
-import { AboutThesis } from '../molecules/AboutThesis'
-import { Text } from '../../../../components/atoms/Typography'
-import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
+// import { Flex, Grid } from '../../../../components/atoms/Layout'
+// import { SectionTitle } from '../../../../components/atoms/Typography'
+// import { AboutThesis } from '../molecules/AboutThesis'
+// import { Text } from '../../../../components/atoms/Typography'
+// import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
 
 // export const StakingSection = <StakingSectionFunction />
 export function StakingSection({
-  sectionRef: ref,
-  getScrollerForThisRef,
-  isVisible,
+  // sectionRef: ref,
+  // getScrollerForThisRef,
+  // isVisible,
+  useScrollingRef,
 }: {
-  sectionRef?: React.Ref<HTMLDivElement>
-  getScrollerForThisRef?: (ref: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement>) => () => void
-  isVisible?: boolean
+  useScrollingRef: () => React.MutableRefObject<HTMLDivElement | null>
+  // sectionRef?: React.Ref<HTMLDivElement>
+  // getScrollerForThisRef?: (
+  //   ref: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement>
+  // ) => () => void
+  // isVisible?: boolean
 }): JSX.Element {
-  const { isMobile } = useWindowDimensions()
-  const scroller = useMemo(
-    () => (ref && getScrollerForThisRef ? getScrollerForThisRef(ref) : () => console.log('no ref')),
-    [ref, getScrollerForThisRef]
-  )
-  useEffect(() => {
-    if (isVisible) scroller()
-  }, [isVisible, scroller, ref])
+  const ref = useScrollingRef()
+  // const { isMobile } = useWindowDimensions()
+  // const scroller = useMemo(
+  //   () => (ref && getScrollerForThisRef ? getScrollerForThisRef(ref) : () => console.log('no ref')),
+  //   [ref, getScrollerForThisRef]
+  // )
+  // useEffect(() => {
+  //   if (isVisible) scroller()
+  // }, [isVisible, scroller, ref])
 
   return (
     <Flex col stretch pr={isMobile ? 40 : 150} pl={isMobile ? 40 : 150} justifyCenter ref={ref}>
@@ -35,7 +40,8 @@ export function StakingSection({
             title="No risk of loss"
             text={
               <Text light regular>
-                Users earn revenue from the underwriting activity and further $SOLACE distribution, while the{' '}
+                Users earn revenue from the underwriting activity and further $SOLACE distribution,
+                while the{' '}
                 <Text extrabold inline light>
                   risk of underwriting falls on the protocol’s owned pool.
                 </Text>

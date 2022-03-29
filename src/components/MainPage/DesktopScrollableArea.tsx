@@ -1,5 +1,5 @@
 import VisibilitySensor from 'react-visibility-sensor'
-import React, { RefObject, useEffect } from 'react'
+import React, { RefObject, useEffect, useMemo } from 'react'
 import { HomepageSections } from './utils/useHomepageSections'
 
 function SnapScroll({ children, ...rest }: { children: React.ReactNode }) {
@@ -53,6 +53,25 @@ export default function DesktopScrollableArea({
     setVisibleSection(visibleSection)
   }, [visibleSection, setVisibleSection])
 
+  const useScrollingRef = (
+    // ref: React.RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void),
+    sectionIndex: number
+  ) => {
+    const isVisible = useMemo(() => visibleSection === sectionIndex, [visibleSection, sectionIndex])
+    const ref = HomepageSections[sectionIndex].ref
+    const scroller = useMemo(
+      () => (ref ? getScrollerForThisRef(ref) : () => console.log('no ref')),
+      [ref, getScrollerForThisRef]
+    )
+    useEffect(() => {
+      isVisible && scroller()
+    }, [isVisible, scroller, ref])
+    return ref
+  }
+
+  // curry useScrollingRef with sectionIndex and return a function without args
+  const curriedUseScrollingRef = (sectionIndex: number) => () => useScrollingRef(sectionIndex)
+
   return (
     <SnapScroll>
       {HomepageSections.map((Section, index) => (
@@ -64,9 +83,10 @@ export default function DesktopScrollableArea({
             return (
               <React.Fragment key={Section.key}>
                 <Section.Section
-                  sectionRef={Section.ref}
-                  getScrollerForThisRef={getScrollerForThisRef}
-                  isVisible={visibleSection === index}
+                  // sectionRef={Section.ref}
+                  // getScrollerForThisRef={getScrollerForThisRef}
+                  // isVisible={visibleSection === index}
+                  useScrollingRef={curriedUseScrollingRef(index)}
                 />
               </React.Fragment>
             )

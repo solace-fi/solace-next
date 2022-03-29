@@ -1,9 +1,9 @@
 import React, { RefObject, useEffect, useMemo } from 'react'
-import { Flex, Grid } from '../../../../components/atoms/Layout'
-import { SectionTitle } from '../../../../components/atoms/Typography'
-import { Text } from '../../../../components/atoms/Typography'
-import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
-import styled from 'styled-components'
+// import { Flex, Grid } from '../../../../components/atoms/Layout'
+// import { SectionTitle } from '../../../../components/atoms/Typography'
+// import { Text } from '../../../../components/atoms/Typography'
+// import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
+// import styled from 'styled-components'
 
 const ProgressBarContainer = styled.div`
   grid-column: span 4 / span 4;
@@ -58,22 +58,27 @@ function RoadmapList({ children }: { children: React.ReactNode[] }): JSX.Element
 
 // export const RoadmapSection = <RoadmapSectionFunction />
 export function RoadmapSection({
-  sectionRef: ref,
-  getScrollerForThisRef,
-  isVisible,
+  // sectionRef: ref,
+  // getScrollerForThisRef,
+  // isVisible,
+  useScrollingRef,
 }: {
-  sectionRef?: React.Ref<HTMLDivElement>
-  getScrollerForThisRef?: (ref: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement>) => () => void
-  isVisible?: boolean
+  useScrollingRef: () => React.MutableRefObject<HTMLDivElement | null>
+  // sectionRef?: React.Ref<HTMLDivElement>
+  // getScrollerForThisRef?: (
+  //   ref: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement>
+  // ) => () => void
+  // isVisible?: boolean
 }): JSX.Element {
-  const { isMobile } = useWindowDimensions()
-  const scroller = useMemo(
-    () => (ref && getScrollerForThisRef ? getScrollerForThisRef(ref) : () => console.log('no ref')),
-    [ref, getScrollerForThisRef]
-  )
-  useEffect(() => {
-    if (isVisible) scroller()
-  }, [isVisible, scroller, ref])
+  const ref = useScrollingRef()
+  // const { isMobile } = useWindowDimensions()
+  // const scroller = useMemo(
+  //   () => (ref && getScrollerForThisRef ? getScrollerForThisRef(ref) : () => console.log('no ref')),
+  //   [ref, getScrollerForThisRef]
+  // )
+  // useEffect(() => {
+  //   if (isVisible) scroller()
+  // }, [isVisible, scroller, ref])
 
   return (
     <Flex
