@@ -49,6 +49,8 @@ module.exports = {
         7.5: '30px',
         // standard double margin / padding between foreign elements: 60px
         15: '60px',
+        // standard double margin / padding between foreign elements: 60px
+        17.5: '70px',
         // big solace logo ball on desktop: 78px
         logoBallDesktop: '78px',
         // big solace logo ball on mobile: 35.69px

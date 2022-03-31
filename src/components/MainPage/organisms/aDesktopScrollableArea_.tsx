@@ -1,25 +1,46 @@
 import VisibilitySensor from 'react-visibility-sensor'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import React, { RefObject, useEffect } from 'react'
-import { HomepageSections } from '../../utils/useHomepageSections'
+import { HomepageSections } from '../utils/useHomepageSections'
 
-const SnapScroll = styled.div`
-  height: calc(100vh);
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  & > * {
-    scroll-snap-align: start;
-    height: calc(100vh - 100px);
-  }
-  &::-webkit-scrollbar {
-    width: 0; /* Remove scrollbar space */
-    background: transparent; /* Optional: just make scrollbar invisible */
-  }
-`
+// const StyledSnapScroll = styled.div`
+//   height: calc(100vh);
+//   scroll-snap-type: y mandatory;
+//   overflow-y: scroll;
+//   scroll-behavior: smooth;
+//   scrollbar-width: none;
+//   & > * {
+//     scroll-snap-align: start;
+//     height: calc(100vh - 100px);
+//   }
+//   &::-webkit-scrollbar {
+//     width: 0; /* Remove scrollbar space */
+//     background: transparent; /* Optional: just make scrollbar invisible */
+//   }
+// `
 
-export default function DesktopScrollableArea({
+function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element {
+  return (
+    <div className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth snapscroll">
+      <style jsx>{`
+        .snapscroll {
+          scrollbar-width: none;
+        }
+        .snapscroll > * {
+          scroll-snap-align: start;
+          height: calc(100vh);
+        }
+        .snapscroll::-webkit-scrollbar {
+          width: 0; /* Remove scrollbar space */
+          background: transparent; /* Optional: just make scrollbar invisible */
+        }
+      `}</style>
+      {children}
+    </div>
+  )
+}
+
+export default function aDesktopScrollableAreaa({
   visibleSection,
   setVisibleSection,
   HomepageSections,
@@ -37,12 +58,11 @@ export default function DesktopScrollableArea({
       })
     }
   }
-  const getScrollerForThisRef = (
-    ref: RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void)
-  ) => () => {
-    console.log('getScrollerForThisRef > ref =', ref)
-    scrollElementIntoView(ref as RefObject<HTMLDivElement>)
-  }
+  const getScrollerForThisRef =
+    (ref: RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void)) => () => {
+      console.log('getScrollerForThisRef > ref =', ref)
+      scrollElementIntoView(ref as RefObject<HTMLDivElement>)
+    }
   // detect changes in visibleSection and scroll to the current one
   useEffect(() => {
     setVisibleSection(visibleSection)

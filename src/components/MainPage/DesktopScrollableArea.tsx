@@ -2,20 +2,18 @@ import VisibilitySensor from 'react-visibility-sensor'
 import React, { RefObject, useEffect, useMemo } from 'react'
 import { HomepageSections } from './utils/useHomepageSections'
 
-function SnapScroll({ children, ...rest }: { children: React.ReactNode }) {
+function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element {
   return (
-    <div className="snap-scroll" {...rest}>
+    <div className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth snapscroll">
       <style jsx>{`
-        height: calc(100vh);
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        & > * {
-          scroll-snap-align: start;
-          height: calc(100vh - 100px);
+        .snapscroll {
+          scrollbar-width: none;
         }
-        &::-webkit-scrollbar {
+        .snapscroll > * {
+          scroll-snap-align: start;
+          height: calc(100vh);
+        }
+        .snapscroll::-webkit-scrollbar {
           width: 0; /* Remove scrollbar space */
           background: transparent; /* Optional: just make scrollbar invisible */
         }

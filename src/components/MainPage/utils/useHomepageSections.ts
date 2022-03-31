@@ -9,7 +9,7 @@ import { StakingSection } from '../sections/StakingSection'
 export function useHomepageSections() {
   const HomepageSections = [
     { Section: AboutFirstSection, key: 'about', ref: useRef<HTMLDivElement | null>(null) },
-    // { Section: ExploitsCoverageSection, key: 'coverage', ref: useRef<HTMLDivElement | null>(null) },
+    { Section: ExploitsCoverageSection, key: 'coverage', ref: useRef<HTMLDivElement | null>(null) },
     // { Section: StakingSection, key: 'staking', ref: useRef<HTMLDivElement | null>(null) },
     // { Section: RoadmapSection, key: 'roadmap', ref: useRef<HTMLDivElement | null>(null) },
     // { Section: Investors, key: 'investors', ref: useRef<HTMLDivElement | null>(null) },
