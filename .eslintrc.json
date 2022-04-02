@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "next",
-    "next/core-web-vitals",
-    "airbnb-typescript",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["next", "next/core-web-vitals"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -22,7 +17,9 @@
       // If you don't want to extend any rules, you don't need an `extends` attribute.
       "extends": [
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "airbnb-typescript/base",
+        "plugin:prettier/recommended"
       ],
 
       "parserOptions": {
@@ -31,6 +28,9 @@
       "rules": {
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-unused-expressions": "warn",
         "import/no-extraneous-dependencies": "off",
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": "off",

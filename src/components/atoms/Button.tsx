@@ -38,7 +38,7 @@ export default function Button({ type, className, children, href, target, rel }:
   rel?: string,
 }) {
   return (
-    <a href={href} target={target} rel={rel} className={`${className} h-14 w-50 flex items-center justify-center rounded-full
+    <a href={href} target={target} rel={rel} className={`${className ?? ""} h-14 w-50 flex items-center justify-center rounded-full
       ${type === 'outline'
         ? 'text-light bg-transparent border border-light'
         : 'bg-light'}

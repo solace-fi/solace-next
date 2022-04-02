@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter()
 
   const handleRouteChange = (url: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     ;(window as unknown as { gtag: any }).gtag('config', process.env.GOOGLE_ANALYTICS_ID, {
       page_path: url,
     })

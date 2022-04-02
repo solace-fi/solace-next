@@ -72,10 +72,12 @@ export default function Sidebar() {
   return (
     <div className="ml-7.5 my-7.5 inline-block fixed">
       <div className="flex flex-col w-[200px] items-start select-none">
-        <Image src={SolaceLogoSmall} className="ml-7.5" />
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+        <Image src={SolaceLogoSmall} className="ml-7.5" alt="Small Solace Logo." />
         <AccordionContainer
           accordees={sidebarContent.map(({ title, children }) => ({
             title,
+            // eslint-disable-next-line @typescript-eslint/no-shadow
             children: children.map(({ title, link, type }) =>
               type === 'hash' ? (
                 <a

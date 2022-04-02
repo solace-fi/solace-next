@@ -31,6 +31,7 @@ export default function AccordionContainer({ accordees }: { accordees: Accordee[
           toggle={toggle}
           index={index}
           title={accordee.title}
+          key={index}
         >
           {accordee.children}
         </SidebarAccordionItem>

@@ -42,7 +42,8 @@ export default function GlassCard({
             href={url}
             className="flex items-center gap-2 group-hover:gap-[13px] group-hover:mr-[5px] ease-out duration-300 "
           >
-            <div>LEARN MORE</div> <Image src={ArrowRight} />
+            {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+            <div>LEARN MORE</div> <Image src={ArrowRight} alt="Arrow pointing to the right" />
           </a>
         </div>
       </div>

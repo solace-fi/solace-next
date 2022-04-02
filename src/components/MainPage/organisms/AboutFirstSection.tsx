@@ -35,7 +35,7 @@ function SolaceStatsSection() {
         },
       ]
         .map(({ title, amount, unit }) => (
-          <div className="flex flex-col items-center gap-0.5">
+          <div className="flex flex-col items-center gap-0.5" key={title}>
             <div className="font-semibold text-xs">{title}</div>
             {unit ? (
               <div className="flex gap-0.5 items-baseline">

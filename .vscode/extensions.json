@@ -3,6 +3,8 @@
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
     "dsznajder.es7-react-js-snippets",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "dbaeumer.vscode-eslint",
+    "rvest.vs-code-prettier-eslint"
   ]
 }

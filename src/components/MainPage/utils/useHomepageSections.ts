@@ -21,4 +21,4 @@ export function useHomepageSections() {
   return { HomepageSections }
 }
 
-export type HomepageSections = ReturnType<typeof useHomepageSections>['HomepageSections']
+export type HomepageSectionsType = ReturnType<typeof useHomepageSections>['HomepageSections']

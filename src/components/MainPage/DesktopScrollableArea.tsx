@@ -1,6 +1,6 @@
 import VisibilitySensor from 'react-visibility-sensor'
 import React, { RefObject, useEffect, useMemo } from 'react'
-import { HomepageSections } from './utils/useHomepageSections'
+import { HomepageSectionsType } from './utils/useHomepageSections'
 
 function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element {
   return (
@@ -30,7 +30,7 @@ export default function DesktopScrollableArea({
 }: {
   visibleSection: number
   setVisibleSection: (section: number) => void
-  HomepageSections: HomepageSections
+  HomepageSections: HomepageSectionsType
 }): JSX.Element {
   const scrollElementIntoView = (ref: React.RefObject<HTMLDivElement>) => {
     console.log('scrollElementIntoView > ref.current =', ref.current)
@@ -55,19 +55,22 @@ export default function DesktopScrollableArea({
     // ref: React.RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void),
     sectionIndex: number
   ) => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const isVisible = useMemo(() => visibleSection === sectionIndex, [visibleSection, sectionIndex])
     const ref = HomepageSections[sectionIndex].ref
     const scroller = useMemo(
       () => (ref ? getScrollerForThisRef(ref) : () => console.log('no ref')),
-      [ref, getScrollerForThisRef]
+      [ref]
     )
     useEffect(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       isVisible && scroller()
     }, [isVisible, scroller, ref])
     return ref
   }
 
   // curry useScrollingRef with sectionIndex and return a function without args
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const curriedUseScrollingRef = (sectionIndex: number) => () => useScrollingRef(sectionIndex)
 
   return (

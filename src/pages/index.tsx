@@ -81,7 +81,7 @@ function SidebarRight({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSideba
             link: 'https://app.solace.fi/legacy',
           },
         ].map(({ title, link, special }) => (
-          <li>
+          <li key={title}>
             <a
               key={title}
               href={link}
