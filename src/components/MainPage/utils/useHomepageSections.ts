@@ -1,9 +1,11 @@
 import { useRef } from 'react'
-import { AboutFirstSection } from '../sections/AboutFirstSection'
-import { Advisors, CoreContributors, Investors } from '../sections/Collaborators'
-import { ExploitsCoverageSection } from '../sections/ExploitsCoverageSection'
-import { RoadmapSection } from '../sections/RoadmapSection'
-import { StakingSection } from '../sections/StakingSection'
+import { AboutFirstSection } from '../organisms/AboutFirstSection'
+import { ExploitsCoverageSection } from '../organisms/ExploitsCoverageSection'
+// import { AboutFirstSection } from '../sections/AboutFirstSection'
+// import { Advisors, CoreContributors, Investors } from '../organisms/Collaborators'
+// import { ExploitsCoverageSection } from '../sections/ExploitsCoverageSection'
+// import { RoadmapSection } from '../sections/RoadmapSection'
+// import { StakingSection } from '../sections/StakingSection'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function useHomepageSections() {

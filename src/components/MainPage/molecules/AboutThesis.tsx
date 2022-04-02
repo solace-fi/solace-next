@@ -1,45 +1,21 @@
-import React from 'react'
-import { Flex } from '../../../../components/atoms/Layout'
-import { WhiteCircle } from '../../../../components/atoms/Icon/WhiteCircle'
-import { Text } from '../../../../components/atoms/Typography'
+import WhiteCircle from '../atoms/WhiteCircle'
 
-export function AboutThesis({ title, text }: { title: string; text: string | React.ReactNode }): JSX.Element {
+export default function AboutThesis({
+  title,
+  text,
+}: {
+  title: string
+  text: string | React.ReactNode
+}): JSX.Element {
   return (
-    <Flex mt={10}>
-      <Flex
-        style={{
-          minWidth: '30px',
-          marginTop: '5px',
-        }}
-      >
-        {/* <img src={whiteCircle} alt="small circle" /> */}
+    <div className="flex mt-2.5 max-w-[370px]">
+      <div className="min-w-[30px] mt-0.5">
         <WhiteCircle />
-      </Flex>
-      <Flex col gap={10}>
-        <Text
-          style={{
-            lineHeight: '24px',
-          }}
-          mont
-          extrabold
-          light
-          t1s
-          mt={4}
-        >
-          {title}
-        </Text>
-        <Text
-          light
-          regular
-          style={{
-            lineHeight: '24px',
-          }}
-          mt={10}
-          t3s
-        >
-          {text}
-        </Text>
-      </Flex>
-    </Flex>
+      </div>
+      <div className="flex-col gap-2.5">
+        <div className="font-title font-bold text-2xl leading-6">{title}</div>
+        <div className="text-base leading-6 mt-2.5 ">{text}</div>
+      </div>
+    </div>
   )
 }

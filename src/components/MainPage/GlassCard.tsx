@@ -12,7 +12,7 @@ export default function GlassCard({
 }) {
   return (
     <div
-      className="h-[216px] w-[327px] mt-10 px-[32px] pt-[31px] pb-[28px] rounded-[30px] cursor-pointer floating-card group"
+      className="h-[216px] w-[327px] px-[32px] pt-[31px] pb-[28px] rounded-[30px] cursor-pointer floating-card group"
       style={{
         backgroundImage: `url("/images/glass-card.svg")`,
         backgroundRepeat: 'no-repeat',
