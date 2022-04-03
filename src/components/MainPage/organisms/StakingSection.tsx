@@ -28,11 +28,7 @@ export function StakingSection({
   //   }
   // }, [isVisible, scroller, ref])
 
-  const Title = (
-    <>
-      Exploits <span className="text-red-600 font-bold">Coverage</span>
-    </>
-  )
+  const Title = <span className="text-red-600 font-bold">Staking</span>
 
   const Theses = (
     <>

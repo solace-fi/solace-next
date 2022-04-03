@@ -4,7 +4,7 @@ import DesktopScrollableArea from '@/components/MainPage/DesktopScrollableArea'
 // import GlassCard from '@/components/MainPage/GlassCard'
 import { useHomepageSections } from '@/components/MainPage/utils/useHomepageSections'
 import Sidebar from '@/components/Sidebar'
-import SolaceGradientBackground from '@/components/SolaceGradientBackground'
+import SolaceGradientBackground from '@/components/atoms/SolaceGradientBackground'
 import React from 'react'
 
 function SidebarRight({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: () => void }) {
