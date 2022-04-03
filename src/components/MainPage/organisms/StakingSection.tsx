@@ -1,103 +1,84 @@
-// import React, { RefObject, useEffect, useMemo } from 'react'
-// // import { Flex, Grid } from '../../../../components/atoms/Layout'
-// // import { SectionTitle } from '../../../../components/atoms/Typography'
-// // import { AboutThesis } from '../molecules/AboutThesis'
-// // import { Text } from '../../../../components/atoms/Typography'
-// // import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
+import React from 'react'
+import AboutThesis from '../molecules/AboutThesis'
+import FeatureListSection from '../molecules/FeatureListSection'
 
-// // export const StakingSection = <StakingSectionFunction />
-// export function StakingSection({
-//   // sectionRef: ref,
-//   // getScrollerForThisRef,
-//   // isVisible,
-//   useScrollingRef,
-// }: {
-//   useScrollingRef: () => React.MutableRefObject<HTMLDivElement | null>
-//   // sectionRef?: React.Ref<HTMLDivElement>
-//   // getScrollerForThisRef?: (
-//   //   ref: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement>
-//   // ) => () => void
-//   // isVisible?: boolean
-// }): JSX.Element {
-//   const ref = useScrollingRef()
-//   // const { isMobile } = useWindowDimensions()
-//   // const scroller = useMemo(
-//   //   () => (ref && getScrollerForThisRef ? getScrollerForThisRef(ref) : () => console.log('no ref')),
-//   //   [ref, getScrollerForThisRef]
-//   // )
-//   // useEffect(() => {
-//   //   if (isVisible) scroller()
-//   // }, [isVisible, scroller, ref])
+export function StakingSection({
+  // sectionRef: ref,
+  // getScrollerForThisRef,
+  // isVisible,
+  useScrollingRef,
+}: {
+  useScrollingRef: () => React.MutableRefObject<HTMLDivElement | null>
+  // sectionRef?: React.Ref<HTMLDivElement>
+  // getScrollerForThisRef?: (
+  //   ref: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement>
+  // ) => () => void
+  // isVisible?: boolean
+}): JSX.Element {
+  const ref = useScrollingRef()
+  // const { isMobile } = useWindowDimensions()
+  // const scroller = useMemo(
+  //   () => (ref && getScrollerForThisRef ? getScrollerForThisRef(
+  // </h2>
+  //   if (isVisible) {
+  //     // console.log('currently visible: ', 'ExploitsCoverageSection')
+  //     // console.log('ExploitsCoverageSection > useEffect > isVisible > now trying to scroll here')
+  //     // console.log('my ref: ', ref)
+  //     scroller()
+  //   }
+  // }, [isVisible, scroller, ref])
 
-//   return (
-//     <Flex col stretch pr={isMobile ? 40 : 150} pl={isMobile ? 40 : 150} justifyCenter ref={ref}>
-//       <SectionTitle light extrabold isMobile={isMobile}>
-//         Staking
-//       </SectionTitle>
-//       <Flex mt={70}>
-//         <Grid gap={isMobile ? 50 : 60} columns={isMobile ? 1 : 2}>
-//           <AboutThesis
-//             title="No risk of loss"
-//             text={
-//               <Text light regular>
-//                 Users earn revenue from the underwriting activity and further $SOLACE distribution,
-//                 while the{' '}
-//                 <Text extrabold inline light>
-//                   risk of underwriting falls on the protocol’s owned pool.
-//                 </Text>
-//               </Text>
-//             }
-//           />
-//           <AboutThesis
-//             title="Stake and get votes"
-//             text={
-//               <>
-//                 Each staked $SOLACE gives you one{' '}
-//                 <Text inline extrabold light>
-//                   vote in the DAO.
-//                 </Text>
-//               </>
-//             }
-//           />
-//           <AboutThesis
-//             title="Long-term bonuses"
-//             text={
-//               <>
-//                 Users can{' '}
-//                 <Text extrabold inline>
-//                   multiply
-//                 </Text>{' '}
-//                 their{' '}
-//                 <Text extrabold inline>
-//                   rewards
-//                 </Text>{' '}
-//                 (up to 2.5x) and voting rights (up to 4x) as they lock $SOLACE for chosen period.
-//               </>
-//             }
-//           />
-//           <AboutThesis
-//             title="Multiple revenue streams"
-//             text={
-//               <>
-//                 Staked $SOLACE provides you with exposure to underwriting{' '}
-//                 <Text extrabold inline>
-//                   rewards
-//                 </Text>
-//                 , underwriting pool{' '}
-//                 <Text extrabold inline>
-//                   investments
-//                 </Text>
-//                 , plus $SOLACE{' '}
-//                 <Text extrabold inline>
-//                   emissions
-//                 </Text>
-//                 .
-//               </>
-//             }
-//           />
-//         </Grid>
-//       </Flex>
-//     </Flex>
-//   )
-// }
-export {}
+  const Title = (
+    <>
+      Exploits <span className="text-red-600 font-bold">Coverage</span>
+    </>
+  )
+
+  const Theses = (
+    <>
+      <AboutThesis
+        title="No risk of loss"
+        text={
+          <>
+            Users earn revenue from the underwriting activity and further $SOLACE distribution,
+            while the{' '}
+            <span className="font-bold">
+              risk of underwriting falls on the protocol&apos;s owned pool.
+            </span>
+          </>
+        }
+      />
+      <AboutThesis
+        title="Stake and get votes"
+        text={
+          <>
+            Each staked $SOLACE gives you one <span className="font-bold">vote in the DAO.</span>
+          </>
+        }
+      />
+      <AboutThesis
+        title="Long-term bonuses"
+        text={
+          <>
+            Users can <span className="font-bold">multiply</span> their{' '}
+            <span className="font-bold">rewards</span> (up to 2.5x) and voting rights (up to 4x) as
+            they lock $SOLACE for chosen period.
+          </>
+        }
+      />
+      <AboutThesis
+        title="Multiple revenue streams"
+        text={
+          <>
+            Staked $SOLACE provides you with exposure to underwriting{' '}
+            <span className="font-bold">rewards</span>, underwriting pool{' '}
+            <span className="font-bold">investments</span>, plus $SOLACE{' '}
+            <span className="font-bold">emissions</span>.
+          </>
+        }
+      />
+    </>
+  )
+
+  return FeatureListSection(ref, Title, Theses)
+}

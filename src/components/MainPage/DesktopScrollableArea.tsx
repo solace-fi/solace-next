@@ -71,20 +71,18 @@ export default function DesktopScrollableArea({
   return (
     <SnapScroll>
       {HomepageSections.map((Section, index) => (
-        <VisibilitySensor key={Section.key}>
+        <VisibilitySensor key={'visibility' + Section.key}>
           {({ isVisible }) => {
             if (isVisible) {
               setVisibleSection(index)
             }
             return (
-              <React.Fragment key={Section.key}>
-                <Section.Section
-                  // sectionRef={Section.ref}
-                  // getScrollerForThisRef={getScrollerForThisRef}
-                  // isVisible={visibleSection === index}
-                  useScrollingRef={curriedUseScrollingRef(index)}
-                />
-              </React.Fragment>
+              <Section.Section
+                // sectionRef={Section.ref}
+                // getScrollerForThisRef={getScrollerForThisRef}
+                // isVisible={visibleSection === index}
+                useScrollingRef={curriedUseScrollingRef(index)}
+              />
             )
           }}
         </VisibilitySensor>

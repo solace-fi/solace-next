@@ -34,8 +34,8 @@ function SolaceStatsSection() {
           amount: '$120.9',
         },
       ]
-        .map(({ title, amount, unit }) => (
-          <div className="flex flex-col items-center gap-0.5" key={title}>
+        .map(({ title, amount, unit }, i) => (
+          <div className="flex flex-col items-center gap-0.5" key={title + i.toString()}>
             <div className="font-semibold text-xs">{title}</div>
             {unit ? (
               <div className="flex gap-0.5 items-baseline">
@@ -119,9 +119,15 @@ export function AboutFirstSection({
                 url: 'https://solace.fi/staking',
               },
             ].map(({ title, body, url }, i) => {
-              const Card = <GlassCard title={title} body={body} url={url} />
+              const Card = (
+                <GlassCard title={title} body={body} url={url} key={'glassCard-internal' + title} />
+              )
               if (i === 1) {
-                return <div className="-mt-5">{Card}</div>
+                return (
+                  <div className="-mt-5" key={title}>
+                    {Card}
+                  </div>
+                )
               } else {
                 return Card
               }

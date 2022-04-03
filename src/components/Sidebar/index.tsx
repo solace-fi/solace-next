@@ -83,6 +83,7 @@ export default function Sidebar() {
                 <a
                   href={`#${link}`}
                   className="block font-normal text-gray-700 hover:text-gray-900 hover:underline underline-offset-2"
+                  key={title}
                 >
                   {title}
                 </a>
@@ -92,6 +93,7 @@ export default function Sidebar() {
                   className="block font-normal text-gray-700 hover:text-gray-900 hover:underline underline-offset-2"
                   target="_blank"
                   rel="noopener noreferrer"
+                  key={title}
                 >
                   {title}
                 </a>
