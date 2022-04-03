@@ -1,5 +1,5 @@
 import VisibilitySensor from 'react-visibility-sensor'
-import React, { RefObject, useEffect, useMemo } from 'react'
+import React, { RefObject, useEffect } from 'react'
 import { HomepageSectionsType } from './utils/useHomepageSections'
 
 function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element {
@@ -55,17 +55,12 @@ export default function DesktopScrollableArea({
     // ref: React.RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void),
     sectionIndex: number
   ) => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const isVisible = useMemo(() => visibleSection === sectionIndex, [visibleSection, sectionIndex])
+    const isVisible = visibleSection === sectionIndex
     const ref = HomepageSections[sectionIndex].ref
-    const scroller = useMemo(
-      () => (ref ? getScrollerForThisRef(ref) : () => console.log('no ref')),
-      [ref]
-    )
     useEffect(() => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      isVisible && scroller()
-    }, [isVisible, scroller, ref])
+      const scroller = ref ? getScrollerForThisRef(ref) : () => console.log('no ref')
+      if (isVisible) scroller()
+    }, [isVisible, ref])
     return ref
   }
 
