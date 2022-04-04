@@ -5,6 +5,8 @@
     "dsznajder.es7-react-js-snippets",
     "eamodio.gitlens",
     "dbaeumer.vscode-eslint",
-    "rvest.vs-code-prettier-eslint"
+    "rvest.vs-code-prettier-eslint",
+    "natqe.reload",
+    "Divlo.vscode-styled-jsx-syntax"
   ]
 }

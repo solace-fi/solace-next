@@ -29,6 +29,8 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       light: '#fafafa',
+      white: '#fff',
+      lightNeutral: '#efefef',
       black: '#000',
       dark: '#5E5E5E',
       select: '#DA3325',
