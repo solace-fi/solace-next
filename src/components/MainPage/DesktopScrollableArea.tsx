@@ -6,17 +6,17 @@ function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element 
   return (
     <div className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth snapscroll">
       <style jsx>{`
-        .snapscroll {
-          scrollbar-width: none;
-        }
-        .snapscroll > * {
-          scroll-snap-align: start;
-          height: calc(100vh);
-        }
-        .snapscroll::-webkit-scrollbar {
-          width: 0; /* Remove scrollbar space */
-          background: transparent; /* Optional: just make scrollbar invisible */
-        }
+        //.snapscroll {
+        //  scrollbar-width: none;
+        //}
+        //.snapscroll > * {
+        //  scroll-snap-align: start;
+        //  height: calc(100vh);
+        //}
+        //.snapscroll::-webkit-scrollbar {
+        //  width: 0; /* Remove scrollbar space */
+        //  background: transparent; /* Optional: just make scrollbar invisible */
+        //}
       `}</style>
       {children}
     </div>
@@ -47,9 +47,9 @@ export default function DesktopScrollableArea({
       scrollElementIntoView(ref as RefObject<HTMLDivElement>)
     }
   // detect changes in visibleSection and scroll to the current one
-  useEffect(() => {
-    setVisibleSection(visibleSection)
-  }, [visibleSection, setVisibleSection])
+  // useEffect(() => {
+  //   setVisibleSection(visibleSection)
+  // }, [visibleSection, setVisibleSection])
 
   const useScrollingRef = (
     // ref: React.RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void),

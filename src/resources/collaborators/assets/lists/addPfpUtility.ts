@@ -19,7 +19,7 @@ import advisors from './advisors'
 import individualInvestors from './individualInvestors'
 
 function addPfpToOnePerson(person: Person): Person {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-var-requires
   const pfp = require('../individualImages/' + person.name.split(' ')[0] + '.png').default as string
   return {
     ...person,

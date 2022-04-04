@@ -1,55 +1,47 @@
-import React, { RefObject, useEffect, useMemo } from 'react'
+import React from 'react'
+import { SectionTitle } from '../molecules/SectionTitle'
 // import { Flex, Grid } from '../../../../components/atoms/Layout'
 // import { SectionTitle } from '../../../../components/atoms/Typography'
 // import { Text } from '../../../../components/atoms/Typography'
 // import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
 // import styled from 'styled-components'
 
-const ProgressBarContainer = styled.div`
-  grid-column: span 4 / span 4;
-  height: 3px;
-  background-color: ${({ theme }) => theme.typography.lightNeutral};
-  border-radius: 999px;
-`
-const ProgressBarContent = styled.div<{ progress: number }>`
-  height: 3px;
-  background-color: ${({ theme }) => theme.typography.lightText};
-  border-radius: 999px;
-  width: ${(props) => props.progress}%;
-`
-
 function ProgressBar() {
   return (
-    <>
-      {/* progress bar container */}
-      <ProgressBarContainer>
-        {/* progress bar */}
-        <ProgressBarContent progress={50} />
-      </ProgressBarContainer>
-    </>
+    <div className="container bg-lightNeutral h-1 rounded-full bg-opacity-50">
+      <style jsx>{`
+        .container {
+          grid-column: span 4 / span 4;
+        }
+      `}</style>
+      <div className="content h-1 w-1/2 rounded-full bg-light" />
+    </div>
   )
 }
 
 function Quarter({ children }: { children: React.ReactNode }): JSX.Element {
-  return (
-    <Text t1s mont bold light>
-      {children}
-    </Text>
-  )
+  return <div className="text-2xl font-title font-bold">{children}</div>
 }
 
 function RoadmapList({ children }: { children: React.ReactNode[] }): JSX.Element {
   return (
-    <ul
-      style={{
-        display: 'flex',
-        gap: '20px',
-        flexDirection: 'column',
-      }}
-    >
+    <ul className="flex gap-4 flex-col list-disc mt-3">
       {children.map((child, index) => (
-        <li key={index}>
-          <Text light>{child}</Text>
+        <li key={index} className="smol-bullet flex gap-2 ml-2">
+          <style jsx>{`
+            // CODE SOURCE: https://stackoverflow.com/questions/7990429/how-to-control-size-of-list-style-type-disc-in-css
+            .smol-bullet {
+              list-style: none;
+            }
+
+            .smol-bullet:before {
+              content: '·';
+              font-size: 35px;
+              vertical-align: middle;
+              line-height: 20px;
+            }
+          `}</style>
+          <div>{child}</div>
         </li>
       ))}
     </ul>
@@ -79,67 +71,55 @@ export function RoadmapSection({
   // useEffect(() => {
   //   if (isVisible) scroller()
   // }, [isVisible, scroller, ref])
-
   return (
-    <Flex
-      col
-      stretch
-      pr={isMobile ? 40 : 150}
-      pl={isMobile ? 40 : 150}
-      justifyCenter
+    <div
+      className="hidden sm:flex flex-col items-stretch px-10 sm:px-36 first-letter:bg-dark max-w-7xl min-h-screen"
       ref={ref}
-      style={{
-        display: isMobile ? 'none' : 'flex',
-      }}
     >
-      <div className="flex flex-col items-stretch px-10 sm:px-36">
-      <SectionTitle light extrabold isMobile={isMobile}>
-        Roadmap
+      <SectionTitle>
+        <div className="font-bold">Roadmap</div>
       </SectionTitle>
-      <Grid columns={4} gap={10} mt={60}>
-        <Text big2 mont bold light>
-          2021
-        </Text>
-        <Text big2 mont bold light>
-          2022
-        </Text>
+      {/* <Grid columns={4} gap={10} mt={60}> */}
+      <div className="grid grid-cols-4 gap-2.5 mt-15">
+        <div className="font-title font-bold text-4xl">2021</div>
+        <div className="font-title font-bold text-4xl">2022</div>
         <ProgressBar />
         <div>
           <Quarter>Q4</Quarter>
           <RoadmapList>
-            <li>$SOLACE token launch </li>
-            <li>Protocol Owned Underwriting Pool </li>
-            <li>Protocol coverage products</li>
+            <>$SOLACE token launch </>
+            <>Protocol Owned Underwriting Pool </>
+            <>Protocol coverage products</>
           </RoadmapList>
         </div>
         <div>
           <Quarter>Q1</Quarter>
           <RoadmapList>
-            <li>DAO-2-DAO coverage launch</li>
-            <li>Solace Wallet Coverage launch</li>
-            <li>Cross-chain Deployments (Aurora, Polygon)</li>
-            <li>Staking V2 w/locking and voting rights</li>
+            <>DAO-2-DAO coverage launch</>
+            <>Solace Wallet Coverage launch</>
+            <>Cross-chain Deployments (Aurora, Polygon)</>
+            <>Staking V2 w/locking and voting rights</>
           </RoadmapList>
         </div>
         <div>
           <Quarter>Q2</Quarter>
           <RoadmapList>
-            <li>Cross-chain Deployments (BNB, FTM, AVAX, etc.)</li>
-            <li>Decentralization of Claims System</li>
-            <li>Cross-chain balancing of staking/locking APY%</li>
-            <li>Dynamic inflation-control model</li>
+            <>Cross-chain Deployments (BNB, FTM, AVAX, etc.)</>
+            <>Decentralization of Claims System</>
+            <>Cross-chain balancing of staking/locking APY%</>
+            <>Dynamic inflation-control model</>
           </RoadmapList>
         </div>
         <div>
           <Quarter>Q3</Quarter>
           <RoadmapList>
-            <li>Non-EVM deployments</li>
-            <li>Asset Protection Tools beyond DeFi</li>
-            <li>Transition to Community-run DAO</li>
-            <li>Solace Market - open cover product platform</li>
+            <>Non-EVM deployments</>
+            <>Asset Protection Tools beyond DeFi</>
+            <>Transition to Community-run DAO</>
+            <>Solace Market - open cover product platform</>
           </RoadmapList>
         </div>
-      </Grid>
-    </Flex>
+      </div>
+    </div>
   )
 }
