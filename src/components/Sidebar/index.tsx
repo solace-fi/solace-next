@@ -1,5 +1,6 @@
 import SolaceLogoSmall from '@/resources/svg/solace-logo-white-small.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 import AccordionContainer from './AccordionContainer'
 
 const sidebarContent = [
@@ -21,6 +22,22 @@ const sidebarContent = [
         title: 'Staking',
         link: 'staking',
         type: 'hash',
+      },
+    ],
+  },
+  {
+    // products -> coverage, bonding, staking
+    title: 'Governance',
+    children: [
+      {
+        title: 'Token',
+        link: 'token',
+        type: 'internal',
+      },
+      {
+        title: 'DAO',
+        link: 'dao',
+        type: 'internal',
       },
     ],
   },
@@ -70,7 +87,7 @@ const sidebarContent = [
 
 export default function Sidebar() {
   return (
-    <div className="ml-7.5 my-7.5 inline-block fixed">
+    <div className="ml-7.5 my-7.5 inline-block fixed min-h-[calc(100vh_-_60px)]">
       <div className="flex flex-col w-[200px] items-start select-none">
         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
         <Image src={SolaceLogoSmall} className="ml-7.5" alt="Small Solace Logo." />
@@ -78,27 +95,42 @@ export default function Sidebar() {
           accordees={sidebarContent.map(({ title, children }) => ({
             title,
             // eslint-disable-next-line @typescript-eslint/no-shadow
-            children: children.map(({ title, link, type }) =>
-              type === 'hash' ? (
-                <a
-                  href={`#${link}`}
-                  className="block font-normal text-gray-700 hover:text-gray-900 hover:underline underline-offset-2"
-                  key={title}
-                >
-                  {title}
-                </a>
-              ) : (
-                <a
-                  href={link}
-                  className="block font-normal text-gray-700 hover:text-gray-900 hover:underline underline-offset-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={title}
-                >
-                  {title}
-                </a>
-              )
-            ),
+            children: children.map(({ title, link, type }) => {
+              switch (type) {
+                case 'hash':
+                  return (
+                    <a
+                      href={`#${link}`}
+                      className="block font-normal text-gray-700 hover:text-gray-900 hover:underline underline-offset-2"
+                      key={title}
+                    >
+                      {title}
+                    </a>
+                  )
+                case 'internal':
+                  return (
+                    <Link href={`/${link}`} key={title}>
+                      <a className="block font-normal text-gray-700 hover:text-gray-900 hover:underline underline-offset-2">
+                        {title}
+                      </a>
+                    </Link>
+                  )
+                case 'external':
+                  return (
+                    <a
+                      href={link}
+                      className="block font-normal text-gray-700 hover:text-gray-900 hover:underline underline-offset-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      key={title}
+                    >
+                      {title}
+                    </a>
+                  )
+                default:
+                  return null
+              }
+            }),
           }))}
         />
         {/* <div className="mt-7.5 font-semibold cursor-pointer hover:font-bold">Products</div>

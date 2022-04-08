@@ -24,7 +24,7 @@ export default function AccordionContainer({ accordees }: { accordees: Accordee[
   // detector for active element
   const isOpen = (index: number) => openElement === index
   return (
-    <div className="mt-9 gap-7.5 flex flex-col">
+    <div className="mt-7.5 gap-4 flex flex-col">
       {accordees.map((accordee, index) => (
         <SidebarAccordionItem
           isOpen={isOpen(index)}

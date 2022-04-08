@@ -12,8 +12,8 @@ function SidebarRight({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSideba
   return (
     <section
       className={`absolute ${
-        isOpen ? 'right-0 top-0 w-[375px]' : '-right-[375px] -top-0 w-0 hidden'
-      } flex flex-col bg-light h-screen transition-all duration-300 ease-out justify-between`}
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      } right-0 top-0 flex flex-col w-[375px] bg-light h-screen transition-all duration-300 ease-out justify-between`}
     >
       {/* header */}
       <div className="flex mt-7.5 mx-7.5 justify-between items-center">

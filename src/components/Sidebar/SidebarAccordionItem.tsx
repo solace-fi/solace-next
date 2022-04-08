@@ -16,17 +16,26 @@ export default function SidebarAccordionItem({
   children,
 }: SidebarAccordionItemProps) {
   return (
-    <div className={`group flex flex-col ${isOpen ? '' : 'h-0 transition duration-200'}`}>
-      <div className="font-semibold cursor-pointer hover:font-bold" onClick={() => toggle(index)}>
-        {title}
+    <div className={`group flex flex-col ${isOpen ? '' : ''}`}>
+      <div
+        className="font-semibold cursor-pointer hover:font-bold w-40 flex justify-start gap-2 items-center"
+        onClick={() => toggle(index)}
+      >
+        <div>{title}</div>
+        <div
+          className={`${
+            isOpen ? '-rotate-180 -mt-[4px]' : 'rotate-0 mt-[4px]'
+          } text-[7px] transition-all duration-300`}
+        >
+          ▼
+        </div>
       </div>
-      <div className="flex-1 mt-2.5 flex gap-2.5 flex-col item-container">
-        <style jsx>{`
-          .item-container a {
-            font-weight: 600;
-          }
-        `}</style>
-        {isOpen && children}
+      <div
+        className={`${
+          isOpen ? 'max-h-24 mt-2.5' : 'max-h-0'
+        } overflow-y-hidden transition-all duration-300 flex flex-col gap-2.5`}
+      >
+        {children}
       </div>
     </div>
   )
