@@ -4,7 +4,7 @@ import { HomepageSectionsType } from './utils/useHomepageSections'
 
 function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element {
   return (
-    <div className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth snapscroll">
+    <div className={/*"h-screen snap-y snap-mandatory scroll-smooth snapscroll" */ ''}>
       <style jsx>{`
         //.snapscroll {
         //  scrollbar-width: none;
