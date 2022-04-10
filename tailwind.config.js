@@ -31,6 +31,7 @@ module.exports = {
       light: '#fafafa',
       white: '#fff',
       lightNeutral: '#efefef',
+      blue: '#5F5DF9',
       black: '#000',
       dark: '#5E5E5E',
       select: '#DA3325',
@@ -60,6 +61,15 @@ module.exports = {
         logoBallMobile: '35.69px',
         // button width default: 200px
         50: '200px',
+      },
+      // border radius
+      borderRadius: {
+        std: '10px',
+      },
+      // box shadow
+      boxShadow: {
+        // standard shadow
+        std: '0px 0px 30px rgba(0, 0, 0, 0.05)',
       },
     },
   },

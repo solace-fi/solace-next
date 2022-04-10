@@ -106,32 +106,27 @@ export function AboutFirstSection({
               {
                 title: 'Wallet coverage',
                 body: 'Get your funds covered with a distinguished protection',
-                url: 'https://solace.fi/wallet-coverage',
+                url: '/about/cover',
               },
               {
                 title: '$SOLACE',
                 body: 'Learn how tokenomics architecture helps us build better insurance',
-                url: 'https://solace.fi/tokenomics',
+                url: '/about/tokenomics',
               },
               {
                 title: 'Staking',
                 body: 'Earn yield from underwriting activity and token distribution without risk',
-                url: 'https://solace.fi/staking',
+                url: '/about/staking',
               },
-            ].map(({ title, body, url }, i) => {
-              const Card = (
-                <GlassCard title={title} body={body} url={url} key={'glassCard-internal' + title} />
-              )
-              if (i === 1) {
-                return (
-                  <div className="-mt-5" key={title}>
-                    {Card}
-                  </div>
-                )
-              } else {
-                return Card
-              }
-            })}
+            ].map(({ title, body, url }, i) => (
+              <GlassCard
+                title={title}
+                body={body}
+                url={url}
+                key={'glassCard-internal' + title}
+                middleCard={i === 1}
+              />
+            ))}
           </section>
         </div>
       </div>
