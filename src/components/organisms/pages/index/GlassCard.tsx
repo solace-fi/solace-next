@@ -1,5 +1,4 @@
-import ArrowRight from '@/resources/svg/icons/arrow-right.svg'
-import Image from 'next/image'
+import ArrowRightMd from '@/resources/svg/tsx/ArrowRightMd'
 import Link from 'next/link'
 
 export default function GlassCard({
@@ -50,7 +49,9 @@ export default function GlassCard({
               className="flex items-center gap-2 group-hover:gap-[13px] group-hover:mr-[5px] ease-out duration-300 "
             >
               {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
-              <div>LEARN MORE</div> <Image src={ArrowRight} alt="Arrow pointing to the right" />
+              <div>LEARN MORE</div>{' '}
+              {/* <Image src={ArrowRight} alt="Arrow pointing to the right" className="text-white" /> */}
+              <ArrowRightMd className="fill-light" />
             </a>
           </div>
         </div>

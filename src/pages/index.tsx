@@ -1,11 +1,11 @@
 // import Button from '@/components/atoms/Button'
 // import { AboutFirstSection } from '@/components/MainPage/organisms/AboutFirstSection'
-import DesktopScrollableArea from '@/components/MainPage/DesktopScrollableArea'
+import DesktopScrollableArea from '@/components/organisms/pages/index/DesktopScrollableArea'
 // import GlassCard from '@/components/MainPage/GlassCard'
-import { useHomepageSections } from '@/components/MainPage/utils/useHomepageSections'
+import { useHomepageSections } from '@/components/organisms/pages/index/utils/useHomepageSections'
 import SolaceGradientBackground from '@/components/atoms/SolaceGradientBackground'
 import React from 'react'
-import Sidebars from '@/components/Sidebars'
+import Sidebars from '@/components/organisms/Sidebars'
 
 export default function Home() {
   const { HomepageSections } = useHomepageSections()

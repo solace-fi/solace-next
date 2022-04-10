@@ -1,19 +1,3 @@
-function WarmGradientText({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="bg-clip-text text-transparent bg-gradient-to-b from-warmGradientA to-warmGradientB">
-      {children}
-    </span>
-  )
-}
-
-function TechyGradientText({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="bg-clip-text text-transparent bg-gradient-to-b from-techyGradientA to-techyGradientB">
-      {children}
-    </span>
-  )
-}
-
 /**
  * @description Button with default 56px height, full width, and a bg-light
  * background. An outlined button is a transparent button with border-light.
@@ -28,6 +12,10 @@ function TechyGradientText({ children }: { children: React.ReactNode }) {
  * @params {String} rel - The rel of the link.
  * @example <Button type="warmgradient" className="ml-2" href="https://solace.network" target="_blank" rel="noopener noreferrer">Learn More</Button>
  */
+
+import TechyGradientText from './Typography/TechyGradientText'
+import WarmGradientText from './Typography/WarmGradientText'
+
 // prettier-ignore
 export default function Button({ type, className, children, href, target, rel }: {
   type: "warmgradient" | "techygradient" | "outline";

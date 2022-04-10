@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     }
   }, [router.events])
   return (
-    <div className="text-light selection:bg-select relative overflow-x-hidden">
+    <div className="text-light bg-light selection:bg-select relative overflow-x-hidden">
       <Component {...pageProps} />
     </div>
   )
