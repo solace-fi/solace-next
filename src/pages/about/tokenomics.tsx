@@ -37,5 +37,9 @@ export default function Tokenomics() {
   ].map(({ title, text, linkText, linkUrl }, i) => (
     <DescriptionCard title={title} text={text} linkText={linkText} linkUrl={linkUrl} key={i} />
   ))
-  return AboutLayout(mainTitle, subtitle, cards, <></>)
+  return (
+    <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
+      asd
+    </AboutLayout>
+  )
 }

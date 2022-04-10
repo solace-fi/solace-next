@@ -1,4 +1,4 @@
-import ArrowRightMd from '@/resources/svg/tsx/ArrowRightMd'
+import ArrowRightMd from '@/resources/svg/tsx/ArrowRight'
 import Link from 'next/link'
 
 export default function GlassCard({

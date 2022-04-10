@@ -89,8 +89,14 @@ export default function SidebarLeft() {
   return (
     <div className="ml-7.5 my-7.5 inline-block fixed min-h-[calc(100vh_-_60px)]">
       <div className="flex flex-col w-[200px] items-start select-none">
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
-        <Image src={SolaceLogoSmall} className="ml-7.5" alt="Small Solace Logo." />
+        <Link href="/" passHref={undefined}>
+          <Image
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            src={SolaceLogoSmall}
+            className="ml-7.5 select-none cursor-pointer"
+            alt="Small Solace Logo."
+          />
+        </Link>
         <AccordionContainer
           accordees={sidebarContent.map(({ title, children }) => ({
             title,

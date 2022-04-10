@@ -23,5 +23,9 @@ export default function Staking() {
       text: 'Staked $SOLACE provides you with exposure to underwriting rewards, underwriting pool investments and $SOLACE emissions.',
     },
   ].map(({ title, text }, i) => <DescriptionCard title={title} text={text} key={i} />)
-  return AboutLayout(mainTitle, subtitle, cards, <></>)
+  return (
+    <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
+      asd
+    </AboutLayout>
+  )
 }
