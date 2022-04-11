@@ -64,12 +64,12 @@ export default function Cover() {
               'px-20 py-6 justify-center flex items-center gap-3', // inner layout
               'bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-full max-w-md w-full', // general appearance
               'font-semibold text-light', // text appearance
-              'cursor-pointer hover:brightness-110 hover:gap-5 duration-300 ease-out' // interaction
+              'cursor-pointer hover:brightness-110 hover:gap-5 duration-300 ease-out hover:scale-105 hover:shadow-std' // interaction
             )}
           >
             <p>Connect Wallet</p> <ArrowRightMd className="fill-light" />
           </div>
-          <div className="ml-[60px] cursor-pointer hover:brightness-95 hover:saturate-200 duration-300 ease-in">
+          <div className="ml-[60px] -mt-5 cursor-pointer hover:scale-105 hover:saturate-200 duration-300 ease-in">
             <HowToVideoCircle />
           </div>
           <div className="bg-blue rounded-full w-0.5 h-full row-span-2 mx-12"></div>

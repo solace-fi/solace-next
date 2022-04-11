@@ -1,6 +1,18 @@
-export default function TechyGradientText({ children }: { children: React.ReactNode }) {
+export default function TechyGradientText({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   return (
-    <span className="bg-clip-text text-transparent bg-gradient-to-b from-techyGradientA to-techyGradientB">
+    <span
+      className={
+        'bg-clip-text text-transparent bg-gradient-to-b from-techyGradientA to-techyGradientB' +
+        ' ' +
+        (className ?? '')
+      }
+    >
       {children}
     </span>
   )

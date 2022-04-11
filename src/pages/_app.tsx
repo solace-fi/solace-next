@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     }
   }, [router.events])
   return (
-    <div className="text-light bg-light relative overflow-x-hidden">
+    <div className="text-light bg-light relative overflow-x-hidden scroll-smooth">
       <Component {...pageProps} />
     </div>
   )
