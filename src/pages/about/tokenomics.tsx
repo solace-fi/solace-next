@@ -63,7 +63,7 @@ export default function Tokenomics() {
         <h2 className="text-[80px] leading-[80px] font-title font-bold mt-25 mb-2">
           How to <TechyGradientText>buy $SOLACE</TechyGradientText>{' '}
         </h2>
-        <section className="flex gap-7.5 mt-12.5">
+        <section className="grid grid-cols-2 gap-7.5 mt-12.5">
           {/* techy bg box */}
           <div className="bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-std shadow-std p-9">
             <BoxedAboutList
@@ -85,10 +85,30 @@ export default function Tokenomics() {
               identifier="market"
               textType="dark"
               items={[
-                'Connect your wallet',
-                'Decide the token you would like to purchase a bond with and click Bond',
-                'Input the amount of tokens you would like to provide',
-                'If you would like to have your bonded tokens staked, select “Auto-stake”',
+                <>
+                  Ethereum: <br />
+                  <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
+                    $SOLACE on Sushiswap
+                  </TechyGradientText>
+                  <br />
+                  in a $SOLACE/USDC pool
+                </>,
+                <>
+                  Ethereum: <br />
+                  <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
+                    $SOLACE on Sushiswap
+                  </TechyGradientText>
+                  <br />
+                  in a $SOLACE/USDC pool
+                </>,
+                <>
+                  Ethereum: <br />
+                  <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
+                    $SOLACE on Sushiswap
+                  </TechyGradientText>
+                  <br />
+                  in a $SOLACE/USDC pool
+                </>,
               ]}
             />
           </div>
