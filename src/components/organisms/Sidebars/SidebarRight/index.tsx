@@ -7,13 +7,13 @@ export default function SidebarRight() {
   return (
     <>
       <div
-        className="absolute top-7.5 right-7.5 h-12 w-12 rounded-full bg-light hover:brightness-90 flex items-center justify-center text-dark font-title font-bold text-lg select-none cursor-pointer"
+        className="fixed top-7.5 right-7.5 h-12 w-12 rounded-full bg-light hover:brightness-90 flex items-center justify-center text-dark font-title font-bold text-lg select-none cursor-pointer"
         onClick={toggleSidebar}
       >
         ayy
       </div>
       <section
-        className={`absolute ${
+        className={`fixed ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } right-0 top-0 flex flex-col w-[375px] bg-light h-screen transition-all duration-300 ease-out justify-between`}
       >
