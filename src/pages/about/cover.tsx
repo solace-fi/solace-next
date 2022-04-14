@@ -1,6 +1,7 @@
 import TechyGradientText from '@/components/atoms/Typography/TechyGradientText'
 import AboutLayout from '@/components/organisms/pages/about/AboutLayout'
 import AboutList from '@/components/organisms/pages/about/AboutList'
+import ConnectWalletButton from '@/components/organisms/pages/about/ConnectWalletButton'
 import DescriptionCard from '@/components/organisms/pages/about/DescriptionCard'
 import SecondSectionSubtitle from '@/components/organisms/pages/about/SecondSectionSubtitle'
 import SecondSectionTitle from '@/components/organisms/pages/about/SecondSectionTitle'
@@ -61,18 +62,12 @@ export default function Cover() {
             items={['Connect your wallet', 'Set a coverage limit', 'Top up your balance']}
           />
           {/* button */}
-          <div
+          <ConnectWalletButton
             className={classNames(
               'mt-[71px]', // outer placement
-              'place-self-center md:col-span-2', // grid placement
-              'px-20 py-6 justify-center flex items-center gap-3', // inner layout
-              'bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-full md:max-w-md w-full', // general appearance: ;
-              'font-semibold text-light', // text appearance
-              'cursor-pointer hover:brightness-110 hover:gap-5 duration-300 ease-out hover:scale-105 hover:shadow-std' // interaction
+              'place-self-center md:col-span-2' // grid placement
             )}
-          >
-            <p>Connect Wallet</p> <ArrowRightMd className="fill-light" />
-          </div>
+          />
           <div className="ml-auto mr-auto md:mr-0 md:ml-[60px] mt-15 md:-mt-5 cursor-pointer hover:scale-105 hover:saturate-200 duration-300 ease-in">
             <HowToVideoCircle />
           </div>
