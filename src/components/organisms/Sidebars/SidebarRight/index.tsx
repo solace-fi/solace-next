@@ -55,7 +55,7 @@ export default function SidebarRight() {
           {[
             {
               title: 'Airdrop',
-              link: 'https://app.solace.fi/airdrop',
+              link: 'https://app.solace.fi',
               special: true,
             },
             {
@@ -71,7 +71,7 @@ export default function SidebarRight() {
               link: 'https://app.solace.fi/stake',
             },
             {
-              title: 'Farm',
+              title: 'Farms',
               link: 'https://app.solace.fi/farm',
             },
             {
@@ -79,8 +79,8 @@ export default function SidebarRight() {
               link: 'https://app.solace.fi/govern',
             },
             {
-              title: 'Legacy',
-              link: 'https://app.solace.fi/legacy',
+              title: 'Archive',
+              link: 'https://app.solace.fi/archive',
             },
           ].map(({ title, link, special }) => (
             <li key={title}>
