@@ -14,7 +14,7 @@ import GlassCard from '../GlassCard'
 
 function SolaceStatsSection() {
   return (
-    <section className="flex items-center gap-15 w-full justify-center pr-50">
+    <section className="hidden md:flex items-center gap-15 w-full justify-center pr-50">
       {[
         {
           title: 'Global Stake',
@@ -87,25 +87,26 @@ export function AboutFirstSection({
   return (
     <div className="min-h-screen" ref={ref}>
       <div className="inline-block mt-10 w-full">
-        <div className="mx-24">
+        <div className="mx-5 md:mx-24">
           <SolaceStatsSection />
-          <section className="mt-[93px]">
+          <section className="mx-5 sm:mx-auto mt-20 md:mt-[93px]">
             <article className="max-w-3xl flex flex-col gap-5">
-              <h1 className="text-[64px] leading-[70.4px] font-title font-bold">
-                We invent the future of DeFi insurance
+              <h1 className="text-[28px] md:text-[64px] leading-[33.6px] md:leading-[70.4px] font-title font-bold">
+                DeFi is a Journey.
+                <br />
+                Focus on Yields.
               </h1>
-              <p className="text-xl leading-8 max-w-[613px]">
+              <p className="text-base md:text-xl leading-[25.6px] md:leading-8 max-w-[618px]">
                 Protect your funds against smart-contracts exploits across 180+ protocols with an
-                intelligent single policy that automatically adjusts premium to changes in your
-                positions.
+                intelligent single policy that dynamically updates as your portfolio changes.
               </p>
             </article>
           </section>
-          <section className="flex gap-10 mt-24">
+          <section className="flex md:items-start items-center flex-col md:flex-row gap-[18px] md:gap-10 mt-12.5 md:mt-24">
             {[
               {
                 title: 'Wallet coverage',
-                body: 'Get your funds covered with a distinguished protection',
+                body: 'Learn about undisputed advantages of one-for-all Solace coverage',
                 url: '/about/cover',
               },
               {

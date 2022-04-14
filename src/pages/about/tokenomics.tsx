@@ -4,6 +4,7 @@ import DescriptionCard from '@/components/organisms/pages/about/DescriptionCard'
 import ArrowRightSm from '@/resources/svg/tsx/ArrowRightSm'
 import classNames from 'classnames'
 import BoxedAboutList from '@/components/organisms/pages/about/AboutList/BoxedAboutList'
+import SecondSectionTitle from '@/components/organisms/pages/about/SecondSectionTitle'
 
 export default function Tokenomics() {
   const mainTitle = '$SOLACE token'
@@ -60,9 +61,9 @@ export default function Tokenomics() {
       </div>
 
       <article className="max-w-5xl pb-20">
-        <h2 className="text-[80px] leading-[80px] font-title font-bold mt-25 mb-2">
+        <SecondSectionTitle className="mt-25">
           How to <TechyGradientText>buy $SOLACE</TechyGradientText>{' '}
-        </h2>
+        </SecondSectionTitle>
         <section className="grid grid-cols-2 gap-7.5 mt-12.5">
           {/* techy bg box */}
           <div className="bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-std shadow-std p-9">

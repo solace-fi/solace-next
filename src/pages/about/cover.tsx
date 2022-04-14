@@ -2,6 +2,8 @@ import TechyGradientText from '@/components/atoms/Typography/TechyGradientText'
 import AboutLayout from '@/components/organisms/pages/about/AboutLayout'
 import AboutList from '@/components/organisms/pages/about/AboutList'
 import DescriptionCard from '@/components/organisms/pages/about/DescriptionCard'
+import SecondSectionSubtitle from '@/components/organisms/pages/about/SecondSectionSubtitle'
+import SecondSectionTitle from '@/components/organisms/pages/about/SecondSectionTitle'
 import ArrowRightMd from '@/resources/svg/tsx/ArrowRightSm'
 import HowToVideoCircle from '@/resources/svg/tsx/HowToVideoCircle'
 import classNames from 'classnames'
@@ -39,10 +41,12 @@ export default function Cover() {
   return (
     <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
       <article>
-        <h2 className="text-[80px] leading-[80px] font-title font-bold mt-17.5 mb-2">
+        <SecondSectionTitle className="mt-17.5">
           <TechyGradientText>How it works</TechyGradientText>{' '}
-        </h2>
-        <p className="text-2xl">It&apos;s just a few clicks to protect your funds:</p>
+        </SecondSectionTitle>
+        <SecondSectionSubtitle>
+          It&apos;s just a few clicks to protect your funds:
+        </SecondSectionSubtitle>
         {/* test here: https://play.tailwindcss.com/
             <div class="grid grid-flow-col w-max">
               <div class="bg-red-200 w-16 h-16"></div>
@@ -52,7 +56,7 @@ export default function Cover() {
               <div class="bg-gray-500 w-40 h-full row-span-2"></div>
             </div>
             */}
-        <div className="grid grid-flow-col max-w-max mt-17.5 items-center mb-20">
+        <div className="grid grid-flow-row md:grid-flow-col md:max-w-max mt-17.5 items-center mb-20">
           <AboutList
             items={['Connect your wallet', 'Set a coverage limit', 'Top up your balance']}
           />
@@ -60,25 +64,25 @@ export default function Cover() {
           <div
             className={classNames(
               'mt-[71px]', // outer placement
-              'place-self-center col-span-2', // grid placement
+              'place-self-center md:col-span-2', // grid placement
               'px-20 py-6 justify-center flex items-center gap-3', // inner layout
-              'bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-full max-w-md w-full', // general appearance
+              'bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-full md:max-w-md w-full', // general appearance: ;
               'font-semibold text-light', // text appearance
               'cursor-pointer hover:brightness-110 hover:gap-5 duration-300 ease-out hover:scale-105 hover:shadow-std' // interaction
             )}
           >
             <p>Connect Wallet</p> <ArrowRightMd className="fill-light" />
           </div>
-          <div className="ml-[60px] -mt-5 cursor-pointer hover:scale-105 hover:saturate-200 duration-300 ease-in">
+          <div className="ml-auto mr-auto md:mr-0 md:ml-[60px] mt-15 md:-mt-5 cursor-pointer hover:scale-105 hover:saturate-200 duration-300 ease-in">
             <HowToVideoCircle />
           </div>
-          <div className="bg-blue rounded-full w-0.5 h-full row-span-2 mx-12"></div>
-          <div className="w-[275px] h-full row-span-2 flex-col flex justify-between">
-            <h3 className="font-bold">
+          <div className="bg-blue rounded-full h-0.5 md:w-0.5 w-full md:h-full md:row-span-2 mt-15 md:mt-0 mx-0 md:mx-12 "></div>
+          <div className="w-[275px] h-full md:row-span-2 flex-col flex justify-between mt-6 md:mt-0 gap-8 mx-[41.5px] md:mx-0">
+            <h3 className="font-bold mx-[13.5px] md:mx-0">
               Wallet coverage protects your funds across 180+ protocols for the following exploit
               types:
             </h3>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-4 mx-auto md:mx-0">
               <li>Minting vulnerability</li>
               <li>Flash loan attack</li>
               <li>Trojan fake token</li>
@@ -87,7 +91,7 @@ export default function Cover() {
               <li>Re-entry attack</li>
             </ul>
             <Link href="https://docs.solace.fi/docs/overview/faq/cover-products" passHref>
-              <a className="flex items-center gap-2 hover:gap-4 duration-300 uppercase text-blue text-sm font-semibold">
+              <a className="flex items-center gap-2 hover:gap-4 duration-300 uppercase text-blue text-sm font-semibold ml-auto md:ml-0">
                 <div>Learn more</div> <ArrowRightMd className="fill-blue w-5" />
               </a>
             </Link>

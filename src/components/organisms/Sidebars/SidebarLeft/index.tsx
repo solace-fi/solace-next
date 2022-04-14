@@ -87,7 +87,7 @@ const sidebarContent = [
 
 export default function SidebarLeft() {
   return (
-    <div className="ml-7.5 my-7.5 inline-block fixed min-h-[calc(100vh_-_60px)]">
+    <div className="ml-7.5 my-7.5 hidden md:inline-block fixed min-h-[calc(100vh_-_60px)]">
       <div className="flex flex-col w-[200px] items-start select-none">
         <Link href="/" passHref={undefined}>
           <Image

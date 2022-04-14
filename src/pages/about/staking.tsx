@@ -6,6 +6,8 @@ import ArrowRightSm from '@/resources/svg/tsx/ArrowRightSm'
 import Link from 'next/link'
 import classNames from 'classnames'
 import Image from 'next/image'
+import SecondSectionTitle from '@/components/organisms/pages/about/SecondSectionTitle'
+import SecondSectionSubtitle from '@/components/organisms/pages/about/SecondSectionSubtitle'
 
 export default function Staking() {
   const mainTitle = 'Staking'
@@ -49,10 +51,12 @@ export default function Staking() {
       </div>
 
       <article>
-        <h2 className="text-[80px] leading-[80px] font-title font-bold mt-25 mb-2">
+        <SecondSectionTitle className="mt-25">
           How to <TechyGradientText>stake $SOLACE</TechyGradientText>{' '}
-        </h2>
-        <p className="text-2xl">It&apos;s just a few clicks to earn with solace:</p>
+        </SecondSectionTitle>
+        <SecondSectionSubtitle>
+          It&apos;s just a few clicks to earn with solace:
+        </SecondSectionSubtitle>
         {/* test here: https://play.tailwindcss.com/
             <div class="grid grid-flow-col gap-4 w-max">
               <div class="row-span-3 bg-red-200">01</div>
