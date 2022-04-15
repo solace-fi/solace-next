@@ -172,23 +172,22 @@ function Bar({ isOpen }: { isOpen: boolean }) {
         {/* items: We're Hiring!, Help & Support, Terms & Conditions, 5 svg icons: discord, twitter, github, medium and defipulse */}
         <div className="flex flex-col items-center md:items-start justify-center gap-2.5">
           <a
-            href="https://docs.solace.fi/hiring/"
+            href="https://www.notion.so/solacefi/Solace-Public-Page-16cc777c403a46c8a2ffaba68008fcd9"
             className="block font-semibold hover:underline underline-offset-2"
           >
             We&apos;re Hiring!
           </a>
           <a
-            href="https://docs.solace.fi/help/"
+            href="https://www.notion.so/solacefi/Solace-Public-Page-16cc777c403a46c8a2ffaba68008fcd9"
             className="block font-normal hover:underline underline-offset-2"
           >
             Help & Support
           </a>
-          <a
-            href="https://docs.solace.fi/terms/"
-            className="block font-normal hover:underline underline-offset-2"
-          >
-            Terms & Conditions
-          </a>
+          <Link href="/terms/">
+            <a className="block font-normal hover:underline underline-offset-2">
+              Terms & Conditions
+            </a>
+          </Link>
           <div className="flex justify-between w-full mt-2.5">
             <a
               href="https://discord.gg/QWZQWZQ"
@@ -215,7 +214,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
               <MediumIcon className="h-4 w-4" />
             </a>
             <a
-              href="https://defipulse.com"
+              href="https://www.defipulse.com/defi-list"
               className="block font-normal hover:underline underline-offset-2"
             >
               <DefiPulseIcon className="h-4 w-4" />
