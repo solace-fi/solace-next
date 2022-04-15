@@ -1,5 +1,8 @@
-import React /* , { RefObject, useEffect, useMemo } */ from 'react'
+import React, { useEffect, useState /* , { RefObject, useEffect, useMemo } */ } from 'react'
 import GlassCard from '../GlassCard'
+import { Lock, UnderwritingPoolUSDBalances, Coverage } from '@solace-fi/sdk-nightly'
+import { truncateValue } from '@/utils'
+import { formatUnits } from '@ethersproject/units'
 // import { Flex } from '../../../../components/atoms/Layout'
 // import { Text } from '../../../../components/atoms/Typography'
 // import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
@@ -13,31 +16,84 @@ import GlassCard from '../GlassCard'
 // export const AboutFirstSection = <AboutFirstSectionFunction />
 
 function SolaceStatsSection() {
+  const [globalStake, setGlobalStake] = useState<string>('-')
+  const [globalAverageApr, setGlobalAverageApr] = useState<string>('-')
+  const [uwpSize, setUwpSize] = useState<string>('-')
+  const [activeCoverLimit, setActiveCoverLimit] = useState<string>('-')
+
+  const getSolaceStats = async () => {
+    const lock = new Lock()
+    const uwpUSD = new UnderwritingPoolUSDBalances()
+    const coverage1 = new Coverage(1)
+    const coverage137 = new Coverage(137)
+
+    const [
+      mainnetGlobalLockStats,
+      polygonGlobalLockStats,
+      auroraGlobalLockStats,
+      uwpUSDSize,
+      mainnetCoverLimit,
+      polygonCoverLimit,
+    ] = await Promise.all([
+      lock.getGlobalLockStats(1),
+      lock.getGlobalLockStats(137),
+      lock.getGlobalLockStats(1313161554),
+      uwpUSD.getUSDBalances_All(),
+      coverage1.activeCoverLimit(),
+      coverage137.activeCoverLimit(),
+    ])
+
+    const numberifiedSolaceStaked =
+      parseFloat(mainnetGlobalLockStats.solaceStaked) +
+      parseFloat(polygonGlobalLockStats.solaceStaked) +
+      parseFloat(auroraGlobalLockStats.solaceStaked)
+    setGlobalStake(truncateValue(numberifiedSolaceStaked.toString(), 2))
+
+    const numberifiedApr =
+      parseFloat(mainnetGlobalLockStats.apr) +
+      parseFloat(polygonGlobalLockStats.apr) +
+      parseFloat(auroraGlobalLockStats.apr)
+    setGlobalAverageApr(truncateValue(parseInt((numberifiedApr / 3).toString()), 2))
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const uwpUSDTotal: number = uwpUSDSize.total
+
+    setUwpSize(truncateValue(uwpUSDTotal, 2))
+
+    const totalCoverLimit = mainnetCoverLimit.add(polygonCoverLimit)
+    setActiveCoverLimit(truncateValue(formatUnits(totalCoverLimit, 18), 2))
+  }
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    getSolaceStats()
+  }, [])
+
   return (
     <section className="hidden md:flex items-center gap-15 w-full justify-center pr-50">
       {[
         {
           title: 'Global Stake',
-          amount: '4.78M',
+          amount: globalStake,
           unit: 'SOLACE',
         },
         {
-          title: 'Global APR',
-          amount: '208%',
+          title: 'Global Average APR',
+          amount: `${globalAverageApr}%`,
         },
         {
           title: 'Underwriting Pool',
-          amount: '$4.13M',
+          amount: uwpSize,
         },
         {
           title: 'Active Cover Limit',
-          amount: '$120.9',
+          amount: activeCoverLimit,
         },
       ]
         .map(({ title, amount, unit }, i) => (
           <div className="flex flex-col items-center gap-0.5" key={title + i.toString()}>
             <div className="font-semibold text-xs">{title}</div>
-            {unit ? (
+            {unit && amount != '-' ? (
               <div className="flex gap-0.5 items-baseline">
                 <div className="font-semibold">{amount}</div>
                 <div className="text-[10px]">{unit}</div>
