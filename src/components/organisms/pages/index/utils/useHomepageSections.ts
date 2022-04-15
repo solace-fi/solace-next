@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { AboutFirstSection } from '../organisms/AboutFirstSection'
-import { Investors, Advisors, CoreContributors, GrantsAndAudits } from '../organisms/Collaborators'
+import { Investors, Advisors, CoreContributors } from '../organisms/Collaborators'
+import { GrantsAndAudits } from '../organisms/GrantsAndAudits'
 // import { ExploitsCoverageSection } from '../organisms/ExploitsCoverageSection'
 import { RoadmapSection } from '../organisms/RoadmapSection'
 // import { StakingSection } from '../organisms/StakingSection'

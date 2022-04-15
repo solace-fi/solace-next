@@ -1,3 +1,5 @@
+import RainbowUserpic from '@/resources/svgx/RainbowUserpic'
+import Userpic from '@/resources/svgx/Userpic'
 import React from 'react'
 
 export default function SidebarRight() {
@@ -7,22 +9,24 @@ export default function SidebarRight() {
   return (
     <>
       <div
-        className="fixed top-7.5 right-7.5 h-12 w-12 rounded-full bg-light hover:brightness-90 flex items-center justify-center text-dark font-title font-bold text-lg select-none cursor-pointer"
+        className="fixed top-6 right-5 h-9 w-9 rounded-full hover:brightness-90 flex items-center justify-center text-dark font-title font-bold text-lg select-none cursor-pointer"
         onClick={toggleSidebar}
       >
-        ayy
+        <Userpic className="h-9 w-9" />
       </div>
       <section
         className={`fixed ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } right-0 top-0 flex flex-col w-[375px] bg-light h-screen transition-all duration-300 ease-out justify-between`}
+        } right-0 top-0 flex flex-col w-[375px] bg-light h-screen transition-all duration-300 ease-out justify-between z-10`}
       >
         {/* header */}
-        <div className="flex mt-7.5 mx-7.5 justify-between items-center">
+        <div className="flex mt-5 mx-5 justify-between items-center">
           {/* Connect Wallet button, 36pic wide + text, then to the right, an X to close the sidebar */}
           <div className="h-[52px] rounded-full gap-2 bg-gradient-to-br flex items-center from-techyGradientA to-techyGradientB select-none cursor-pointer hover:brightness-110 duration-200 ease-out group">
             {/* userpic h-9 w-9 m-2 */}
-            <div className="h-9 w-9 m-2 bg-gradient-to-br from-warmGradientA to-warmGradientB rounded-full group-hover:animate-spin" />
+            {/* <div className="h-9 w-9 m-2 bg-gradient-to-br from-warmGradientA to-warmGradientB rounded-full group-hover:animate-spin" /> */}
+            <RainbowUserpic className="h-9 w-9 m-2" />
+
             {/* text */}
             <div className="text-sm mr-4 mb-4 mt-4 font-bold">Connect Wallet</div>
           </div>
