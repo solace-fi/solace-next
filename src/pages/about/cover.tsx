@@ -70,7 +70,9 @@ export default function Cover() {
             pathname="cover"
           />
           <div className="ml-auto mr-auto md:mr-0 md:ml-[60px] mt-15 md:-mt-5 cursor-pointer hover:scale-105 hover:saturate-200 duration-300 ease-in">
-            <HowToVideoCircle />
+            <a href="https://youtu.be/meb8JXP8iYA" target="_blank" rel="noopener noreferrer">
+              <HowToVideoCircle />
+            </a>
           </div>
           <div className="bg-blue rounded-full h-0.5 md:w-0.5 w-full md:h-full md:row-span-2 mt-15 md:mt-0 mx-0 md:mx-12 "></div>
           <div className="w-[275px] h-full md:row-span-2 flex-col flex justify-between mt-6 md:mt-0 gap-8 mx-[41.5px] md:mx-0">

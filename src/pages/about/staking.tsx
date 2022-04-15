@@ -71,12 +71,14 @@ export default function Staking() {
             />
           </div>
           <div className="row-span-3 col-span-2 mt-15 md:mt-0 md:ml-[65px] cursor-pointer ease-in gap-8 flex flex-col justify-center shrink-0 grow-0">
-            <Image
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              src={require('@/resources/png/staking-tutorial-preview.png')}
-              alt="preview"
-              className="hover:brightness-95 duration-300 grow-0 shrink-0"
-            />
+            <a target={'_blank'} rel="noreferrer" href="https://youtu.be/RUn4QFZilTU">
+              <Image
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                src={require('@/resources/png/staking-tutorial-preview.png')}
+                alt="preview"
+                className="hover:brightness-95 duration-300 grow-0 shrink-0"
+              />
+            </a>
             <Link href="https://docs.solace.fi/docs/overview/faq/cover-products" passHref>
               <a className="flex w-full justify-center">
                 <div className="flex items-center duration-300 uppercase text-blue text-sm font-bold group">

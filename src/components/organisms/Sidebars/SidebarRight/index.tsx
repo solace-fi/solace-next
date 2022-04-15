@@ -61,11 +61,11 @@ export default function SidebarRight() {
         {/* body buttons */}
         <ul className="">
           {[
-            {
-              title: 'Airdrop',
-              link: 'https://app.solace.fi',
-              special: true,
-            },
+            // {
+            //   title: 'Airdrop',
+            //   link: 'https://app.solace.fi',
+            //   special: true,
+            // },
             {
               title: 'My Policy',
               link: 'https://app.solace.fi/cover',
@@ -80,7 +80,7 @@ export default function SidebarRight() {
             },
             {
               title: 'Farms',
-              link: 'https://app.solace.fi/farm',
+              link: 'https://app.solace.fi/farms',
             },
             {
               title: 'Govern',
@@ -90,7 +90,7 @@ export default function SidebarRight() {
               title: 'Archive',
               link: 'https://app.solace.fi/archive',
             },
-          ].map(({ title, link, special }) => (
+          ].map(({ title, link, special }: { title: string; link: string; special?: boolean }) => (
             <li key={title}>
               <a
                 key={title}

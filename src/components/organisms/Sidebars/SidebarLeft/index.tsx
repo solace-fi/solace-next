@@ -40,14 +40,14 @@ const sidebarContent = [
     children: [
       {
         title: 'Token',
-        link: 'about/tokenomics',
-        type: 'internal',
+        link: 'https://etherscan.io/token/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
+        type: 'external',
       },
-      // {
-      //   title: 'DAO',
-      //   link: 'dao',
-      //   type: 'internal',
-      // },
+      {
+        title: 'DAO',
+        link: 'https://forum.solace.fi/',
+        type: 'external',
+      },
     ],
   },
   {
@@ -61,7 +61,7 @@ const sidebarContent = [
       },
       {
         title: 'SDK',
-        link: 'https://docs.solace.fi/developer/sdk/',
+        link: 'https://docs.solace.fi/docs/dev-docs/sdk/getting-started',
         type: 'external',
       },
     ],
@@ -190,7 +190,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
           </Link>
           <div className="flex justify-between w-full mt-2.5">
             <a
-              href="https://discord.gg/QWZQWZQ"
+              href="https://discord.com/channels/@me/918588744402096178/964626220476162189"
               className="block font-normal hover:underline underline-offset-2"
             >
               <DiscordIcon className="h-4 w-4" />

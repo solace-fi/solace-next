@@ -97,25 +97,43 @@ export default function Tokenomics() {
               items={[
                 <>
                   Ethereum: <br />
-                  <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
-                    $SOLACE on Sushiswap
-                  </TechyGradientText>
+                  <a
+                    href="https://app.sushi.com/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40"
+                    target={'_blank'}
+                    rel="noreferrer"
+                  >
+                    <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
+                      $SOLACE on Sushiswap
+                    </TechyGradientText>
+                  </a>
                   <br />
                   in a $SOLACE/USDC pool
                 </>,
                 <>
-                  Ethereum: <br />
-                  <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
-                    $SOLACE on Sushiswap
-                  </TechyGradientText>
+                  Polygon: <br />
+                  <a
+                    href="https://discord.com/channels/@me/918588744402096178/964625355472269372"
+                    target={'_blank'}
+                    rel="noreferrer"
+                  >
+                    <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
+                      $SOLACE on Sushiswap
+                    </TechyGradientText>
+                  </a>
                   <br />
                   in a $SOLACE/USDC pool
                 </>,
                 <>
-                  Ethereum: <br />
-                  <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
-                    $SOLACE on Sushiswap
-                  </TechyGradientText>
+                  Aurora: <br />
+                  <a
+                    href="https://discord.com/channels/@me/918588744402096178/964625355472269372"
+                    target={'_blank'}
+                    rel="noreferrer"
+                  >
+                    <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
+                      $SOLACE on Trisolaris
+                    </TechyGradientText>
+                  </a>
                   <br />
                   in a $SOLACE/USDC pool
                 </>,
@@ -127,7 +145,7 @@ export default function Tokenomics() {
           <h3 className="text-4xl font-title">Still have questions about buying $SOLACE?</h3>
           <div className="flex flex-col md:flex-row gap-9">
             {/* button to "Watch How-to Video" on youtube */}
-            <div
+            <a
               className={classNames(
                 'mt-10 mx-auto', // outer placement
                 'py-6 px- justify-center flex items-center', // inner layout
@@ -135,10 +153,13 @@ export default function Tokenomics() {
                 'font-semibold text-light', // text appearance
                 'cursor-pointer hover:brightness-110 duration-300 ease-out hover:shadow-std hover:scale-105' // interaction
               )}
+              href="https://youtu.be/RUn4QFZilTU"
+              target="_blank"
+              rel="noreferrer"
             >
               Watch How-to Video
-            </div>
-            <div
+            </a>
+            <a
               className={classNames(
                 'mt-10 mx-auto', // outer placement
                 'py-6 justify-center flex items-center', // inner layout
@@ -146,9 +167,12 @@ export default function Tokenomics() {
                 'font-semibold text-light', // text appearance
                 'cursor-pointer hover:brightness-110 duration-300 ease-out hover:shadow-std hover:scale-105' // interaction
               )}
+              href="https://docs.solace.fi/docs/user-guides/buy-token"
+              target={'_blank'}
+              rel="noreferrer"
             >
               Learn more about buying $SOLACE
-            </div>
+            </a>
           </div>
         </section>
       </article>
