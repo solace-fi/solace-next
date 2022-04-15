@@ -41,6 +41,7 @@ export default function Staking() {
             'mt-10 md:mr-50', // outer placement
             'col-span-2' // grid placement
           )}
+          pathname="stake"
         />
       </div>
 

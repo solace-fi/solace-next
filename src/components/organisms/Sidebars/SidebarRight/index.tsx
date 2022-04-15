@@ -27,7 +27,12 @@ export default function SidebarRight() {
             <Userpic className="h-9 w-9 m-2" />
 
             {/* text */}
-            <div className="text-sm mr-4 mb-4 mt-4 font-bold">Connect Wallet</div>
+            <a
+              href="https://app.solace.fi/?connect-wallet=true"
+              className="text-sm mr-4 mb-4 mt-4 font-bold"
+            >
+              Connect Wallet
+            </a>
           </div>
           {/* X */}
           <div
