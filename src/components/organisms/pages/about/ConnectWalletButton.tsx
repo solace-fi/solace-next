@@ -1,4 +1,4 @@
-import ArrowRightSm from '@/resources/svg/tsx/ArrowRightSm'
+import ArrowRightSm from '@/resources/svgx/ArrowRightSm'
 import classNames from 'classnames'
 
 export default function ConnectWalletButton({ className }: { className?: string }) {

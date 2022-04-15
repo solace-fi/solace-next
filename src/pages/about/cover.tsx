@@ -5,8 +5,8 @@ import ConnectWalletButton from '@/components/organisms/pages/about/ConnectWalle
 import DescriptionCard from '@/components/organisms/pages/about/DescriptionCard'
 import SecondSectionSubtitle from '@/components/organisms/pages/about/SecondSectionSubtitle'
 import SecondSectionTitle from '@/components/organisms/pages/about/SecondSectionTitle'
-import ArrowRightMd from '@/resources/svg/tsx/ArrowRightSm'
-import HowToVideoCircle from '@/resources/svg/tsx/HowToVideoCircle'
+import ArrowRightMd from '@/resources/svgx/ArrowRightSm'
+import HowToVideoCircle from '@/resources/svgx/HowToVideoCircle'
 import classNames from 'classnames'
 import Link from 'next/link'
 

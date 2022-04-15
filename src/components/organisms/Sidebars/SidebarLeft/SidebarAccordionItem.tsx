@@ -18,7 +18,7 @@ export default function SidebarAccordionItem({
   return (
     <div className={`group flex flex-col ${isOpen ? '' : ''}`}>
       <div
-        className="font-semibold cursor-pointer hover:font-bold w-40 flex justify-start gap-2 items-center"
+        className="font-semibold cursor-pointer hover:font-bold w-40 flex justify-center md:justify-start gap-2 items-center"
         onClick={() => toggle(index)}
       >
         <div>{title}</div>
@@ -33,7 +33,7 @@ export default function SidebarAccordionItem({
       <div
         className={`${
           isOpen ? 'max-h-24 mt-2.5' : 'max-h-0'
-        } overflow-y-hidden transition-all duration-300 flex flex-col gap-2.5`}
+        } overflow-y-hidden transition-all duration-300 flex flex-col gap-2.5 items-center md:items-start`}
       >
         {children}
       </div>
