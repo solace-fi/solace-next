@@ -1,25 +1,12 @@
 export default function Userpic({ className }: { className: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 36 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
-      <circle cx="18" cy="18" r="16" stroke="#FAFAFA" strokeWidth="4" />
-      <rect x="6" y="6" width="24" height="24" rx="12" fill="url(#pattern0)" />
-      <defs>
-        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#image0_4144_28364" transform="scale(0.0078125)" />
-        </pattern>
-        <image
-          id="image0_4144_28364"
-          width="128"
-          height="128"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAADfklEQVR4Ae3dwXXbQAxFUbXg9tKBm0lt2WRll5G9cqYFPZ4DwbwLLWGAM/8/YCiKfvz++/Usn3/ff57lU3Kf2JL7itjp+mv+R/0DdRGn82+vv64fASwnGAHEDUQAM0CaI6oDpwWoBUSCEMDyBZx24HR+BFgu4EogAiAAN4IKhqsDS+4TW/MjAAIgQHFhdWDJjQC+C9ACqoNqPAIs76EE4FbwvW8FVweIb89DTK/fY7oA+WcFRABxhtkuYAIggFkEbXfQ9voRAAEQYLuLS/0IgAAIUBy0PRYBEAABtru41I8ACIAAxUHbYxEAARBgu4tL/QhwdwJMP9JU1Cv2BzwWbhNbC64GHv9dAAEQQHom7+4CQoCbD3EEQADpxyFmgOUCQoDlG1hnGAIgAC2gumhzPAIgAAJsdnCtHQEQAAGqizbHIwACIMBmB9faMwFqAdPxdQFq/PT11/zrnwiqG1jj6wZMxxPA8CtyCCAOcdXBNX56A2t+BECA9khSVWCNrw6u8bX+6XgEQAAEKBSYdnDNjwAIgAAIEI9iFUMlvmzeFbGl9neI1QK0AC2gkOAdXFxqQAAEQAAEMAS+/FBFwe87xOZfBv36/HhOfqYXcfLaT+5CrxNLAJF+BIAAowREgOjg2kIQAAEQYNIF1cE1fvLaT24tQAtIInAKiAJCADOAGWDSBbWH1/jJazcDfH6Mv2KOALQALWDSBRXhNX7y2rUALSAdAX0ZFI+Ahx4IYAYYFUG+E1h7YI2vF1Dz1/jt9Y8/E7h9AbfXTwBxDiCAmy8gARBAOorVGaTGawE3FzABEMDsD0O299Dt9SMAAiBAGaQQ4OYOIgACcAy8M0IRAAEQAAG+XhZBWbsrYh0Db06wLIDpHljz1/jqwun8BDD8jiACGEbw9AZM50cABGi3gqcVXPPXeDPAcgcRwHAPnnYQARDAyzdxjnimBVzzGwKXtzACiBuoBWgBWkDByHYHba+/7N2JNQPEFlI3YFqABEAA7gQWFyLAcgeVzT+x6wVQ33AxvQC1/ho/LaBa/6P+AQJ4/XGwKwhS948A4ituEGD4RlJ1QI0nAAIYvZNYBawFaAHtv34ZAg2B6Sxce2hFYI2v9VcD1fq1AC1ACyguQgCnAKeA0seqg4p7r4it9Ze1O7H1GswAZgAzQHERApgBzAClj1UHFfdeEVvrL2t3xQzwH5XwiE+scDAuAAAAAElFTkSuQmCC"
-        />
-      </defs>
+    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M32 18C32 25.732 25.732 32 18 32C10.268 32 4 25.732 4 18C4 10.268 10.268 4 18 4C25.732 4 32 10.268 32 18ZM36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18ZM16.0558 24.1311C14.3004 24.3882 12.1365 26.4956 11.3265 28.5058C10.7603 28.1454 10.2252 27.7405 9.72621 27.2961C10.6689 25.3626 12.3805 23.4898 13.9591 22.7166C12.1687 21.4487 11 19.3608 11 17C11 13.134 14.1341 10 18 10C21.866 10 25 13.134 25 17C25 19.3608 23.8314 21.4487 22.0409 22.7166C23.6195 23.4898 25.331 25.3623 26.2737 27.2956C25.7747 27.7401 25.2396 28.145 24.6735 28.5054C23.8633 26.4953 21.6996 24.3881 19.9443 24.1311C19.4093 24.0528 18.7822 24 18 24C17.2179 24 16.5908 24.0528 16.0558 24.1311ZM18 22C15.2386 22 13 19.7614 13 17C13 14.2386 15.2386 12 18 12C20.7615 12 23 14.2386 23 17C23 19.7614 20.7615 22 18 22Z"
+        fill="currentColor"
+      />
     </svg>
   )
 }

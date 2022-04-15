@@ -1,4 +1,3 @@
-import RainbowUserpic from '@/resources/svgx/RainbowUserpic'
 import Userpic from '@/resources/svgx/Userpic'
 import React from 'react'
 
@@ -12,7 +11,7 @@ export default function SidebarRight() {
         className="fixed top-6 right-5 h-9 w-9 rounded-full hover:brightness-90 flex items-center justify-center text-dark font-title font-bold text-lg select-none cursor-pointer"
         onClick={toggleSidebar}
       >
-        <Userpic className="h-9 w-9" />
+        <Userpic className="h-9 w-9 text-white" />
       </div>
       <section
         className={`fixed ${
@@ -25,7 +24,7 @@ export default function SidebarRight() {
           <div className="h-[52px] rounded-full gap-2 bg-gradient-to-br flex items-center from-techyGradientA to-techyGradientB select-none cursor-pointer hover:brightness-110 duration-200 ease-out group">
             {/* userpic h-9 w-9 m-2 */}
             {/* <div className="h-9 w-9 m-2 bg-gradient-to-br from-warmGradientA to-warmGradientB rounded-full group-hover:animate-spin" /> */}
-            <RainbowUserpic className="h-9 w-9 m-2" />
+            <Userpic className="h-9 w-9 m-2" />
 
             {/* text */}
             <div className="text-sm mr-4 mb-4 mt-4 font-bold">Connect Wallet</div>

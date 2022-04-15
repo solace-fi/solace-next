@@ -6,6 +6,11 @@ import { useState } from 'react'
 import AccordionContainer from './AccordionContainer'
 import classNames from 'classnames'
 import OwnImage from '@/components/atoms/OwnImage'
+import DiscordIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Discord'
+import TwitterIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Twitter'
+import GithubIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Github'
+import MediumIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Medium'
+import DefiPulseIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/DefiPulse'
 
 const sidebarContent = [
   {
@@ -189,91 +194,31 @@ function Bar({ isOpen }: { isOpen: boolean }) {
               href="https://discord.gg/QWZQWZQ"
               className="block font-normal hover:underline underline-offset-2"
             >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M22 12.22c0 .04-.01.07-.01.11 0 3.77-3.02 7.25-7.26 7.25a7.25 7.25 0 01-7.25-7.25c0-3.77 3.02-7.25 7.25-7.25.04 0 .07.01.11.01a7.25 7.25 0 017.25 7.25zm-1.88 0c0-2.52-2.04-4.56-4.58-4.56a4.57 4.57 0 00-4.56 4.56c0 2.52 2.04 4.56 4.56 4.56 2.53 0 4.57-2.04 4.57-4.56zM12 7.77a2.78 2.78 0 012.78 2.78 2.78 2.78 0 01-2.78 2.78 2.78 2.78 0 01-2.78-2.78 2.78 2.78 0 012.78-2.78zm0 5.66a1.78 1.78 0 100-3.56 1.78 1.78 0 000 3.56z" />
-              </svg>
+              <DiscordIcon className="h-4 w-4" />
             </a>
             <a
               href="https://twitter.com/solacefi"
               className="block font-normal hover:underline underline-offset-2"
             >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-              </svg>
+              <TwitterIcon className="h-4 w-4" />
             </a>
             <a
               href="https://github.com/solace-fi"
               className="block font-normal hover:underline underline-offset-2"
             >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
-              </svg>
+              <GithubIcon className="h-4 w-4" />
             </a>
             <a
               href="https://medium.com/solace-fi"
               className="block font-normal hover:underline underline-offset-2"
             >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 00-3-3.87" />
-                <path d="M16 3.13a4 4 0 00-7.75 0" />
-              </svg>
+              <MediumIcon className="h-4 w-4" />
             </a>
             <a
               href="https://defipulse.com"
               className="block font-normal hover:underline underline-offset-2"
             >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z" />
-                <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z" />
-                <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z" />
-              </svg>
+              <DefiPulseIcon className="h-4 w-4" />
             </a>
           </div>
         </div>
