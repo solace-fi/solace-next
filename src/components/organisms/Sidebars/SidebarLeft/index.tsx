@@ -104,7 +104,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
         ' duration-300  transition md:mr-0 md:ml-7.5 my-7.5 md:inline-block fixed min-h-[calc(100vh_-_60px)]'
       }
     >
-      <div className="flex flex-col w-[200px] items-center justify-between h-[calc(100%_-_120px)] md:h-[calc(100vh-120px)] md:items-start select-none">
+      <div className="flex flex-col w-[200px] items-center justify-between h-[calc(100%_-_120px)] md:h-[calc(100vh-60px)] md:items-start select-none">
         {/* mobile */}
         <div className="">
           <Link href="/" passHref={undefined}>
