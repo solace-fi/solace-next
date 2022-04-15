@@ -172,7 +172,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
         {/* items: We're Hiring!, Help & Support, Terms & Conditions, 5 svg icons: discord, twitter, github, medium and defipulse */}
         <div className="flex flex-col items-center md:items-start justify-center gap-2.5">
           <a
-            href="https://www.notion.so/solacefi/Solace-Public-Page-16cc777c403a46c8a2ffaba68008fcd9"
+            href="https://www.notion.so/Solace-16cc777c403a46c8a2ffaba68008fcd9"
             className="block font-semibold hover:underline underline-offset-2"
           >
             We&apos;re Hiring!
@@ -183,7 +183,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
           >
             Help & Support
           </a>
-          <Link href="/terms/">
+          <Link href="https://app.solace.fi/terms/">
             <a className="block font-normal hover:underline underline-offset-2">
               Terms & Conditions
             </a>

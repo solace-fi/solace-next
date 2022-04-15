@@ -110,7 +110,7 @@ export default function SidebarRight() {
         <div className="flex justify-center items-center text-dark h-[82px]">
           <div>
             <a className="hover:font-semibold" href="https://app.solace.fi/terms">
-              Terms & Privacy
+              Terms & Conditions
             </a>
           </div>
           {/* <div className="ml-4">
