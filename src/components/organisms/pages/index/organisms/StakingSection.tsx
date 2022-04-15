@@ -76,5 +76,5 @@ export function StakingSection({
     </>
   )
 
-  return FeatureListSection(ref, Title, Theses)
+  return FeatureListSection(ref, Title, Theses, 'staking')
 }

@@ -19,18 +19,18 @@ const sidebarContent = [
     children: [
       {
         title: 'Coverage',
-        link: 'cover',
-        type: 'hash',
+        link: 'about/cover',
+        type: 'internal',
       },
       {
         title: 'Bonding',
-        link: 'bond',
-        type: 'hash',
+        link: 'about/tokenomics',
+        type: 'internal',
       },
       {
         title: 'Staking',
-        link: 'staking',
-        type: 'hash',
+        link: 'about/staking',
+        type: 'internal',
       },
     ],
   },
@@ -40,14 +40,14 @@ const sidebarContent = [
     children: [
       {
         title: 'Token',
-        link: 'token',
+        link: 'about/tokenomics',
         type: 'internal',
       },
-      {
-        title: 'DAO',
-        link: 'dao',
-        type: 'internal',
-      },
+      // {
+      //   title: 'DAO',
+      //   link: 'dao',
+      //   type: 'internal',
+      // },
     ],
   },
   {
@@ -87,7 +87,7 @@ const sidebarContent = [
       },
       {
         title: 'Contributors',
-        link: 'contributors',
+        link: 'coreContributors',
         type: 'hash',
       },
     ],

@@ -14,7 +14,7 @@ import GlassCard from '../GlassCard'
 
 function SolaceStatsSection() {
   return (
-    <section className="hidden md:flex items-center gap-15 w-full justify-center pr-50">
+    <section className="hidden md:flex items-center gap-15 w-full justify-center pr-50" id="start">
       {[
         {
           title: 'Global Stake',

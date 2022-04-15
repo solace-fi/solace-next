@@ -26,6 +26,7 @@ export function GrantsAndAudits({
     <div
       className="flex flex-col items-stretch px-10 sm:px-36 gap-15 sm:gap-16 justify-center min-h-screen"
       ref={ref}
+      id="grants-and-audits"
     >
       <SectionTitle>
         <div className="font-bold">Grants & Audits</div>
