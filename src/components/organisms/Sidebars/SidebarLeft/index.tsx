@@ -47,12 +47,12 @@ const sidebarContent = [
     children: [
       {
         title: 'Docs',
-        link: 'https://docs.solace.com/',
+        link: 'https://docs.solace.fi/',
         type: 'external',
       },
       {
         title: 'SDK',
-        link: 'https://docs.solace.com/developer/sdk/',
+        link: 'https://docs.solace.fi/developer/sdk/',
         type: 'external',
       },
     ],
