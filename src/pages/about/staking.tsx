@@ -1,5 +1,11 @@
+import TechyGradientText from '@/components/atoms/Typography/TechyGradientText'
 import AboutLayout from '@/components/organisms/pages/about/AboutLayout'
+import AboutList from '@/components/organisms/pages/about/AboutList'
 import DescriptionCard from '@/components/organisms/pages/about/DescriptionCard'
+import ArrowRightSm from '@/resources/svg/tsx/ArrowRightSm'
+import Link from 'next/link'
+import classNames from 'classnames'
+import Image from 'next/image'
 
 export default function Staking() {
   const mainTitle = 'Staking'
@@ -25,7 +31,64 @@ export default function Staking() {
   ].map(({ title, text }, i) => <DescriptionCard title={title} text={text} key={i} />)
   return (
     <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
-      asd
+      {/* button */}
+      <div className="mr-[200px]">
+        <div
+          className={classNames(
+            'mt-10 mx-auto', // outer placement
+            'col-span-2', // grid placement
+            'px-20 py-6 justify-center flex items-center gap-3', // inner layout
+            'bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-full max-w-md w-full', // general appearance
+            'font-semibold text-light', // text appearance
+            'cursor-pointer hover:brightness-110 hover:gap-5 duration-300 ease-out hover:scale-105 hover:shadow-std' // interaction
+          )}
+        >
+          <p>Connect Wallet</p>
+          <ArrowRightSm className="fill-light" />
+        </div>
+      </div>
+
+      <article>
+        <h2 className="text-[80px] leading-[80px] font-title font-bold mt-25 mb-2">
+          How to <TechyGradientText>stake $SOLACE</TechyGradientText>{' '}
+        </h2>
+        <p className="text-2xl">It&apos;s just a few clicks to earn with solace:</p>
+        {/* test here: https://play.tailwindcss.com/
+            <div class="grid grid-flow-col gap-4 w-max">
+              <div class="row-span-3 bg-red-200">01</div>
+              <div class="col-span-2 bg-red-400">02</div>
+              <div class="row-span-2 col-span-2 bg-red-600">03</div>
+            </div>
+            */}
+        <div className="grid grid-flow-col mt-15 mt mb-20 max-w-5xl">
+          <div className="row-span-3">
+            <AboutList
+              items={[
+                'Connect your wallet',
+                'Click Create New Safe',
+                'Choose a Deposit Amount and a Lock Time',
+                "Click 'Stake' and confirm the transaction",
+              ]}
+            />
+          </div>
+          <div className="row-span-3 col-span-2 ml-[65px] cursor-pointer ease-in gap-8 flex flex-col justify-center shrink-0 grow-0">
+            <Image
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              src={require('@/resources/png/staking-tutorial-preview.png')}
+              alt="preview"
+              className="hover:brightness-95 duration-300 grow-0 shrink-0"
+            />
+            <Link href="https://docs.solace.fi/docs/overview/faq/cover-products" passHref>
+              <a className="flex w-full justify-center">
+                <div className="flex items-center duration-300 uppercase text-blue text-sm font-semibold group">
+                  <div>READ more ABOUT STAKING $SOLACE</div>{' '}
+                  <ArrowRightSm className="fill-blue w-5 mb-px ml-2 group-hover:ml-4 duration-300" />
+                </div>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </article>
     </AboutLayout>
   )
 }
