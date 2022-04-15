@@ -105,14 +105,14 @@ export default function SidebarRight() {
         <div className="flex justify-center items-center text-dark h-[82px]">
           <div>
             <a className="hover:font-semibold" href="https://app.solace.fi/terms">
-              Terms
+              Terms & Privacy
             </a>
           </div>
-          <div className="ml-4">
+          {/* <div className="ml-4">
             <a className="hover:font-semibold" href="https://app.solace.fi/privacy">
               Privacy
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
