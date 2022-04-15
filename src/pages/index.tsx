@@ -13,12 +13,7 @@ export default function Home() {
   return (
     <SolaceGradientBackground>
       <Sidebars />
-      <div
-        className="min-h-screen w-full ml-[200px]"
-        style={{
-          width: 'calc(100% - 200px)',
-        }}
-      >
+      <div className="min-h-screen w-full ml-0 pb-12.5 md:ml-[200px] md:w-[calc(100%_-_200px)]">
         <DesktopScrollableArea
           HomepageSections={HomepageSections}
           visibleSection={visibleSection}

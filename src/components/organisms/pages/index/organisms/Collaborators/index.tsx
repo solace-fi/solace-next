@@ -1,19 +1,26 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { Ref } from 'react'
-// import { Flex, Grid } from '../../../../../components/atoms/Layout'
-// import { Text } from '../../../../../components/atoms/Typography'
-// import { useWindowDimensions } from '../../../../../hooks/internal/useWindowDimensions'
-// import { SectionTitle } from '../../../../../components/atoms/Typography'
-// import collectiveInvestors from '../../../../../resources/collaborators/assets/lists/collectiveInvestors'
-// // import individualInvestors from '../../../../../resources/collaborators/assets/lists/individualInvestors'
-// // import advisors from '../../../../../resources/collaborators/assets/lists/advisors'
 import { peeps } from '@/resources/collaborators/assets/lists/addPfpUtility'
 import Image from 'next/image'
 import { Collective, Person } from '@/resources/collaborators/types'
 import { SectionTitle } from '../../molecules/SectionTitle'
 import collectiveInvestors from '@/resources/collaborators/assets/lists/collectiveInvestors'
 import coreContributors from '@/resources/collaborators/assets/lists/coreContributors'
-// import coreContributors from '../../../../../resources/collaborators/assets/lists/coreContributors'
-// import { Collective, Person } from '../../../../../resources/collaborators/types'
+
+/*
+ * @/resources/svg/audits/quantstamp.png
+ * @/resources/svg/audits/hacken.png
+ * @/resources/svg/grants/aave-logo-white-2.svg
+ * @/resources/svg/grants/near-logo-white-2.svg
+ * @/resources/svg/grants/polygon-logo-white-2.svg
+ */
+
+import QuantstampLogo from '@/resources/svg/audits/quantstamp.png'
+import HackenLogo from '@/resources/svg/audits/hacken.png'
+
+import AaveLogo from '@/resources/svg/grants/aave-logo-white-2.svg'
+import NearLogo from '@/resources/svg/grants/near-logo-white-2.svg'
+import PolygonLogo from '@/resources/svg/grants/polygon-logo-white-2.svg'
 
 const { pfpdAdvisors, pfpdIndividualInvestors } = peeps
 const advisors = pfpdAdvisors
@@ -148,6 +155,55 @@ export function ListOfPeople({
         {collectiveList && <ReactCollective collectiveList={collectiveList} />}
         <div className={`grid gap-x-[120px] gap-y-7.5 grid-cols-1 ${tailwindGridColumns}`}>
           {reactTeam}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function GrantsAndAudits({
+  useScrollingRef,
+}: {
+  useScrollingRef: () => React.MutableRefObject<HTMLDivElement | null>
+}) {
+  const ref = useScrollingRef()
+  return (
+    <div
+      className="flex flex-col items-stretch px-10 sm:px-36 gap-15 sm:gap-16 justify-center min-h-screen"
+      ref={ref}
+    >
+      <SectionTitle>
+        <div className="font-bold">Grants & Audits</div>
+      </SectionTitle>
+      <div className="flex mt-[10px] flex-col md:flex-row items-start md:items-end gap-7.5 md:gap-[118px] text-xl md:text-4xl leading-7 md:leading-[46.8px] font-light">
+        <div className="flex flex-col gap-12.5 max-w-[490px]">
+          <div>
+            We are proud and thankful for the{' '}
+            <span className="font-semibold">trust and grants from</span>
+          </div>
+          <div className="flex justify-between">
+            <div className="block h-[110px] shrink-0 bg-select flex-[0.2]">
+              <Image src={PolygonLogo} alt="Polygon" height={110} layout={'responsive'} />
+            </div>
+            <div className="block h-[110px] shrink-0 bg-select flex-[0.2]">
+              <Image src={AaveLogo} alt="Aave" height={110} layout={'responsive'} />
+            </div>
+            <div className="block h-[110px] shrink-0 bg-select flex-[0.2]">
+              <Image src={NearLogo} alt="Near" height={110} layout={'responsive'} />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-12.5">
+          <div>
+            <span className="font-semibold">Audited</span> by
+          </div>
+          <div className="flex flex-col gap-[25.73px]">
+            {/* 2 divs, each width 277.82 px and height 31.62 px */}
+            <Image src={HackenLogo} alt="Hacken" width={279} className="" />
+            <Image src={QuantstampLogo} alt="Polygon" width={279} className="" />
+            {/* <div className="h-[31.62px] w-[277.82px] bg-blue"></div>
+              <div className="h-[31.62px] w-[277.82px] bg-blue"></div> */}
+          </div>
         </div>
       </div>
     </div>

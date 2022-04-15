@@ -13,7 +13,7 @@ export default function AboutListItem({
   textType: 'dark' | 'white' | 'techy'
 }) {
   return (
-    <li className="text-2xl flex items-center gap-4">
+    <li className="text-[22px] sm:text-2xl flex items-center gap-4">
       <div
         className={classNames(
           { 'bg-white': bulletType === 'white' },

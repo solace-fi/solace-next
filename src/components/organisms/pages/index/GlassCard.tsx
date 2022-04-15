@@ -17,7 +17,7 @@ export default function GlassCard({
       <a
         className={
           'h-[216px] w-[327px] px-[32px] pt-[31px] pb-[28px] rounded-[30px] cursor-pointer floating-card group' +
-          (middleCard ? ' -mt-5' : '')
+          (middleCard ? 'mt-0 md:-mt-5' : '')
         }
         style={{
           backgroundImage: `url("/images/glass-card.svg")`,
