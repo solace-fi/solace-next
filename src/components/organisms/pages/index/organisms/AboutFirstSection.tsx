@@ -83,17 +83,17 @@ function SolaceStatsSection() {
         },
         {
           title: 'Underwriting Pool',
-          amount: uwpSize,
+          amount: `$${uwpSize}`,
         },
         {
           title: 'Active Cover Limit',
-          amount: activeCoverLimit,
+          amount: `$${activeCoverLimit}`,
         },
       ]
         .map(({ title, amount, unit }, i) => (
           <div className="flex flex-col items-center gap-0.5" key={title + i.toString()}>
             <div className="font-semibold text-xs">{title}</div>
-            {unit && amount != '-' ? (
+            {unit ? (
               <div className="flex gap-0.5 items-baseline">
                 <div className="font-semibold">{amount}</div>
                 <div className="text-[10px]">{unit}</div>
