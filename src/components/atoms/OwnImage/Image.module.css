@@ -6,6 +6,11 @@
   width: 100% !important;
 }
 
+.imageContainer > span > span {
+  width: 100% !important;
+  height: 0 !important;
+}
+
 .image {
   object-fit: cover;
   width: 100% !important;
