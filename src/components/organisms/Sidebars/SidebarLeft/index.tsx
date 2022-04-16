@@ -11,6 +11,7 @@ import TwitterIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Twitter'
 import GithubIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Github'
 import MediumIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Medium'
 import DefiPulseIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/DefiPulse'
+import useIsBelow from '@/utils/useIsBelow'
 
 const sidebarContent = [
   {
@@ -95,14 +96,16 @@ const sidebarContent = [
 ]
 
 function Bar({ isOpen }: { isOpen: boolean }) {
+  const { isBelow, isProductPage } = useIsBelow('footer')
   return (
     <div
-      className={
+      className={classNames(
         (!isOpen
           ? 'hidden md:block opacity-0 md:opacity-100'
           : 'opacity-100 flex items-center justify-center w-full h-full') +
-        ' duration-300  transition md:mr-0 md:ml-7.5 my-7.5 md:inline-block fixed min-h-[calc(100vh_-_60px)]'
-      }
+          ' duration-300  transition md:mr-0 md:ml-7.5 my-7.5 md:inline-block fixed min-h-[calc(100vh_-_60px)]'
+        // { 'text-dark': isProductPage }
+      )}
     >
       <div className="flex flex-col w-[200px] items-center justify-between h-[calc(100%_-_120px)] md:h-[calc(100vh-60px)] md:items-start select-none">
         {/* mobile */}
@@ -170,7 +173,13 @@ function Bar({ isOpen }: { isOpen: boolean }) {
           }))}
         />
         {/* items: We're Hiring!, Help & Support, Terms & Conditions, 5 svg icons: discord, twitter, github, medium and defipulse */}
-        <div className="flex flex-col items-center md:items-start justify-center gap-2.5">
+        <div
+          className={
+            'flex flex-col items-center md:items-start justify-center gap-2.5 ' +
+            (isBelow && isProductPage ? 'text-dark' : '')
+          }
+          id="footer"
+        >
           <a
             href="https://www.notion.so/Solace-16cc777c403a46c8a2ffaba68008fcd9"
             className="block font-semibold hover:underline underline-offset-2"

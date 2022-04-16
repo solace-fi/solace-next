@@ -1,3 +1,4 @@
+import useIsBelow from '@/utils/useIsBelow'
 import React from 'react'
 import { useState } from 'react'
 import SidebarAccordionItem from './SidebarAccordionItem'
@@ -23,8 +24,15 @@ export default function AccordionContainer({ accordees }: { accordees: Accordee[
     openElement === index ? setOpenElement(null) : setOpenElement(index)
   // detector for active element
   const isOpen = (index: number) => openElement === index
+  const { isBelow, isProductPage } = useIsBelow('accordion')
+
   return (
-    <div className="gap-4 flex flex-col md:mb-auto mt-7.5">
+    <div
+      className={
+        'gap-4 flex flex-col md:mb-auto mt-7.5 ' + (isBelow && isProductPage ? 'text-dark' : '')
+      }
+      id="accordion"
+    >
       {accordees.map((accordee, index) => (
         <SidebarAccordionItem
           isOpen={isOpen(index)}
