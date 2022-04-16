@@ -178,7 +178,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
             We&apos;re Hiring!
           </a>
           <a
-            href="https://www.notion.so/solacefi/Solace-Public-Page-16cc777c403a46c8a2ffaba68008fcd9"
+            href="https://discord.gg/XKrQgwAjBa"
             className="block font-normal hover:underline underline-offset-2"
           >
             Help & Support
