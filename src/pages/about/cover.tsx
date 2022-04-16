@@ -16,27 +16,27 @@ export default function Cover() {
   const cards = [
     {
       title: 'Instant quote',
-      text: 'Just one click to see all your positions with associated risks and to get a quote',
+      text: "Discover your portfolio's risk ranking  and get a quote with just one click",
     },
     {
       title: 'Cost efficient',
-      text: 'Get your whole portfolio covered by setting a coverage limit to your highest position',
+      text: "By pooling your portfolio's risk, Wallet Coverage can protect many positions in the wallet with a single coverage limit",
     },
     {
       title: 'Dynamic pricing',
-      text: 'You are charged only for actual positions within a set coverage limit',
+      text: 'Weekly premiums are only charged for actual position value utilized within a set coverage limit',
     },
     {
       title: 'Cross-chain',
       text: 'Buy a policy on one chain and get covered on multiple (currently servicing Ethereum and Polygon)',
     },
     {
-      title: 'Hassle free claims',
+      title: 'Hassle-free claims',
       text: 'No need to file a claim',
     },
     {
       title: 'Fast payouts',
-      text: 'You receive a payout within one week',
+      text: 'You receive a payout within one week of a detected exploit',
     },
   ].map(({ title, text }, i) => <DescriptionCard title={title} text={text} key={i} />)
   return (
@@ -45,9 +45,7 @@ export default function Cover() {
         <SecondSectionTitle className="mt-17.5">
           <TechyGradientText>How it works</TechyGradientText>{' '}
         </SecondSectionTitle>
-        <SecondSectionSubtitle>
-          It&apos;s just a few clicks to protect your funds:
-        </SecondSectionSubtitle>
+        <SecondSectionSubtitle>Protect your funds with just a few clicks:</SecondSectionSubtitle>
         {/* test here: https://play.tailwindcss.com/
             <div class="grid grid-flow-col w-max">
               <div class="bg-red-200 w-16 h-16"></div>
@@ -77,8 +75,7 @@ export default function Cover() {
           <div className="bg-blue rounded-full h-0.5 md:w-0.5 w-full md:h-full md:row-span-2 mt-15 md:mt-0 mx-0 md:mx-12 "></div>
           <div className="w-[275px] h-full md:row-span-2 flex-col flex justify-between mt-6 md:mt-0 gap-8 mx-[41.5px] md:mx-0">
             <h3 className="font-bold mx-[13.5px] md:mx-0">
-              Wallet coverage protects your funds across 180+ protocols for the following exploit
-              types:
+              Wallet coverage protects your funds across 180+ protocols for the following:
             </h3>
             <ul className="flex flex-col gap-4 mx-auto md:mx-0">
               <li>Minting vulnerability</li>

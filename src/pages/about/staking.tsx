@@ -12,24 +12,23 @@ import ConnectWalletButton from '@/components/organisms/pages/about/ConnectWalle
 
 export default function Staking() {
   const mainTitle = 'Staking'
-  const subtitle =
-    'Earn yield from underwriting activity and token distribution without fear of loss.'
+  const subtitle = 'Earn yield from underwriting activity and token distribution'
   const cards = [
     {
-      title: 'Instant quote',
-      text: 'Just one click to see all your positions with associated risks and to get a quote',
+      title: 'No underwriting risk',
+      text: 'Earn revenue from staking and never worry about the underwriting risk. It falls onto the protocol-owned pool.',
     },
     {
-      title: 'Get votes',
-      text: 'Each staked $SOLACE gives you one vote in the DAO.',
+      title: 'Participate in Shaping Solace',
+      text: 'Each staked $SOLACE gives you one vote in the DAO, with a maximum 4x multiplier through token locks.',
     },
     {
-      title: 'Long-term bonuses',
-      text: 'Multiply your rewards (up to 2.5x) and voting rights (up to 4x) for a chosen period.',
+      title: 'Locking bonuses',
+      text: 'Earn more $SOLACE (up to 2.5x) and voting rights (up to 4x) through locking your stake into a safe.',
     },
     {
       title: 'Multiple revenue streams.',
-      text: 'Staked $SOLACE provides you with exposure to underwriting rewards, underwriting pool investments and $SOLACE emissions.',
+      text: 'Staked $SOLACE provides you with exposure to policy sales, underwriting pool investments, and $SOLACE emissions.',
     },
   ].map(({ title, text }, i) => <DescriptionCard title={title} text={text} key={i} />)
   return (

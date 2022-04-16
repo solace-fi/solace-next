@@ -9,15 +9,15 @@ import ConnectWalletButton from '@/components/organisms/pages/about/ConnectWalle
 export default function Tokenomics() {
   const mainTitle = '$SOLACE token'
   const subtitle =
-    "Solace's tokenomics architecture is designed to provide capital providers with higher yields and policyholders with a better protection."
+    "Solace's tokenomics are designed to provide $SOLACE stakers higher yields and policyholders with better claims process."
   const cards = [
     {
       title: 'Trustworthy protection',
-      text: 'Solace owns its underwriting pool, therefore, the protocol itself underwrites coverage, not the users. Policyholders can be sure that our underwriting capital always will be there for them.',
+      text: 'Solace owns its underwriting pool, underwrites the coverage, and pays the claims. Policyholders can be sure that our underwriting capital always will be there for them.',
     },
     {
-      title: 'Yield and governance',
-      text: 'Holders are able to stake and lock $SOLACE to access governance rights and rewards, benefiting from the underwriting activity and token emissions.',
+      title: 'No underwriting risk',
+      text: 'Solace raises underwriting capital through bonds, where users exchange their capital for vesting $SOLACE tokens at a discount. This decouples the underwriting risk from stakers, so they don’t need to worry about their capital being liquidated after an exploit.',
       linkText: 'Learn more about staking',
       linkUrl: '/about/staking',
     },
@@ -26,18 +26,17 @@ export default function Tokenomics() {
       text: (
         <>
           $SOLACE is a market-driven token. It derives value from the protocol’s growth, success as
-          an underwriter, and the DAO’s balance sheet. Payouts are unrelated to the token price.
+          an underwriter, and the DAO’s balance sheet.
           <br />
           <br />
-          Solace drives the utility and establishes demand through staking and facilitating
-          insurance. Accrued policy premiums are collected and used to buy back $SOLACE on the open
-          market.
+          Solace drives utility and establishes demand through staking and offering insurance.
+          Accrued policy premiums are collected and used to buy back $SOLACE on the open market.
         </>
       ),
     },
     {
-      title: 'No risk for capital providers',
-      text: 'Our underwriting capital is raised by a bonding mechanism where users exchange their capital for vested $SOLACE tokens at a discount. This decouples the underwriting risk from capital providers, so they don’t need to worry about their capital being liquidated after an exploit.',
+      title: 'Yield and governance',
+      text: 'Holders are able to stake and lock $SOLACE to access rewards and governance rights , benefiting from the underwriting activity and token emissions. Learn more about staking here.',
     },
   ].map(({ title, text, linkText, linkUrl }, i) => (
     <DescriptionCard title={title} text={text} linkText={linkText} linkUrl={linkUrl} key={i} />

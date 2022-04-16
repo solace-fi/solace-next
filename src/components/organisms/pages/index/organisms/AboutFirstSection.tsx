@@ -153,8 +153,8 @@ export function AboutFirstSection({
                 Focus on Yields.
               </h1>
               <p className="text-base md:text-xl leading-[25.6px] md:leading-8 max-w-[618px]">
-                Protect your funds against smart-contracts exploits across 180+ protocols with an
-                intelligent single policy that dynamically updates as your portfolio changes.
+                Insure your funds against smart contract exploits across 180+ protocols with a
+                personalized single policy that dynamically updates as your portfolio changes
               </p>
             </article>
           </section>
@@ -162,17 +162,17 @@ export function AboutFirstSection({
             {[
               {
                 title: 'Wallet coverage',
-                body: 'Learn about undisputed advantages of one-for-all Solace coverage',
+                body: "Learn about the undisputed advantages of Solace policy, only one you'll ever need",
                 url: '/about/cover',
               },
               {
                 title: '$SOLACE',
-                body: 'Learn how tokenomics architecture helps us build better insurance',
+                body: 'Understand how masterful tokenomics drive more value and utility for the investors',
                 url: '/about/tokenomics',
               },
               {
                 title: 'Staking',
-                body: 'Earn yield from underwriting activity and token distribution without risk',
+                body: 'Earn yield, without the risk of paying out claims. Protocol-owned funds cover those',
                 url: '/about/staking',
               },
             ].map(({ title, body, url }, i) => (
