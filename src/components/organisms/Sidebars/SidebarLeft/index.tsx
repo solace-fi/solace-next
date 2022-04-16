@@ -35,22 +35,22 @@ const sidebarContent = [
       },
     ],
   },
-  {
-    // products -> coverage, bonding, staking
-    title: 'Governance',
-    children: [
-      {
-        title: 'Token',
-        link: 'https://etherscan.io/token/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
-        type: 'external',
-      },
-      {
-        title: 'DAO',
-        link: 'https://forum.solace.fi/',
-        type: 'external',
-      },
-    ],
-  },
+  // {
+  //   // products -> coverage, bonding, staking
+  //   title: 'Governance',
+  //   children: [
+  //     {
+  //       title: 'Token',
+  //       link: 'https://etherscan.io/token/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
+  //       type: 'external',
+  //     },
+  //     {
+  //       title: 'DAO',
+  //       link: 'https://forum.solace.fi/',
+  //       type: 'external',
+  //     },
+  //   ],
+  // },
   {
     // developers: docs, sdk
     title: 'Developers',
@@ -139,7 +139,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
                 case 'hash':
                   return (
                     <a
-                      href={`#${link}`}
+                      href={`/#${link}`}
                       className="block font-normal hover:underline underline-offset-2"
                       key={title}
                     >
@@ -199,7 +199,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
           </Link>
           <div className="flex justify-between w-full mt-2.5">
             <a
-              href="https://discord.com/channels/@me/918588744402096178/964626220476162189"
+              href="https://discord.gg/XKrQgwAjBa"
               className="block font-normal hover:underline underline-offset-2"
             >
               <DiscordIcon className="h-4 w-4" />

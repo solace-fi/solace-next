@@ -116,11 +116,11 @@ export default function Tokenomics() {
                     rel="noreferrer"
                   >
                     <TechyGradientText className="font-bold underline-offset-1 decoration-1 cursor-pointer decoration-techyGradientB underline">
-                      $SOLACE on Sushiswap
+                      $SOLACE on Uniswap
                     </TechyGradientText>
                   </a>
                   <br />
-                  in a $SOLACE/USDC pool
+                  in a $SOLACE/FRAX pool
                 </>,
                 <>
                   Aurora: <br />
@@ -134,7 +134,7 @@ export default function Tokenomics() {
                     </TechyGradientText>
                   </a>
                   <br />
-                  in a $SOLACE/USDC pool
+                  in a $SOLACE/wNEAR pool
                 </>,
               ]}
             />
