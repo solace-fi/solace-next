@@ -81,9 +81,9 @@ export default function Tokenomics() {
               textType="white"
               items={[
                 'Connect your wallet',
-                'Decide the token you would like to purchase a bond with and click Bond',
-                'Input the amount of tokens you would like to provide',
-                'If you would like to have your bonded tokens staked, select “Auto-stake”',
+                'Choose the token you would like to purchase a bond with, and click Bond.',
+                'Input the amount of tokens you would like to provide.',
+                'If you would like to have your bonded tokens staked, select “Auto-stake”.',
               ]}
             />
           </div>
