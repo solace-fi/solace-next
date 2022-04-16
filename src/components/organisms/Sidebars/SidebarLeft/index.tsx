@@ -139,7 +139,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
                 case 'hash':
                   return (
                     <a
-                      href={`#${link}`}
+                      href={`/#${link}`}
                       className="block font-normal hover:underline underline-offset-2"
                       key={title}
                     >
