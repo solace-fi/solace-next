@@ -1,19 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { Ref } from 'react'
-// import { Flex, Grid } from '../../../../../components/atoms/Layout'
-// import { Text } from '../../../../../components/atoms/Typography'
-// import { useWindowDimensions } from '../../../../../hooks/internal/useWindowDimensions'
-// import { SectionTitle } from '../../../../../components/atoms/Typography'
-// import collectiveInvestors from '../../../../../resources/collaborators/assets/lists/collectiveInvestors'
-// // import individualInvestors from '../../../../../resources/collaborators/assets/lists/individualInvestors'
-// // import advisors from '../../../../../resources/collaborators/assets/lists/advisors'
 import { peeps } from '@/resources/collaborators/assets/lists/addPfpUtility'
 import Image from 'next/image'
 import { Collective, Person } from '@/resources/collaborators/types'
 import { SectionTitle } from '../../molecules/SectionTitle'
 import collectiveInvestors from '@/resources/collaborators/assets/lists/collectiveInvestors'
 import coreContributors from '@/resources/collaborators/assets/lists/coreContributors'
-// import coreContributors from '../../../../../resources/collaborators/assets/lists/coreContributors'
-// import { Collective, Person } from '../../../../../resources/collaborators/types'
 
 const { pfpdAdvisors, pfpdIndividualInvestors } = peeps
 const advisors = pfpdAdvisors
@@ -140,6 +132,7 @@ export function ListOfPeople({
     <div
       className="flex flex-col items-stretch px-10 sm:px-36 gap-15 sm:gap-16 justify-center min-h-screen"
       ref={sectionRef}
+      id={`${item}`}
     >
       <SectionTitle>
         <div className="font-bold">{title}</div>

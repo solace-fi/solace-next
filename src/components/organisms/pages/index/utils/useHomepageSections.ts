@@ -1,9 +1,10 @@
 import { useRef } from 'react'
 import { AboutFirstSection } from '../organisms/AboutFirstSection'
 import { Investors, Advisors, CoreContributors } from '../organisms/Collaborators'
-import { ExploitsCoverageSection } from '../organisms/ExploitsCoverageSection'
+import { GrantsAndAudits } from '../organisms/GrantsAndAudits'
+// import { ExploitsCoverageSection } from '../organisms/ExploitsCoverageSection'
 import { RoadmapSection } from '../organisms/RoadmapSection'
-import { StakingSection } from '../organisms/StakingSection'
+// import { StakingSection } from '../organisms/StakingSection'
 // import { AboutFirstSection } from '../sections/AboutFirstSection'
 // import { Advisors, CoreContributors, Investors } from '../organisms/Collaborators'
 // import { ExploitsCoverageSection } from '../sections/ExploitsCoverageSection'
@@ -14,8 +15,8 @@ import { StakingSection } from '../organisms/StakingSection'
 export function useHomepageSections() {
   const HomepageSections = [
     { Section: AboutFirstSection, key: 'about', ref: useRef<HTMLDivElement | null>(null) },
-    { Section: ExploitsCoverageSection, key: 'coverage', ref: useRef<HTMLDivElement | null>(null) },
-    { Section: StakingSection, key: 'staking', ref: useRef<HTMLDivElement | null>(null) },
+    { Section: GrantsAndAudits, key: 'grandsAndAudits', ref: useRef<HTMLDivElement | null>(null) },
+    // { Section: StakingSection, key: 'staking', ref: useRef<HTMLDivElement | null>(null) },
     { Section: RoadmapSection, key: 'roadmap', ref: useRef<HTMLDivElement | null>(null) },
     { Section: Investors, key: 'investors', ref: useRef<HTMLDivElement | null>(null) },
     { Section: Advisors, key: 'advisors', ref: useRef<HTMLDivElement | null>(null) },

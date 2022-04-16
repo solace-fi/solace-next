@@ -1,5 +1,8 @@
-import React /* , { RefObject, useEffect, useMemo } */ from 'react'
+import React, { useEffect, useState /* , { RefObject, useEffect, useMemo } */ } from 'react'
 import GlassCard from '../GlassCard'
+import { Lock, UnderwritingPoolUSDBalances, Coverage } from '@solace-fi/sdk-nightly'
+import { truncateValue } from '@/utils'
+import { formatUnits } from '@ethersproject/units'
 // import { Flex } from '../../../../components/atoms/Layout'
 // import { Text } from '../../../../components/atoms/Typography'
 // import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
@@ -13,25 +16,78 @@ import GlassCard from '../GlassCard'
 // export const AboutFirstSection = <AboutFirstSectionFunction />
 
 function SolaceStatsSection() {
+  const [globalStake, setGlobalStake] = useState<string>('-')
+  const [globalAverageApr, setGlobalAverageApr] = useState<string>('-')
+  const [uwpSize, setUwpSize] = useState<string>('-')
+  const [activeCoverLimit, setActiveCoverLimit] = useState<string>('-')
+
+  const getSolaceStats = async () => {
+    const lock = new Lock()
+    const uwpUSD = new UnderwritingPoolUSDBalances()
+    const coverage1 = new Coverage(1)
+    const coverage137 = new Coverage(137)
+
+    const [
+      mainnetGlobalLockStats,
+      polygonGlobalLockStats,
+      auroraGlobalLockStats,
+      uwpUSDSize,
+      mainnetCoverLimit,
+      polygonCoverLimit,
+    ] = await Promise.all([
+      lock.getGlobalLockStats(1),
+      lock.getGlobalLockStats(137),
+      lock.getGlobalLockStats(1313161554),
+      uwpUSD.getUSDBalances_All(),
+      coverage1.activeCoverLimit(),
+      coverage137.activeCoverLimit(),
+    ])
+
+    const numberifiedSolaceStaked =
+      parseFloat(mainnetGlobalLockStats.solaceStaked) +
+      parseFloat(polygonGlobalLockStats.solaceStaked) +
+      parseFloat(auroraGlobalLockStats.solaceStaked)
+    setGlobalStake(truncateValue(numberifiedSolaceStaked.toString(), 2))
+
+    const numberifiedApr =
+      parseFloat(mainnetGlobalLockStats.apr) +
+      parseFloat(polygonGlobalLockStats.apr) +
+      parseFloat(auroraGlobalLockStats.apr)
+    setGlobalAverageApr(truncateValue(parseInt((numberifiedApr / 3).toString()), 2))
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const uwpUSDTotal: number = uwpUSDSize.total
+
+    setUwpSize(truncateValue(uwpUSDTotal, 2))
+
+    const totalCoverLimit = mainnetCoverLimit.add(polygonCoverLimit)
+    setActiveCoverLimit(truncateValue(formatUnits(totalCoverLimit, 18), 2))
+  }
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    getSolaceStats()
+  }, [])
+
   return (
-    <section className="flex items-center gap-15 w-full justify-center pr-50">
+    <section className="hidden md:flex items-center gap-15 w-full justify-center pr-50" id="start">
       {[
         {
           title: 'Global Stake',
-          amount: '4.78M',
+          amount: globalStake,
           unit: 'SOLACE',
         },
         {
-          title: 'Global APR',
-          amount: '208%',
+          title: 'Global Average APR',
+          amount: `${globalAverageApr}%`,
         },
         {
           title: 'Underwriting Pool',
-          amount: '$4.13M',
+          amount: `$${uwpSize}`,
         },
         {
           title: 'Active Cover Limit',
-          amount: '$120.9',
+          amount: `$${activeCoverLimit}`,
         },
       ]
         .map(({ title, amount, unit }, i) => (
@@ -87,35 +143,36 @@ export function AboutFirstSection({
   return (
     <div className="min-h-screen" ref={ref}>
       <div className="inline-block mt-10 w-full">
-        <div className="mx-24">
+        <div className="mx-5 md:mx-24">
           <SolaceStatsSection />
-          <section className="mt-[93px]">
+          <section className="mx-5 sm:mx-auto mt-20 md:mt-[93px]">
             <article className="max-w-3xl flex flex-col gap-5">
-              <h1 className="text-[64px] leading-[70.4px] font-title font-bold">
-                We invent the future of DeFi insurance
+              <h1 className="text-[28px] md:text-[64px] leading-[33.6px] md:leading-[70.4px] font-title font-bold">
+                DeFi is a Journey.
+                <br />
+                Focus on Yields.
               </h1>
-              <p className="text-xl leading-8 max-w-[613px]">
-                Protect your funds against smart-contracts exploits across 180+ protocols with an
-                intelligent single policy that automatically adjusts premium to changes in your
-                positions.
+              <p className="text-base md:text-xl leading-[25.6px] md:leading-8 max-w-[618px]">
+                Insure your funds against smart contract exploits across 180+ protocols with a
+                personalized single policy that dynamically updates as your portfolio changes
               </p>
             </article>
           </section>
-          <section className="flex gap-10 mt-24">
+          <section className="flex md:items-start items-center flex-col md:flex-row gap-[18px] md:gap-10 mt-12.5 md:mt-24">
             {[
               {
                 title: 'Wallet coverage',
-                body: 'Get your funds covered with a distinguished protection',
+                body: "Learn about the undisputed advantages of Solace policy, only one you'll ever need",
                 url: '/about/cover',
               },
               {
                 title: '$SOLACE',
-                body: 'Learn how tokenomics architecture helps us build better insurance',
+                body: 'Understand how masterful tokenomics drive more value and utility for the investors',
                 url: '/about/tokenomics',
               },
               {
                 title: 'Staking',
-                body: 'Earn yield from underwriting activity and token distribution without risk',
+                body: 'Earn yield, without the risk of paying out claims. Protocol-owned funds cover those',
                 url: '/about/staking',
               },
             ].map(({ title, body, url }, i) => (

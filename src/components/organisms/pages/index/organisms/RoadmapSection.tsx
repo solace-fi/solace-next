@@ -73,8 +73,9 @@ export function RoadmapSection({
   // }, [isVisible, scroller, ref])
   return (
     <div
-      className="hidden sm:flex flex-col items-stretch px-10 sm:px-36 first-letter:bg-dark max-w-7xl min-h-screen"
+      className="hidden sm:flex flex-col items-stretch justify-center px-10 sm:px-36 first-letter:bg-dark max-w-7xl min-h-screen"
       ref={ref}
+      id="roadmap"
     >
       <SectionTitle>
         <div className="font-bold">Roadmap</div>
