@@ -111,7 +111,7 @@ export default function Tokenomics() {
                 <>
                   Polygon: <br />
                   <a
-                    href="https://discord.com/channels/@me/918588744402096178/964625355472269372"
+                    href="https://app.uniswap.org/#/swap?chain=polygon&inputCurrency=0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40"
                     target={'_blank'}
                     rel="noreferrer"
                   >
@@ -125,7 +125,7 @@ export default function Tokenomics() {
                 <>
                   Aurora: <br />
                   <a
-                    href="https://discord.com/channels/@me/918588744402096178/964625355472269372"
+                    href="https://www.trisolaris.io/#/swap?inputCurrency=0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40"
                     target={'_blank'}
                     rel="noreferrer"
                   >
