@@ -199,7 +199,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
           </Link>
           <div className="flex justify-between w-full mt-2.5">
             <a
-              href="https://discord.com/channels/@me/918588744402096178/964626220476162189"
+              href="https://discord.gg/XKrQgwAjBa"
               className="block font-normal hover:underline underline-offset-2"
             >
               <DiscordIcon className="h-4 w-4" />
