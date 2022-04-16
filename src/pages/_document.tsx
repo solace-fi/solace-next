@@ -23,8 +23,7 @@ export default function Document() {
           rel="stylesheet"
         />
         <meta charSet="utf-8" />
-        <link rel="shortcut icon" type="image/png" href="%PUBLIC_URL%/favicon.ico" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="DeFi coverage protecting your capital" />
         <meta
@@ -35,7 +34,7 @@ export default function Document() {
         <meta property="og:url" content="https://app.solace.fi/" />
         <meta property="og:title" content="solace° • Decentralized Coverage Protocol" />
         <meta property="og:description" content="DeFi coverage protecting your capital" />
-        <meta property="og:image" content="%PUBLIC_URL%/images/sharing.png" />
+        <meta property="og:image" content="/images/sharing.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="twitter:card" content="summary_large_image" />
@@ -43,7 +42,7 @@ export default function Document() {
         <meta property="twitter:url" content="https://app.solace.fi/" />
         <meta property="twitter:title" content="solace° • Decentralized Coverage Protocol" />
         <meta property="twitter:description" content="DeFi coverage protecting your capital" />
-        <meta property="twitter:image" content="%PUBLIC_URL%/images/sharing.png"></meta>
+        <meta property="twitter:image" content="/images/sharing.png"></meta>
       </Head>
       <body>
         <Main /> <NextScript />

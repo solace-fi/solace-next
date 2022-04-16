@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <Head>
         <title>solace° • Decentralized Coverage Protocol</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <div className="text-light bg-light relative overflow-x-hidden scroll-smooth">
         <Component {...pageProps} />
