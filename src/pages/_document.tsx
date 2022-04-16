@@ -5,8 +5,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
-        <title>solace° • Decentralized Coverage Protocol</title>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GID}`} />
         <script
           dangerouslySetInnerHTML={{
@@ -26,7 +24,6 @@ export default function Document() {
         />
         <meta charSet="utf-8" />
         <link rel="shortcut icon" type="image/png" href="%PUBLIC_URL%/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="DeFi coverage protecting your capital" />
