@@ -31,7 +31,7 @@ export default function Document() {
           content="Ethereum, Solace, DeFi, Stablecoin, Protocol, Decentralized, Finance, Uniswap, Yearn, Aave, Compound, Curve, Sushiswap, Coverage, Crypto, Solace Finance, Solace Protocol"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://app.solace.fi/" />
+        <meta property="og:url" content="https://solace.fi/" />
         <meta property="og:title" content="solace° • Decentralized Coverage Protocol" />
         <meta property="og:description" content="DeFi coverage protecting your capital" />
         <meta property="og:image" content="/images/sharing.png" />
@@ -39,7 +39,7 @@ export default function Document() {
         <meta property="og:image:height" content="630" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@SolaceFi" />
-        <meta property="twitter:url" content="https://app.solace.fi/" />
+        <meta property="twitter:url" content="https://solace.fi/" />
         <meta property="twitter:title" content="solace° • Decentralized Coverage Protocol" />
         <meta property="twitter:description" content="DeFi coverage protecting your capital" />
         <meta property="twitter:image" content="/images/sharing.png"></meta>

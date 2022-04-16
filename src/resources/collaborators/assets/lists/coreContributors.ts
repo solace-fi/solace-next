@@ -2,7 +2,7 @@ import getPeopleFromString from '../../getPeopleFromString'
 
 const teamStr = `Nikita Buzov
 Founder
-@NikitaBuzovEth
+@0xNlKlTA
 
 Matt Ladin
 COO
@@ -39,7 +39,7 @@ Smart Contracts
 @ssozuer
 
 Kevin McDonald
-Research and Risk Assessment
+Product
 @i001962
 
 Sebastian Chacon
