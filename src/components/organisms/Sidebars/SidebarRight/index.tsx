@@ -28,7 +28,7 @@ export default function SidebarRight() {
 
             {/* text */}
             <a
-              href="https://app.solace.fi/?connect-wallet=true"
+              href="https://app.solace.fi/cover?connect-wallet=true"
               className="text-sm mr-4 mb-4 mt-4 font-bold"
             >
               Connect Wallet
