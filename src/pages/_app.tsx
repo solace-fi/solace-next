@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
@@ -21,9 +22,14 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     }
   }, [router.events])
   return (
-    <div className="text-light bg-light relative overflow-x-hidden scroll-smooth">
-      <Component {...pageProps} />
-    </div>
+    <>
+      <Head>
+        <title>solace° • Decentralized Coverage Protocol</title>
+      </Head>
+      <div className="text-light bg-light relative overflow-x-hidden scroll-smooth">
+        <Component {...pageProps} />
+      </div>
+    </>
   )
 }
 
