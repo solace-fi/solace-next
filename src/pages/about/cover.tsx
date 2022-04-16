@@ -12,7 +12,7 @@ import Link from 'next/link'
 
 export default function Cover() {
   const mainTitle = 'Wallet Coverage'
-  const subtitle = 'Coverage that providers a better experience at every stage.'
+  const subtitle = 'Coverage that provides a better experience at every stage.'
   const cards = [
     {
       title: 'Instant quote',
