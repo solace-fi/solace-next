@@ -192,7 +192,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
           >
             Help & Support
           </a>
-          <Link href="https://app.solace.fi/terms/">
+          <Link href="https://app.solace.fi/terms">
             <a className="block font-normal hover:underline underline-offset-2">
               Terms & Conditions
             </a>
