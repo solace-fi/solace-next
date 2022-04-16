@@ -35,22 +35,22 @@ const sidebarContent = [
       },
     ],
   },
-  {
-    // products -> coverage, bonding, staking
-    title: 'Governance',
-    children: [
-      {
-        title: 'Token',
-        link: 'https://etherscan.io/token/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
-        type: 'external',
-      },
-      {
-        title: 'DAO',
-        link: 'https://forum.solace.fi/',
-        type: 'external',
-      },
-    ],
-  },
+  // {
+  //   // products -> coverage, bonding, staking
+  //   title: 'Governance',
+  //   children: [
+  //     {
+  //       title: 'Token',
+  //       link: 'https://etherscan.io/token/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
+  //       type: 'external',
+  //     },
+  //     {
+  //       title: 'DAO',
+  //       link: 'https://forum.solace.fi/',
+  //       type: 'external',
+  //     },
+  //   ],
+  // },
   {
     // developers: docs, sdk
     title: 'Developers',
