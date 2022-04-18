@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-const GID = process.env.GOOGLE_ANALYTICS_ID as string
+const GID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID as string
 
 export default function Document() {
   return (
@@ -12,7 +12,7 @@ export default function Document() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GID}', { page_path: window.location.pathname });
+            gtag('config', '${GID}', { page_title: window.location.pathname , page_path: window.location.pathname });
           `,
           }}
         />
