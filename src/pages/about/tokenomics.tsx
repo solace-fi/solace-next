@@ -18,8 +18,6 @@ export default function Tokenomics() {
     {
       title: 'No underwriting risk',
       text: 'Solace raises underwriting capital through bonds, where users exchange their capital for vesting $SOLACE tokens at a discount. This decouples the underwriting risk from stakers, so they don’t need to worry about their capital being liquidated after an exploit.',
-      linkText: 'Learn more about staking',
-      linkUrl: '/about/staking',
     },
     {
       title: 'Token value',
@@ -37,6 +35,8 @@ export default function Tokenomics() {
     {
       title: 'Yield and governance',
       text: 'Holders are able to stake and lock $SOLACE to access rewards and governance rights , benefiting from the underwriting activity and token emissions. Learn more about staking here.',
+      linkText: 'Learn more about staking',
+      linkUrl: '/about/staking',
     },
   ].map(({ title, text, linkText, linkUrl }, i) => (
     <DescriptionCard title={title} text={text} linkText={linkText} linkUrl={linkUrl} key={i} />
