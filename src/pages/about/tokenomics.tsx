@@ -23,8 +23,8 @@ export default function Tokenomics() {
       title: 'Token value',
       text: (
         <>
-          $$SOLACE facilitates two primary functions. First and foremost, it is a mean of payment
-          for insurance. Although we do allow policyholders to use stablecoins, those ultimately get
+          $SOLACE facilitates two primary functions. First and foremost, it is a mean of payment for
+          insurance. Although we do allow policyholders to use stablecoins, those ultimately get
           traded for $SOLACE. Second, $SOLACE can be staked or locked to receive a share of the
           revenue that the protocol generates and partake in the governance of Solace. Ultimately,
           the value generated for investors is derived from Solace’s cashflows, success as an
