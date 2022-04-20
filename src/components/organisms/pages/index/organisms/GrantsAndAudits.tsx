@@ -15,6 +15,7 @@ import PolygonLogo from '@/resources/svgx/grants/PolygonLogo'
 import NearLogo from '@/resources/svgx/grants/NearLogo'
 import HackenLogo from '@/resources/svgx/audits/HackenLogo'
 import QuantstampLogo from '@/resources/svgx/audits/QuantstampLogo'
+import Link from 'next/link'
 
 export function GrantsAndAudits({
   useScrollingRef,
@@ -55,8 +56,14 @@ export function GrantsAndAudits({
           </div>
           <div className="flex flex-col gap-[25.73px]">
             {/* 2 divs, each width 277.82 px and height 31.62 px */}
-            <HackenLogo className="w-[277.82px]" />
-            <QuantstampLogo className="w-[277.82px]" />
+            <a href="https://hacken.io/audits/#solace" target="_blank" rel="noopener noreferrer">
+              <HackenLogo className="w-[277.82px]" />
+            </a>
+            <Link href="/files/Solace-Quantstamp-Report.pdf" passHref>
+              <a>
+                <QuantstampLogo className="w-[277.82px]" />
+              </a>
+            </Link>
             {/* <OwnImage src={HackenLogo} alt="Hacken" width="279px" className="" />
             <OwnImage src={QuantstampLogo} alt="Polygon" width="279px" className="" /> */}
             {/* <div className="h-[31.62px] w-[277.82px] bg-blue"></div>
