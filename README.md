@@ -10,7 +10,7 @@ yarn dev
 
 ## To build and deploy
 
-**If this project is hosted on vercel, deploying to github will deploy the project.**
+**If this project is hosted on vercel, deploying to github will deploy the project. Remember to add environment variables to Vercel for production builds.**
 
 Otherwise, the required commands are as follows:
 
