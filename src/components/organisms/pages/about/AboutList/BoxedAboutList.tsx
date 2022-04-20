@@ -5,11 +5,13 @@ export default function BoxedAboutList({
   identifier,
   bulletType,
   textType,
+  textSize,
 }: {
   items: string[] | JSX.Element[]
   identifier: string
   bulletType: 'white' | 'techy'
   textType: 'dark' | 'white' | 'techy'
+  textSize: 'small' | 'large'
 }) {
   return (
     <ul className="gap-8 flex flex-col ">
@@ -20,6 +22,7 @@ export default function BoxedAboutList({
           key={identifier}
           bulletType={bulletType}
           textType={textType}
+          textSize={textSize}
         />
       ))}
     </ul>

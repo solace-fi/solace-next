@@ -79,6 +79,7 @@ export default function Tokenomics() {
               bulletType="white"
               identifier="bonds"
               textType="white"
+              textSize={'small'}
               items={[
                 'Connect your wallet',
                 'Choose the token you would like to purchase a bond with, and click Bond.',
@@ -93,6 +94,7 @@ export default function Tokenomics() {
               bulletType="techy"
               identifier="market"
               textType="dark"
+              textSize={'small'}
               items={[
                 <>
                   Ethereum: <br />
