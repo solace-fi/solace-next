@@ -75,6 +75,9 @@ export default function Tokenomics() {
         <section className="grid md:grid-cols-2 gap-7.5 mt-12.5">
           {/* techy bg box */}
           <div className="bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-std shadow-std p-9">
+            <h2 className="text-4xl font-title mb-9 mr-6 text-light">
+              Purchase $SOLACE <strong className="font-bold">via bonds:</strong>
+            </h2>
             <BoxedAboutList
               bulletType="white"
               identifier="bonds"
@@ -90,6 +93,11 @@ export default function Tokenomics() {
           </div>
           {/* white bg box */}
           <div className="bg-white rounded-std shadow-std p-9">
+            <h3 className="text-4xl font-title mb-9 mr-6">
+              <TechyGradientText>
+                Purchase $SOLACE <strong className="font-bold">on the open market:</strong>
+              </TechyGradientText>
+            </h3>
             <BoxedAboutList
               bulletType="techy"
               identifier="market"
