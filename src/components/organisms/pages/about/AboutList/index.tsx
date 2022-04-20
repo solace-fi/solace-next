@@ -10,6 +10,7 @@ export default function AboutList({ items }: { items: string[] }) {
           key={text + String(i)}
           bulletType={'techy'}
           textType={'techy'}
+          textSize={'large'}
         />
       ))}
     </ul>
