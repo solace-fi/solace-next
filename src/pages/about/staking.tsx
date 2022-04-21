@@ -78,7 +78,7 @@ export default function Staking() {
                 className="hover:brightness-95 duration-300 grow-0 shrink-0"
               />
             </a>
-            <Link href="https://docs.solace.fi/docs/overview/faq/cover-products" passHref>
+            <Link href="https://docs.solace.fi/docs/user-guides/stake" passHref>
               <a className="flex w-full justify-center">
                 <div className="flex items-center duration-300 uppercase text-blue text-sm font-bold group">
                   <div>READ more ABOUT STAKING $SOLACE</div>{' '}

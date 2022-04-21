@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-const GID = process.env.GOOGLE_ANALYTICS_ID as string
+const GID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string
 
 export default function Document() {
   return (
@@ -12,10 +12,39 @@ export default function Document() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GID}', { page_path: window.location.pathname });
+            gtag('config', '${GID}', { page_title: window.location.pathname , page_path: window.location.pathname });
           `,
           }}
         />
+        {/* <!-- Twitter universal website tag code --> */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            !function(e,t,n,s,u,a)
+              {e.twq ||
+                ((s = e.twq =
+                  function () {
+                    s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments)
+                  }),
+                (s.version = '1.1'),
+                (s.queue = []),
+                (u = t.createElement(n)),
+                (u.async = !0),
+                (u.src = '//static.ads-twitter.com/uwt.js'),
+                (a = t.getElementsByTagName(n)[0]),
+                a.parentNode.insertBefore(u, a))}
+              (window,document,'script'); // Insert Twitter Pixel ID and Standard Event data below
+              twq('init','o84sx'); twq('track','PageView');
+            `,
+          }}
+        />
+        <script>
+          {`
+          
+          `}
+        </script>
+
+        {/* <!-- End Twitter universal website tag code --> */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="crossorigin" />
         <link

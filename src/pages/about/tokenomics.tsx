@@ -18,25 +18,25 @@ export default function Tokenomics() {
     {
       title: 'No underwriting risk',
       text: 'Solace raises underwriting capital through bonds, where users exchange their capital for vesting $SOLACE tokens at a discount. This decouples the underwriting risk from stakers, so they don’t need to worry about their capital being liquidated after an exploit.',
-      linkText: 'Learn more about staking',
-      linkUrl: '/about/staking',
     },
     {
       title: 'Token value',
       text: (
         <>
-          $SOLACE is a market-driven token. It derives value from the protocol’s growth, success as
-          an underwriter, and the DAO’s balance sheet.
-          <br />
-          <br />
-          Solace drives utility and establishes demand through staking and offering insurance.
-          Accrued policy premiums are collected and used to buy back $SOLACE on the open market.
+          $SOLACE facilitates two primary functions. First and foremost, it is a mean of payment for
+          insurance. Although we do allow policyholders to use stablecoins, those ultimately get
+          traded for $SOLACE. Second, $SOLACE can be staked or locked to receive a share of the
+          revenue that the protocol generates and partake in the governance of Solace. Ultimately,
+          the value generated for investors is derived from Solace’s cashflows, success as an
+          underwriter, and the DAO’s balance sheet.
         </>
       ),
     },
     {
       title: 'Yield and governance',
       text: 'Holders are able to stake and lock $SOLACE to access rewards and governance rights , benefiting from the underwriting activity and token emissions. Learn more about staking here.',
+      linkText: 'Learn more about staking',
+      linkUrl: '/about/staking',
     },
   ].map(({ title, text, linkText, linkUrl }, i) => (
     <DescriptionCard title={title} text={text} linkText={linkText} linkUrl={linkUrl} key={i} />
@@ -75,10 +75,14 @@ export default function Tokenomics() {
         <section className="grid md:grid-cols-2 gap-7.5 mt-12.5">
           {/* techy bg box */}
           <div className="bg-gradient-to-br from-techyGradientA to-techyGradientB rounded-std shadow-std p-9">
+            <h2 className="text-4xl font-title mb-9 mr-6 text-light">
+              Purchase $SOLACE <strong className="font-bold">via bonds:</strong>
+            </h2>
             <BoxedAboutList
               bulletType="white"
               identifier="bonds"
               textType="white"
+              textSize={'small'}
               items={[
                 'Connect your wallet',
                 'Choose the token you would like to purchase a bond with, and click Bond.',
@@ -89,10 +93,16 @@ export default function Tokenomics() {
           </div>
           {/* white bg box */}
           <div className="bg-white rounded-std shadow-std p-9">
+            <h3 className="text-4xl font-title mb-9 mr-6">
+              <TechyGradientText>
+                Purchase $SOLACE <strong className="font-bold">on the open market:</strong>
+              </TechyGradientText>
+            </h3>
             <BoxedAboutList
               bulletType="techy"
               identifier="market"
               textType="dark"
+              textSize={'small'}
               items={[
                 <>
                   Ethereum: <br />
