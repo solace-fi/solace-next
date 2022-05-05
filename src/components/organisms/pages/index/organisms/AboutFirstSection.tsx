@@ -1,8 +1,6 @@
 import React, { useEffect, useState /* , { RefObject, useEffect, useMemo } */ } from 'react'
 import GlassCard from '../GlassCard'
-import { Lock, UnderwritingPoolUSDBalances, Coverage } from '@solace-fi/sdk-nightly'
 import { truncateValue } from '@/utils'
-import { formatUnits } from '@ethersproject/units'
 // import { Flex } from '../../../../components/atoms/Layout'
 // import { Text } from '../../../../components/atoms/Typography'
 // import { useWindowDimensions } from '../../../../hooks/internal/useWindowDimensions'
