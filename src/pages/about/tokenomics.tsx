@@ -25,16 +25,19 @@ export default function Tokenomics() {
         <>
           $SOLACE facilitates two primary functions. First and foremost, it is a mean of payment for
           insurance. Although we do allow policyholders to use stablecoins, those ultimately get
-          traded for $SOLACE. Second, $SOLACE can be staked or locked to receive a share of the
-          revenue that the protocol generates and partake in the governance of Solace. Ultimately,
-          the value generated for investors is derived from Solace’s cashflows, success as an
-          underwriter, and the DAO’s balance sheet.
+          traded for $SOLACE.
+          <br />
+          <br />
+          Second, $SOLACE can be staked or locked to receive a share of the revenue that the
+          protocol generates and partake in the governance of Solace. Ultimately, the value
+          generated for investors is derived from Solace’s cashflows, success as an underwriter, and
+          the DAO’s balance sheet.
         </>
       ),
     },
     {
       title: 'Yield and governance',
-      text: 'Holders are able to stake and lock $SOLACE to access rewards and governance rights , benefiting from the underwriting activity and token emissions. Learn more about staking here.',
+      text: 'Holders are able to stake and lock $SOLACE to access rewards and governance rights , benefiting from the underwriting activity and token emissions.',
       linkText: 'Learn more about staking',
       linkUrl: '/about/staking',
     },

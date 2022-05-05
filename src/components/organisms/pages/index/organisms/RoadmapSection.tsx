@@ -14,7 +14,7 @@ function ProgressBar() {
           grid-column: span 4 / span 4;
         }
       `}</style>
-      <div className="content h-1 w-1/2 rounded-full bg-light" />
+      <div className="content h-1 w-3/4 rounded-full bg-light" />
     </div>
   )
 }

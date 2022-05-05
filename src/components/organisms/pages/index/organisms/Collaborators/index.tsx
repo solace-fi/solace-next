@@ -5,7 +5,10 @@ import Image from 'next/image'
 import { Collective, Person } from '@/resources/collaborators/types'
 import { SectionTitle } from '../../molecules/SectionTitle'
 import collectiveInvestors from '@/resources/collaborators/assets/lists/collectiveInvestors'
-import coreContributors from '@/resources/collaborators/assets/lists/coreContributors'
+import coreContributorsJson from '@/resources/collaborators/assets/lists/coreContributorsJson'
+import DiscordIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Discord'
+import TelegramIcon from '@/resources/svgx/Telegram'
+import TwitterIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Twitter'
 
 const { pfpdAdvisors, pfpdIndividualInvestors } = peeps
 const advisors = pfpdAdvisors
@@ -20,7 +23,7 @@ function ProfilePic({ src, alt }: { src: string; alt: string }): JSX.Element {
   )
 }
 
-export function TeamMemberComponent({
+export function InvestorOrAdvisorComponent({
   name,
   role,
   twitterUsername,
@@ -37,17 +40,85 @@ export function TeamMemberComponent({
     // <Flex gap={10}>
     <div className="flex gap-2.5">
       {profilePic ? <ProfilePic src={profilePic} alt={name} /> : null}
-      <div className="flex flex-col gap-[3px]">
-        <div className="font-bold font-title leading-[1.2] text-xl">{name}</div>
-        <div className="text-sm"></div>
+      <div className="flex flex-col">
+        <div className="font-bold font-title leading-[19.5px] text-base">{name}</div>
+        <div className="text-sm leading-[19.07px]"></div>
         {role}
         {twitterUsername && (
-          <div className="text-xs underline mt-[3px]">
+          <div className="text-xs underline mt-[5px]">
             <a href={twitterUrl} target="_blank" rel="noreferrer">
               {atUsername}
             </a>
           </div>
         )}
+      </div>
+    </div>
+  )
+}
+
+export function TeamMemberComponent({
+  name,
+  role,
+  twitterUsername,
+  profilePic,
+  discordUrl,
+  telegramUrl: telegramUrl,
+}: {
+  name: string
+  role: string
+  twitterUsername?: string
+  profilePic?: string
+  discordUrl?: string
+  telegramUrl?: string
+}): JSX.Element {
+  const twitterUrl = twitterUsername && `https://twitter.com/${twitterUsername}`
+  // const atUsername = twitterUsername && `@${twitterUsername}`
+
+  // DiscordIcon
+  // TelegramIcon
+  // TwitterIcon
+  const discordIcon = discordUrl ? (
+    <a href={discordUrl} target="_blank" rel="noreferrer">
+      {/* <Image src="/static/images/discord-icon.svg" alt="Discord" /> */}
+      {/* <div className="h-4 w-4 bg-white rounded-full shrink-0 grow-0" /> */}
+      <DiscordIcon className="h-4 w-4" />
+    </a>
+  ) : null
+
+  const telegramIcon = telegramUrl ? (
+    <a href={`${telegramUrl}`} target="_blank" rel="noreferrer">
+      <TelegramIcon className="h-4 w-4" />
+    </a>
+  ) : null
+
+  const twitterIcon = twitterUsername ? (
+    <a href={twitterUrl} target="_blank" rel="noreferrer">
+      <TwitterIcon className="h-4 w-4" />
+    </a>
+  ) : null
+
+  // console.log({ discordUrl, twitterUrl, telegramUrl })
+
+  return (
+    // <Flex gap={10}>
+    <div className="flex gap-2.5">
+      {profilePic ? <ProfilePic src={profilePic} alt={name} /> : null}
+      <div className="flex flex-col">
+        <div className="font-bold font-title leading-[22px] text-lg">{name}</div>
+        <div className="text-base leading-[21.79px]"></div>
+        {role}
+        {/* {twitterUsername && (
+          <div className="text-xs underline mt-[3px]">
+            <a href={twitterUrl} target="_blank" rel="noreferrer">
+              {atUsername}
+            </a>
+          </div>
+        )} */}
+        <div className="mt-[10px] flex h-4 w-full gap-2">
+          {twitterIcon}
+          {discordIcon}
+          {telegramIcon}
+        </div>
       </div>
     </div>
   )
@@ -113,7 +184,7 @@ export function ListOfPeople({
   item: 'investors' | 'advisors' | 'coreContributors'
 }): JSX.Element {
   const reactTeam = peopleList.map(({ name, role, twitter, profilePic }) => (
-    <TeamMemberComponent
+    <InvestorOrAdvisorComponent
       key={name}
       name={name}
       role={role}
@@ -211,12 +282,11 @@ export function Advisors({
   )
 }
 
-export function CoreContributors({
-  // sectionRef: ref,
-  // getScrollerForThisRef,
-  // isVisible,
-  useScrollingRef,
-}: {
+export function CoreContributors({}: // // sectionRef: ref,
+// // getScrollerForThisRef,
+// // isVisible,
+// useScrollingRef,
+{
   useScrollingRef: () => React.MutableRefObject<HTMLDivElement | null>
   // sectionRef?: React.Ref<HTMLDivElement>
   // getScrollerForThisRef?: (
@@ -224,7 +294,7 @@ export function CoreContributors({
   // ) => () => void
   // isVisible?: boolean
 }): JSX.Element {
-  const ref = useScrollingRef()
+  // const ref = useScrollingRef()
   // const scroller = useMemo(
   //   () => (ref && getScrollerForThisRef ? getScrollerForThisRef(ref) : () => console.log('no ref')),
   //   [ref, getScrollerForThisRef]
@@ -233,14 +303,62 @@ export function CoreContributors({
   //   if (isVisible) scroller()
   // }, [isVisible, scroller, ref])
 
-  return (
-    <ListOfPeople
-      sectionRef={ref}
-      peopleList={coreContributors}
-      title="Core contributors"
-      // mobileColumns={1}
-      // desktopColumns={3}
-      item={'coreContributors'}
+  const team = coreContributorsJson
+  // const user1 = team[0]
+  // const userElement = (
+  //   <TeamMemberComponent
+  //     name={user1.name}
+  //     role={user1.role}
+  //     twitterUsername={user1.twitter.split('https://twitter.com/')[1]}
+  //     discordUrl={user1.discord.split('\n\n')[1]}
+  //     // discordUsername={user1.discord.split('\n\n')[0]}
+  //     telegramUrl={user1.telegram}
+  //   />
+  // )
+
+  const allUserElements = team.map(({ name, role, twitter, discord, telegram }) => (
+    <TeamMemberComponent
+      key={name}
+      name={name}
+      role={role}
+      twitterUsername={twitter.split('https://twitter.com/')[1]}
+      discordUrl={discord.split('\n\n')[1]}
+      // discordUsername={discord.split('\n\n')[0]}
+      telegramUrl={telegram}
     />
+  ))
+
+  return (
+    <div
+      className="flex flex-col items-stretch px-10 sm:px-36 gap-15 sm:gap-16 justify-center min-h-screen"
+      // ref={sectionRef}
+      id="core-contributors"
+    >
+      <SectionTitle>
+        <div className="font-bold">Core Contributors</div>
+      </SectionTitle>
+      <div className="flex flex-col sm:flex-row gap-7.5 sm:gap-[120px] mt-[10px]">
+        {/* {collectiveList && <ReactCollective collectiveList={collectiveList} />} */}
+        <div
+          className={`grid gap-x-[80px] gap-y-7.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`}
+        >
+          {allUserElements}
+        </div>
+      </div>
+    </div>
+    // <>
+    //   <ListOfPeople
+    //     sectionRef={ref}
+    //     peopleList={coreContributors}
+    //     title="Core contributors"
+    //     // mobileColumns={1}
+    //     // desktopColumns={3}
+    //     item={'coreContributors'}
+    //   />
+    //   <div className="ml-36">
+    //     <SectionTitle>I WILL UNITE</SectionTitle>
+    //     {userElement}
+    //   </div>
+    // </>
   )
 }
