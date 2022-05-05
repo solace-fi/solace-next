@@ -90,7 +90,7 @@ function SolaceStatsSection() {
     <section className="hidden md:flex items-center gap-15 w-full justify-center pr-50" id="start">
       {[
         {
-          title: 'Global Stake',
+          title: 'Total Value Locked',
           amount: globalStake,
           unit: 'SOLACE',
         },

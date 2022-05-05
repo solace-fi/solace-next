@@ -16,7 +16,7 @@ export default function SidebarRight() {
       <section
         className={`fixed ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } right-0 top-0 flex flex-col w-[375px] bg-light h-screen transition-all duration-300 ease-out justify-between z-10`}
+        } right-0 top-0 flex flex-col w-[375px] bg-select h-screen transition-all duration-300 ease-out justify-between z-10`}
       >
         {/* header */}
         <div className="flex mt-5 mx-5 justify-between items-center">
