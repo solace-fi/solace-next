@@ -21,53 +21,72 @@ function SolaceStatsSection() {
   const [uwpSize, setUwpSize] = useState<string>('-')
   const [activeCoverLimit, setActiveCoverLimit] = useState<string>('-')
 
-  const getSolaceStats = async () => {
-    const lock = new Lock()
-    const uwpUSD = new UnderwritingPoolUSDBalances()
-    const coverage1 = new Coverage(1)
-    const coverage137 = new Coverage(137)
-
-    const [
-      mainnetGlobalLockStats,
-      polygonGlobalLockStats,
-      auroraGlobalLockStats,
-      uwpUSDSize,
-      mainnetCoverLimit,
-      polygonCoverLimit,
-    ] = await Promise.all([
-      lock.getGlobalLockStats(1),
-      lock.getGlobalLockStats(137),
-      lock.getGlobalLockStats(1313161554),
-      uwpUSD.getUSDBalances_All(),
-      coverage1.activeCoverLimit(),
-      coverage137.activeCoverLimit(),
-    ])
-
-    const numberifiedSolaceStaked =
-      parseFloat(mainnetGlobalLockStats.solaceStaked) +
-      parseFloat(polygonGlobalLockStats.solaceStaked) +
-      parseFloat(auroraGlobalLockStats.solaceStaked)
-    setGlobalStake(truncateValue(numberifiedSolaceStaked.toString(), 2))
-
-    const numberifiedApr =
-      parseFloat(mainnetGlobalLockStats.apr) +
-      parseFloat(polygonGlobalLockStats.apr) +
-      parseFloat(auroraGlobalLockStats.apr)
-    setGlobalAverageApr(truncateValue(parseInt((numberifiedApr / 3).toString()), 2))
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const uwpUSDTotal: number = uwpUSDSize.total
-
-    setUwpSize(truncateValue(uwpUSDTotal, 2))
-
-    const totalCoverLimit = mainnetCoverLimit.add(polygonCoverLimit)
-    setActiveCoverLimit(truncateValue(formatUnits(totalCoverLimit, 18), 2))
-  }
-
+  // let's get stats from here: https://stats.solace.fi/fs?f=frontend-stats.json
+  // sample response: {"globalStakedSolace":"13490567.284672529","averageStakingAPR":"278","uwp":5116397.743521584,"coverLimit":331453.6961276553}
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    getSolaceStats()
+    const fetchStats = async () => {
+      const response = await fetch('https://stats.solace.fi/fs?f=frontend-stats.json')
+      const json = (await response.json()) as {
+        globalStakedSolace: string
+        averageStakingAPR: string
+        uwp: string
+        coverLimit: string
+      }
+      setGlobalStake(truncateValue(json.globalStakedSolace))
+      setGlobalAverageApr(truncateValue(json.averageStakingAPR))
+      setUwpSize(truncateValue(json.uwp))
+      setActiveCoverLimit(truncateValue(json.coverLimit))
+    }
+    fetchStats().catch(console.error)
   }, [])
+
+  // const getSolaceStats = async () => {
+  //   const lock = new Lock()
+  //   const uwpUSD = new UnderwritingPoolUSDBalances()
+  //   const coverage1 = new Coverage(1)
+  //   const coverage137 = new Coverage(137)
+
+  //   const [
+  //     mainnetGlobalLockStats,
+  //     polygonGlobalLockStats,
+  //     auroraGlobalLockStats,
+  //     uwpUSDSize,
+  //     mainnetCoverLimit,
+  //     polygonCoverLimit,
+  //   ] = await Promise.all([
+  //     lock.getGlobalLockStats(1),
+  //     lock.getGlobalLockStats(137),
+  //     lock.getGlobalLockStats(1313161554),
+  //     uwpUSD.getUSDBalances_All(),
+  //     coverage1.activeCoverLimit(),
+  //     coverage137.activeCoverLimit(),
+  //   ])
+
+  //   const numberifiedSolaceStaked =
+  //     parseFloat(mainnetGlobalLockStats.solaceStaked) +
+  //     parseFloat(polygonGlobalLockStats.solaceStaked) +
+  //     parseFloat(auroraGlobalLockStats.solaceStaked)
+  //   setGlobalStake(truncateValue(numberifiedSolaceStaked.toString(), 2))
+
+  //   const numberifiedApr =
+  //     parseFloat(mainnetGlobalLockStats.apr) +
+  //     parseFloat(polygonGlobalLockStats.apr) +
+  //     parseFloat(auroraGlobalLockStats.apr)
+  //   setGlobalAverageApr(truncateValue(parseInt((numberifiedApr / 3).toString()), 2))
+
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  //   const uwpUSDTotal: number = uwpUSDSize.total
+
+  //   setUwpSize(truncateValue(uwpUSDTotal, 2))
+
+  //   const totalCoverLimit = mainnetCoverLimit.add(polygonCoverLimit)
+  //   setActiveCoverLimit(truncateValue(formatUnits(totalCoverLimit, 18), 2))
+  // }
+
+  // useEffect(() => {
+  //   // eslint-disable-next-line @typescript-eslint/no-floating-promises
+  //   getSolaceStats()
+  // }, [])
 
   return (
     <section className="hidden md:flex items-center gap-15 w-full justify-center pr-50" id="start">

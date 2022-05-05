@@ -97,7 +97,7 @@ export function TeamMemberComponent({
     </a>
   ) : null
 
-  console.log({ discordUrl, twitterUrl, telegramUrl })
+  // console.log({ discordUrl, twitterUrl, telegramUrl })
 
   return (
     // <Flex gap={10}>
