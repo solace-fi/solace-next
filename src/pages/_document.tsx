@@ -1,7 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+// eslint-disable-next-line @next/next/no-script-in-document
 import Script from 'next/script'
 
-const GID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string
+// const GID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string
 
 export default function Document() {
   return (
