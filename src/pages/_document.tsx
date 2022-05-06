@@ -1,11 +1,13 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
+
 const GID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string
 
 export default function Document() {
   return (
     <Html>
       <Head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GID}`} />
+        {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=${GID}`} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -15,7 +17,27 @@ export default function Document() {
             gtag('config', '${GID}', { page_title: window.location.pathname , page_path: window.location.pathname });
           `,
           }}
+        /> */}
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XRDPNH8F33"
+          strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-XRDPNH8F33');`}
+        </Script>
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRDPNH8F33"></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-XRDPNH8F33');`}
+        </script> */}
         {/* <!-- Twitter universal website tag code --> */}
         <script
           dangerouslySetInnerHTML={{
