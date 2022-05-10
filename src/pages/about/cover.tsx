@@ -42,7 +42,7 @@ export default function Cover() {
   ].map(({ title, text }, i) => <DescriptionCard title={title} text={text} key={i} />)
   return (
     <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
-      <HeadTitle>Wallet Coverage</HeadTitle>
+      <HeadTitle>Coverage</HeadTitle>
       <article>
         <SecondSectionTitle className="mt-17.5">
           <TechyGradientText>How it works</TechyGradientText>{' '}
