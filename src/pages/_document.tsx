@@ -1,11 +1,12 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-const GID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string
+
+// const GID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string
 
 export default function Document() {
   return (
     <Html>
       <Head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GID}`} />
+        {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=${GID}`} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -15,7 +16,15 @@ export default function Document() {
             gtag('config', '${GID}', { page_title: window.location.pathname , page_path: window.location.pathname });
           `,
           }}
-        />
+        /> */}
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRDPNH8F33"></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-XRDPNH8F33');`}
+        </script> */}
         {/* <!-- Twitter universal website tag code --> */}
         <script
           dangerouslySetInnerHTML={{

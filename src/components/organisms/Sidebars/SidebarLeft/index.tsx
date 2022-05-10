@@ -214,7 +214,7 @@ function Bar({ isOpen }: { isOpen: boolean }) {
               href="https://github.com/solace-fi"
               className="block font-normal hover:underline underline-offset-2"
             >
-              <GithubIcon className="h-4 w-4" />
+              <GithubIcon className="h-4 w-4 opacity-80" />
             </a>
             <a
               href="https://medium.com/solace-fi"

@@ -37,7 +37,7 @@ export default function Tokenomics() {
     },
     {
       title: 'Yield and governance',
-      text: 'Holders are able to stake and lock $SOLACE to access rewards and governance rights , benefiting from the underwriting activity and token emissions. Learn more about staking here.',
+      text: 'Holders are able to stake and lock $SOLACE to access rewards and governance rights , benefiting from the underwriting activity and token emissions.',
       linkText: 'Learn more about staking',
       linkUrl: '/about/staking',
     },
