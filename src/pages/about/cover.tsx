@@ -42,6 +42,13 @@ export default function Cover() {
   return (
     <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
       <article>
+        {/* button */}
+        <ConnectWalletButton
+          className={classNames(
+            'mt-[71px]' // outer placement
+          )}
+          pathname="cover"
+        />
         <SecondSectionTitle className="mt-17.5">
           <TechyGradientText>How it works</TechyGradientText>{' '}
         </SecondSectionTitle>
@@ -59,14 +66,7 @@ export default function Cover() {
           <AboutList
             items={['Connect your wallet', 'Set a coverage limit', 'Top up your balance']}
           />
-          {/* button */}
-          <ConnectWalletButton
-            className={classNames(
-              'mt-[71px]', // outer placement
-              'place-self-center md:col-span-2' // grid placement
-            )}
-            pathname="cover"
-          />
+
           <div className="ml-auto mr-auto md:mr-0 md:ml-[60px] mt-15 md:-mt-5 cursor-pointer hover:scale-105 hover:saturate-200 duration-300 ease-in">
             <a href="https://youtu.be/meb8JXP8iYA" target="_blank" rel="noopener noreferrer">
               <HowToVideoCircle />
