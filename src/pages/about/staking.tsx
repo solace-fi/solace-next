@@ -9,6 +9,7 @@ import Image from 'next/image'
 import SecondSectionTitle from '@/components/organisms/pages/about/SecondSectionTitle'
 import SecondSectionSubtitle from '@/components/organisms/pages/about/SecondSectionSubtitle'
 import ConnectWalletButton from '@/components/organisms/pages/about/ConnectWalletButton'
+import HeadTitle from '@/components/atoms/HeadTitle'
 
 export default function Staking() {
   const mainTitle = 'Staking'
@@ -33,6 +34,7 @@ export default function Staking() {
   ].map(({ title, text }, i) => <DescriptionCard title={title} text={text} key={i} />)
   return (
     <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
+      <HeadTitle>Staking</HeadTitle>
       {/* button */}
       <div className="flex w-full justify-center">
         <ConnectWalletButton

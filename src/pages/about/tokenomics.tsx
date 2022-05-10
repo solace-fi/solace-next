@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import BoxedAboutList from '@/components/organisms/pages/about/AboutList/BoxedAboutList'
 import SecondSectionTitle from '@/components/organisms/pages/about/SecondSectionTitle'
 import ConnectWalletButton from '@/components/organisms/pages/about/ConnectWalletButton'
+import HeadTitle from '@/components/atoms/HeadTitle'
 
 export default function Tokenomics() {
   const mainTitle = '$SOLACE token'
@@ -46,6 +47,7 @@ export default function Tokenomics() {
   ))
   return (
     <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
+      <HeadTitle>Tokenomics</HeadTitle>
       {/* TOKENOIMICS BUTTON */}
       {/* <div className="mr-[200px]">
         <div

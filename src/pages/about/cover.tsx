@@ -1,3 +1,4 @@
+import HeadTitle from '@/components/atoms/HeadTitle'
 import TechyGradientText from '@/components/atoms/Typography/TechyGradientText'
 import AboutLayout from '@/components/organisms/pages/about/AboutLayout'
 import AboutList from '@/components/organisms/pages/about/AboutList'
@@ -41,6 +42,7 @@ export default function Cover() {
   ].map(({ title, text }, i) => <DescriptionCard title={title} text={text} key={i} />)
   return (
     <AboutLayout title={mainTitle} subtitle={subtitle} cards={cards}>
+      <HeadTitle>Wallet Coverage</HeadTitle>
       <article>
         <SecondSectionTitle className="mt-17.5">
           <TechyGradientText>How it works</TechyGradientText>{' '}
