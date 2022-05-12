@@ -81,19 +81,19 @@ export function TeamMemberComponent({
     <a href={discordUrl} target="_blank" rel="noreferrer">
       {/* <Image src="/static/images/discord-icon.svg" alt="Discord" /> */}
       {/* <div className="h-4 w-4 bg-white rounded-full shrink-0 grow-0" /> */}
-      <DiscordIcon className="h-4 w-4" />
+      <DiscordIcon className="h-4 w-4 opacity-80 hover:opacity-100" />
     </a>
   ) : null
 
   const telegramIcon = telegramUrl ? (
     <a href={`${telegramUrl}`} target="_blank" rel="noreferrer">
-      <TelegramIcon className="h-4 w-4" />
+      <TelegramIcon className="h-4 w-4 opacity-80 hover:opacity-100" />
     </a>
   ) : null
 
   const twitterIcon = twitterUsername ? (
     <a href={twitterUrl} target="_blank" rel="noreferrer">
-      <TwitterIcon className="h-4 w-4" />
+      <TwitterIcon className="h-4 w-4 opacity-80 hover:opacity-100" />
     </a>
   ) : null
 
@@ -114,7 +114,7 @@ export function TeamMemberComponent({
             </a>
           </div>
         )} */}
-        <div className="mt-[10px] flex h-4 w-full gap-2">
+        <div className="mt-[10px] flex h-4 w-full gap-2 text-light">
           {twitterIcon}
           {discordIcon}
           {telegramIcon}
