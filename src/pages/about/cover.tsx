@@ -45,12 +45,14 @@ export default function Cover() {
       <HeadTitle>Coverage</HeadTitle>
       <article>
         {/* button */}
-        <ConnectWalletButton
-          className={classNames(
-            'mt-[71px]' // outer placement
-          )}
-          pathname="cover"
-        />
+        <div className="w-full flex justify-center pr-0 md:pr-50">
+          <ConnectWalletButton
+            className={classNames(
+              'mt-[71px]' // outer placement
+            )}
+            pathname="cover"
+          />
+        </div>
         <SecondSectionTitle className="mt-17.5">
           <TechyGradientText>How it works</TechyGradientText>{' '}
         </SecondSectionTitle>
@@ -64,18 +66,18 @@ export default function Cover() {
               <div class="bg-gray-500 w-40 h-full row-span-2"></div>
             </div>
             */}
-        <div className="grid grid-flow-row md:grid-flow-col md:max-w-max mt-17.5 items-center mb-20">
+        <div className="grid grid-flow-row md:grid-flow-col md:max-w-full mt-17.5 items-center mb-20">
           <AboutList
             items={['Connect your wallet', 'Set a coverage limit', 'Top up your balance']}
           />
-
+          <div></div>
           <div className="ml-auto mr-auto md:mr-0 md:ml-[60px] mt-15 md:-mt-5 cursor-pointer hover:scale-105 hover:saturate-200 duration-300 ease-in">
             <a href="https://youtu.be/meb8JXP8iYA" target="_blank" rel="noopener noreferrer">
               <HowToVideoCircle />
             </a>
           </div>
           <div className="bg-blue rounded-full h-0.5 md:w-0.5 w-full md:h-full md:row-span-2 mt-15 md:mt-0 mx-0 md:mx-12 "></div>
-          <div className="w-[275px] h-full md:row-span-2 flex-col flex justify-between mt-6 md:mt-0 gap-8 mx-[41.5px] md:mx-0">
+          <div className="w-[275px] h-full md:row-span-2 flex-col flex justify-between mt-6 md:mt-0 gap-8 mx-[41.5px] md:mx-0 text-center">
             <h3 className="font-bold mx-[13.5px] md:mx-0">
               Wallet coverage protects your funds across 180+ protocols for the following:
             </h3>
@@ -88,7 +90,7 @@ export default function Cover() {
               <li>Re-entry attack</li>
             </ul>
             <Link href="https://docs.solace.fi/docs/overview/faq/cover-products" passHref>
-              <a className="flex items-center gap-2 hover:gap-4 duration-300 uppercase text-blue text-sm font-semibold ml-auto md:ml-0">
+              <a className="flex items-center gap-2 hover:gap-4 duration-300 uppercase text-blue text-sm font-semibold mx-auto md:ml-0">
                 <div>Learn more</div> <ArrowRightMd className="fill-blue w-5" />
               </a>
             </Link>
