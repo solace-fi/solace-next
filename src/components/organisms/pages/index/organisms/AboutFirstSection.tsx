@@ -28,7 +28,7 @@ function SolaceStatsSection() {
         uwp: string
         activePolicies: string
       }
-      setGlobalAverageApr(truncateValue(json.averageStakingAPR, 2))
+      setGlobalAverageApr(truncateValue(json.averageStakingAPR, 0))
       setUwpSize(truncateValue(json.uwp))
       setActivePolicies(truncateValue(json.activePolicies))
     }
