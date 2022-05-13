@@ -44,7 +44,7 @@ function SolaceStatsSection() {
         },
         {
           title: 'Active Policies',
-          amount: `$${activePolicies}`,
+          amount: `${activePolicies}`,
         },
         {
           title: 'Global Average APR',
