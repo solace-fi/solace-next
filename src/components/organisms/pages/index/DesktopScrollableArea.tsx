@@ -1,31 +1,31 @@
 // import VisibilitySensor from 'react-visibility-sensor'
-import React, { RefObject, useEffect } from 'react'
+import React from 'react'
 import { HomepageSectionsType } from './utils/useHomepageSections'
 
-function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element {
-  return (
-    <div className={/*"h-screen snap-y snap-mandatory scroll-smooth snapscroll" */ ''}>
-      <style jsx>{`
-        //.snapscroll {
-        //  scrollbar-width: none;
-        //}
-        //.snapscroll > * {
-        //  scroll-snap-align: start;
-        //  height: calc(100vh);
-        //}
-        //.snapscroll::-webkit-scrollbar {
-        //  width: 0; /* Remove scrollbar space */
-        //  background: transparent; /* Optional: just make scrollbar invisible */
-        //}
-      `}</style>
-      {children}
-    </div>
-  )
-}
+// function SnapScroll({ children }: { children: React.ReactNode[] }): JSX.Element {
+//   return (
+//     <div className={/*"h-screen snap-y snap-mandatory scroll-smooth snapscroll" */ ''}>
+//       <style jsx>{`
+//         //.snapscroll {
+//         //  scrollbar-width: none;
+//         //}
+//         //.snapscroll > * {
+//         //  scroll-snap-align: start;
+//         //  height: calc(100vh);
+//         //}
+//         //.snapscroll::-webkit-scrollbar {
+//         //  width: 0; /* Remove scrollbar space */
+//         //  background: transparent; /* Optional: just make scrollbar invisible */
+//         //}
+//       `}</style>
+//       {children}
+//     </div>
+//   )
+// }
 
 export default function DesktopScrollableArea({
-  visibleSection,
-  setVisibleSection,
+  // visibleSection,
+  // setVisibleSection,
   HomepageSections,
 }: {
   visibleSection: number
@@ -70,7 +70,7 @@ export default function DesktopScrollableArea({
 
   return (
     <>
-      {HomepageSections.map((Section, i) => (
+      {HomepageSections.map((Section) => (
         <Section.Section useScrollingRef={() => Section.ref} key={Section.key} />
       ))}
     </>
