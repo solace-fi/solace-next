@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   }
   return (
     <>
-      <GoogleAnalytics />
+      <GoogleAnalytics gaMeasurementId="G-XRDPNH8F33" />
       <Head>
         <title>solace° • Decentralized Coverage Protocol</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
