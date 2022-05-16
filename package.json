@@ -16,7 +16,7 @@
     "classnames": "^2.3.1",
     "eslint-config-airbnb-typescript": "^16.2.0",
     "next": "12.1.0",
-    "next-ga4": "^0.1.0",
+    "nextjs-google-analytics": "^1.2.0",
     "postcss": "^8.4.12",
     "react": "17.0.2",
     "react-dom": "17.0.2",

@@ -44,7 +44,7 @@ export default function GlassCard({
             <blockquote>{body}</blockquote>
           </article>
           <div className="w-full flex font-body justify-end font-bold">
-            <a
+            <div
               // href={url}
               className="flex items-center gap-2 group-hover:gap-[13px] group-hover:mr-[5px] ease-out duration-300 "
             >
@@ -52,7 +52,7 @@ export default function GlassCard({
               <div>LEARN MORE</div>{' '}
               {/* <Image src={ArrowRight} alt="Arrow pointing to the right" className="text-white" /> */}
               <ArrowRightMd className="fill-light" />
-            </a>
+            </div>
           </div>
         </div>
       </a>

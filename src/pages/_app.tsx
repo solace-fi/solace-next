@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { NextGA } from 'next-ga4'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 import '../styles/globals.css'
 
@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   }
   return (
     <>
-      <NextGA measurementId={(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string) || ''} />
+      <GoogleAnalytics />
       <Head>
         <title>solace° • Decentralized Coverage Protocol</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
