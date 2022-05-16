@@ -18,11 +18,11 @@ function SolaceStatsSection() {
   const [uwpSize, setUwpSize] = useState<string>('-')
   const [activePolicies, setActivePolicies] = useState<string>('-')
 
-  // let's get stats from here: https://stats.solace.fi/fs?f=frontend-stats.json
+  // let's get stats from here: https://stats-cache.solace.fi/frontend-stats.json
   // sample response: {"globalStakedSolace":"13490567.284672529","averageStakingAPR":"278","uwp":5116397.743521584,"coverLimit":331453.6961276553}
   useEffect(() => {
     const fetchStats = async () => {
-      const response = await fetch('https://stats.solace.fi/fs?f=frontend-stats.json')
+      const response = await fetch('https://stats-cache.solace.fi/frontend-stats.json')
       const json = (await response.json()) as {
         averageStakingAPR: string
         uwp: string
