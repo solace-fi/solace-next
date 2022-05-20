@@ -20,10 +20,17 @@ export default function GlassCard({
           (middleCard ? ' mt-0 md:-mt-5' : '')
         }
         style={{
-          backgroundImage: `url("/images/glass-card.svg")`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% 100%',
-          boxShadow: '0 5px 30px 0 rgb(0 0 0 / 0.03)',
+          background:
+            'radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.0447917) 77.08%, rgba(255, 255, 255, 0) 100%)',
+          border: '2px solid rgba(255, 255, 255, 0.20)',
+          borderRadius: '30px',
+          backdropFilter: 'blur(80px)',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.06)',
+          // -webkit-backdrop-filter: blur(20px),
+          // backgroundImage: `url("/images/glass-card.svg")`,
+          // backgroundRepeat: 'no-repeat',
+          // backgroundSize: '100% 100%',
+          // boxShadow: '0 5px 30px 0 rgb(0 0 0 / 0.03)',
         }}
       >
         <style jsx>{`
@@ -44,7 +51,7 @@ export default function GlassCard({
             <blockquote>{body}</blockquote>
           </article>
           <div className="w-full flex font-body justify-end font-bold">
-            <a
+            <div
               // href={url}
               className="flex items-center gap-2 group-hover:gap-[13px] group-hover:mr-[5px] ease-out duration-300 "
             >
@@ -52,7 +59,7 @@ export default function GlassCard({
               <div>LEARN MORE</div>{' '}
               {/* <Image src={ArrowRight} alt="Arrow pointing to the right" className="text-white" /> */}
               <ArrowRightMd className="fill-light" />
-            </a>
+            </div>
           </div>
         </div>
       </a>

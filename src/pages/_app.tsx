@@ -1,18 +1,18 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { NextGA } from 'next-ga4'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  if (!process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID) {
+  if (!process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
     console.warn(
       'No Google Analytics ID found. Please set the `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` environment variable.'
     )
   }
   return (
     <>
-      <NextGA measurementId={(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string) || ''} />
+      <GoogleAnalytics gaMeasurementId="G-XRDPNH8F33" />
       <Head>
         <title>solace° • Decentralized Coverage Protocol</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />

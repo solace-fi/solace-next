@@ -110,24 +110,28 @@ function Bar({ isOpen }: { isOpen: boolean }) {
       <div className="flex flex-col w-[200px] items-center justify-between h-[calc(100%_-_120px)] md:h-[calc(100vh-60px)] md:items-start select-none">
         {/* mobile */}
         <div className="">
-          <Link href="/" passHref={undefined}>
-            <OwnImage
-              className="block md:hidden ml-5 md:ml-7.5 select-none cursor-pointer"
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              src={SolaceLogoSmall}
-              alt="Small Solace Logo."
-              width="132.57px"
-            />
+          <Link href="/" passHref>
+            <a>
+              <OwnImage
+                className="block md:hidden ml-5 md:ml-7.5 select-none cursor-pointer"
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                src={SolaceLogoSmall}
+                alt="Small Solace Logo."
+                width="132.57px"
+              />
+            </a>
           </Link>
           {/* desktop */}
-          <Link href="/" passHref={undefined}>
-            <OwnImage
-              className="hidden md:block select-none cursor-pointer"
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              src={SolaceLogoSmall}
-              alt="Small Solace Logo."
-              width="132.57px"
-            />
+          <Link href="/" passHref>
+            <a>
+              <OwnImage
+                className="hidden md:block select-none cursor-pointer"
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                src={SolaceLogoSmall}
+                alt="Small Solace Logo."
+                width="132.57px"
+              />
+            </a>
           </Link>
         </div>
         <AccordionContainer
