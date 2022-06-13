@@ -112,13 +112,6 @@ const coreContributorsJson = [
     telegram: 'https://t.me/nimz0x',
   },
   {
-    name: 'Olaf Bieschke',
-    role: 'Community',
-    twitter: 'https://twitter.com/layersheikh',
-    discord: 'Sheikh#7071\n\nhttps://discord.com/users/390283091257589780/',
-    telegram: 'https://t.me/layersheikh',
-  },
-  {
     name: 'Camilla Abdullina',
     role: 'PR',
     twitter: 'https://twitter.com/Camillaa_97',
