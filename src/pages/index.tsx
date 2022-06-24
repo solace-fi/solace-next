@@ -29,16 +29,17 @@ export default function Home() {
   return (
     <div>
       {promoBannerIsOpen && (
-        <div className="h-[51px] bg-white flex font-semibold justify-center text-xl text-dark items-center relative">
+        <div className="h-[51px] px-4 bg-white flex font-semibold md:justify-center text-dark items-center relative pr-[51px] md:pr-0">
           <div className="flex gap-6 items-center">
-            <div className="text-base text-transparent bg-gradient-to-br bg-clip-text from-techyGradientA to-techyGradientB">
+            <div className="text-xs md:text-base text-transparent bg-gradient-to-br bg-clip-text from-techyGradientA to-techyGradientB">
               Solace Portfolio Insurance is upgraded to version 3!
             </div>
             <a
               className={classNames(
                 'text-white bg-gradient-to-br from-techyGradientA to-techyGradientB',
-                'rounded-full py-1.5 px-8 text-sm',
-                'hover:opacity-80 transition-color duration-200 ease-out cursor-pointer select-none'
+                'rounded-full py-1.5 px-8 text-xs md:text-sm',
+                'hover:opacity-80 transition-color duration-200 ease-out cursor-pointer select-none',
+                'shrink-0'
               )}
               href="https://app.solace.fi/cover?connect-wallet=true"
             >

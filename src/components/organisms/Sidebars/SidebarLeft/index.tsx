@@ -2,7 +2,7 @@ import SolaceGradientBackground from '@/components/atoms/SolaceGradientBackgroun
 import SolaceLogoSmall from '@/resources/svg/solace-logo-white-small.svg'
 import Burger from '@/resources/svgx/Burger'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AccordionContainer from './AccordionContainer'
 import classNames from 'classnames'
 import OwnImage from '@/components/atoms/OwnImage'
@@ -12,6 +12,7 @@ import GithubIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Github'
 import MediumIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/Medium'
 import DefiPulseIcon from '@/resources/svgx/sidebarIcons/sidebar-icons/DefiPulse'
 import useIsBelow from '@/utils/useIsBelow'
+import { useScrollY } from '../SidebarRight'
 
 const sidebarContent = [
   {
@@ -240,16 +241,46 @@ function Bar({ isOpen }: { isOpen: boolean }) {
 }
 
 function CloseButton({ toggle, isOpen }: { toggle: () => void; isOpen: boolean }) {
+  const scrollY = useScrollY()
+  const [topOffset, setTopOffset] = useState(0)
+  const [promoBannerIsOpen, setPromoBannerIsOpen] = useState(true)
+
+  useEffect(() => {
+    const spiPromoBannerIsOpen = localStorage.getItem('spiPromoBannerIsOpen')
+    if (spiPromoBannerIsOpen === 'false') {
+      setPromoBannerIsOpen(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    // console.log('changing directions')
+    const baseOffset = promoBannerIsOpen ? 51 : 0
+    // get window scrollY and if it's between 0 and 51, set topOffset to 51 - scrollY, otherwise set topOffset to 0
+    if (scrollY >= 0 && scrollY < baseOffset) {
+      setTopOffset(baseOffset - scrollY)
+    } else {
+      setTopOffset(0)
+    }
+  }, [promoBannerIsOpen, scrollY])
+
   return (
     <button
       className={classNames(
-        { 'fixed left-5 top-5 h-12 w-12 z-20 md:hidden': true },
-        { hidden: !isOpen }
+        { 'fixed left-5 h-12 w-12 z-20 md:hidden': true },
+        { hidden: !isOpen },
+        'sidebar-left'
       )}
       onClick={toggle}
       type="button"
       aria-label="Close"
     >
+      <style jsx>
+        {`
+          .sidebar-left {
+            bottom: calc(100% - ${topOffset + 62}px);
+          }
+        `}
+      </style>
       <svg className="h-12 w-12" viewBox="0 0 24 24">
         <path
           fill="currentColor"
@@ -268,7 +299,7 @@ export default function SidebarLeft() {
       <nav className="hidden md:inline-block absolute">
         <Bar isOpen={isOpen} />
       </nav>
-      <Burger className="fixed md:hidden top-4 left-4 h-12 w-12" onClick={toggle} />
+      <Burger className="fixed md:hidden left-4 h-12 w-12" onClick={toggle} />
       <CloseButton toggle={toggle} isOpen={isOpen} />
       <nav className={!isOpen ? 'hidden' : 'md:hidden fixed h-screen w-screen z-10 bg-white'}>
         <SolaceGradientBackground className="z-20 h-screen w-screen">
