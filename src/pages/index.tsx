@@ -41,7 +41,9 @@ export default function Home() {
                 'hover:opacity-80 transition-color duration-200 ease-out cursor-pointer select-none',
                 'shrink-0'
               )}
-              href="https://app.solace.fi/cover?connect-wallet=true"
+              href="https://www.google.com"
+              target={'_blank'}
+              rel={'noopener noreferrer'}
             >
               Learn more
             </a>
