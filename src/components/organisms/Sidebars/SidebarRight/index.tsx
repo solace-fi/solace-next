@@ -1,16 +1,61 @@
 import Userpic from '@/resources/svgx/Userpic'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+export function useScrollY() {
+  const [scrollY, setScrollY] = useState(0)
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return scrollY
+}
 
 export default function SidebarRight() {
   const [isOpen, setSidebarIsOpen] = React.useState(false)
   const toggleSidebar = () => setSidebarIsOpen(!isOpen)
-  // return isOpen ? (
+
+  const scrollY = useScrollY()
+  const [topOffset, setTopOffset] = useState(0)
+  const [promoBannerIsOpen, setPromoBannerIsOpen] = React.useState(true)
+
+  useEffect(() => {
+    const spiPromoBannerIsOpen = localStorage.getItem('spiPromoBannerIsOpen')
+    if (spiPromoBannerIsOpen === 'false') {
+      setPromoBannerIsOpen(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    // console.log('changing directions')
+    const baseOffset = promoBannerIsOpen ? 51 : 0
+    // get window scrollY and if it's between 0 and 51, set topOffset to 51 - scrollY, otherwise set topOffset to 0
+    if (scrollY >= 0 && scrollY < baseOffset) {
+      setTopOffset(baseOffset - scrollY)
+    } else {
+      setTopOffset(0)
+    }
+  }, [promoBannerIsOpen, scrollY])
+
   return (
     <>
       <div
-        className="fixed top-6 right-5 h-9 w-9 rounded-full hover:brightness-90 flex items-center justify-center text-dark font-title font-bold text-lg select-none cursor-pointer"
+        className="fixed right-5 h-9 w-9 rounded-full hover:brightness-90 flex text-dark font-title font-bold text-lg select-none cursor-pointer sidebar-right"
         onClick={toggleSidebar}
       >
+        <style jsx>
+          {`
+            .sidebar-right {
+              bottom: calc(100% - ${topOffset + 62}px);
+            }
+          `}
+        </style>
         <Userpic className="h-9 w-9 text-white" />
       </div>
       <section

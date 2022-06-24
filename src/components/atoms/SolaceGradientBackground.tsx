@@ -7,7 +7,7 @@ export default function SolaceGradientBackground({
   className?: string
 }) {
   return (
-    <div className={classNames('solace-gradient', className)}>
+    <div className={classNames('solace-gradient', className, 'relative')}>
       <style jsx>{`
         .solace-gradient {
           background: radial-gradient(
