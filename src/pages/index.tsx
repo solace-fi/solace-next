@@ -41,7 +41,7 @@ export default function Home() {
                 'hover:opacity-80 transition-color duration-200 ease-out cursor-pointer select-none',
                 'shrink-0'
               )}
-              href="https://www.google.com"
+              href="https://medium.com/solace-fi/solace-portfolio-insurance-v3-is-live-473f752ce3e4"
               target={'_blank'}
               rel={'noopener noreferrer'}
             >
